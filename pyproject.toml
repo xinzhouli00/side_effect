@@ -8,6 +8,13 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pymedtermino = "^0.3.3"
+torch = "^2.5.1"
+transformers = "^4.47.0"
+scikit-learn = "^1.5.2"
+matplotlib = "^3.9.3"
+nltk = "^3.9.1"
+pandas = "^2.2.3"
 
 [tool.poetry.dev-dependencies]
 
