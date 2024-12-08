@@ -94,11 +94,8 @@ class SideEffectAnalyzer:
 if __name__ == "__main__":
     # Step 1: Initialize keywords and official side effects
     side_effects_df = pd.read_csv("data/side_effects.csv")
-<<<<<<< HEAD
-    side_effects_official = [effect.lower() for effect in side_effects_df['Reaction']]
-=======
     side_effects_official = [effect.lower() for effect in side_effects_df["Reaction"]]
->>>>>>> b72fc40 (Save local changes)
+
     initial_keywords = side_effects_official
 
     # Step 2: Initialize the SideEffectAnalyzer
@@ -115,7 +112,6 @@ if __name__ == "__main__":
 
     # Clean reviews using get_comment_dict
     simulants_comment_dict = get_comment_dict(simulants_data, "Review Text")
->>>>>>> b72fc40 (Save local changes)
 
     # Save cleaned reviews
     cleaned_simulants = pd.DataFrame(simulants_comment_dict)
@@ -137,7 +133,6 @@ if __name__ == "__main__":
 
     # Clean reviews using get_comment_dict
     non_simulants_comment_dict = get_comment_dict(non_simulants_data, "Review Text")
->>>>>>> b72fc40 (Save local changes)
 
     # Save cleaned reviews
     cleaned_non_simulants = pd.DataFrame(non_simulants_comment_dict)
@@ -164,4 +159,3 @@ if __name__ == "__main__":
     ).to_csv("side_effect_scores.csv", index=False)
     pd.DataFrame(combined_top_k_comments).to_csv("top_k_comments.csv", index=False)
     print("Results saved to CSV.")
-
