@@ -26,3 +26,11 @@ def filter_comments_by_drug(comment_dict, drug_name):
     :return: Filtered comment dictionary and list of cleaned comments.
     """
     return pick_drug(comment_dict, drug_name)
+
+def get_drugs(df):
+    """
+    Extracts unique drug names from a DataFrame.
+    :param df: Pandas DataFrame containing a column 'Drug Name'.
+    :return: List of unique drug names.
+    """
+    return df['Drug Name'].unique()

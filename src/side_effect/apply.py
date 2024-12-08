@@ -1,3 +1,11 @@
+import sys
+import os
+
+# 添加项目根目录到 sys.path
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+sys.path.append(base_dir)
+
+
 import pandas as pd
 from src.side_effect.embedding_and_keywords import BioBERTEmbedder, KeywordExpander
 from src.side_effect.analysis import get_comment_similarity, evaluate_score, comment_side_effect
@@ -68,39 +76,60 @@ class SideEffectAnalyzer:
 
 if __name__ == "__main__":
     # Step 1: Initialize keywords and official side effects
-    initial_keywords = ["nausea", "dizziness", "headache", "stomach pain"]
-    side_effects_df = pd.read_csv("side_effects.csv")
+    side_effects_df = pd.read_csv("data/side_effects.csv")
     side_effects_official = [effect.lower() for effect in side_effects_df['Reaction']]
+    initial_keywords = side_effects_official
 
     # Step 2: Initialize the SideEffectAnalyzer
     analyzer = SideEffectAnalyzer(initial_keywords, side_effects_official)
 
-    # Step 3: Analyze the first dataset (simulants)
-    print("Processing simulants reviews...")
-    simulants_results = analyzer.process_file("simulants_reviews.csv")
+    # Step 3: Preprocess and save cleaned reviews for simulants
+    print("Processing and cleaning simulants reviews...")
+    simulants_data = pd.read_csv("data/simulants_reviews.csv")
+    simulants_data['Review Text'] = simulants_data['Review Text'].str.replace('For ADHD', '', regex=False)
+    simulants_data = simulants_data.drop(columns=["Condition"], errors='ignore')
 
-    # Step 4: Analyze the second dataset (non-simulants)
-    print("Processing non-simulants reviews...")
-    non_simulants_results = analyzer.process_file("non_simulants_reviews.csv")
+    # Clean reviews using get_comment_dict
+    simulants_comment_dict = get_comment_dict(simulants_data, 'Review Text')
 
-    # Step 5: Combine results
+    # Save cleaned reviews
+    cleaned_simulants = pd.DataFrame(simulants_comment_dict)
+    cleaned_simulants.to_csv("cleaned_simulants_reviews.csv", index=False)
+    print("Cleaned simulants reviews saved to 'cleaned_simulants_reviews.csv'.")
+
+    # Step 4: Analyze simulants
+    print("Analyzing simulants reviews...")
+    simulants_results = analyzer.process_file("cleaned_simulants_reviews.csv")
+
+    # Step 5: Repeat the process for non-simulants
+    print("Processing and cleaning non-simulants reviews...")
+    non_simulants_data = pd.read_csv("data/non_simulants_reviews.csv")
+    non_simulants_data['Review Text'] = non_simulants_data['Review Text'].str.replace('For ADHD', '', regex=False)
+    non_simulants_data = non_simulants_data.drop(columns=["Condition"], errors='ignore')
+
+    # Clean reviews using get_comment_dict
+    non_simulants_comment_dict = get_comment_dict(non_simulants_data, 'Review Text')
+
+    # Save cleaned reviews
+    cleaned_non_simulants = pd.DataFrame(non_simulants_comment_dict)
+    cleaned_non_simulants.to_csv("cleaned_non_simulants_reviews.csv", index=False)
+    print("Cleaned non-simulants reviews saved to 'cleaned_non_simulants_reviews.csv'.")
+
+    # Step 6: Analyze non-simulants
+    print("Analyzing non-simulants reviews...")
+    non_simulants_results = analyzer.process_file("cleaned_non_simulants_reviews.csv")
+
+    # Combine and save results
     combined_comment_dict = simulants_results[0] + non_simulants_results[0]
     combined_side_effect_scores = {**simulants_results[1], **non_simulants_results[1]}
     combined_top_k_comments = simulants_results[2] + non_simulants_results[2]
 
-    # Step 6: Save results to CSV
     print("Saving results to CSV...")
-    # Save updated comments dictionary
     pd.DataFrame(combined_comment_dict).to_csv("updated_comments.csv", index=False)
-    print("Updated comments saved to 'updated_comments.csv'.")
-
-    # Save side effect scores
     pd.DataFrame([
         {"Drug Name": drug, **scores}
         for drug, scores in combined_side_effect_scores.items()
     ]).to_csv("side_effect_scores.csv", index=False)
-    print("Side effect scores saved to 'side_effect_scores.csv'.")
-
-    # Save top K comments
     pd.DataFrame(combined_top_k_comments).to_csv("top_k_comments.csv", index=False)
-    print("Top K comments saved to 'top_k_comments.csv'.")
+    print("Results saved to CSV.")
+
