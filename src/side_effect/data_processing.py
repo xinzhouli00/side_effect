@@ -1,5 +1,5 @@
 import pandas as pd
-from .side_effect import preprocess_text, get_comment_dict, pick_drug
+from .side_effect import get_comment_dict, pick_drug, merge_data
 
 def load_data(file_path):
     """
@@ -9,7 +9,7 @@ def load_data(file_path):
     """
     return pd.read_csv(file_path)
 
-def prepare_comment_dict(data, comment_col_name='Review Text'):
+def prepare_comment_dict(data, comment_col_name='Review Text', cleaned_data = False):
     """
     Cleans and preprocesses comments, preparing a dictionary for further analysis.
     :param data: Pandas DataFrame containing review data.
@@ -34,3 +34,6 @@ def get_drugs(df):
     :return: List of unique drug names.
     """
     return df['Drug Name'].unique()
+
+def get_merged_data(path):
+    return merge_data(path)

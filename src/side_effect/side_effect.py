@@ -3,6 +3,7 @@ import ssl
 import pandas as pd
 from nltk.corpus import wordnet
 import nltk
+import os
 
 # 忽略 SSL 问题
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -32,17 +33,18 @@ def get_drugs(df):
     """
     return df['Drug Name'].unique()
 
-def get_comment_dict(df, comment_col_name):
+def get_comment_dict(df, comment_col_name, cleaned_data = False):
     """
     Cleans comments and prepares a dictionary of all comments and their metadata.
     :param df: Pandas DataFrame containing comments.
     :param comment_col_name: Column name for the comments.
     :return: List of dictionaries with processed comments and additional fields.
     """
-    comments = df[comment_col_name]
-    cleaned_comments = [preprocess_text(comment) for comment in comments]
-    df['cleaned_comments'] = cleaned_comments
-    df['side_effects'] = [[] for _ in range(len(cleaned_comments))]
+    if not cleaned_data:
+        comments = df[comment_col_name]
+        cleaned_comments = [preprocess_text(comment) for comment in comments]
+        df['cleaned_comments'] = cleaned_comments
+        df['side_effects'] = [[] for _ in range(len(cleaned_comments))]
     return df.to_dict(orient='records')
 
 def pick_drug(comment_dict, drug_name):
@@ -55,3 +57,13 @@ def pick_drug(comment_dict, drug_name):
     drug_dict = [item for item in comment_dict if item['Drug Name'] == drug_name]
     drug_comment = [item['cleaned_comments'] for item in drug_dict]
     return drug_dict, drug_comment
+
+def merge_data(folder_path):
+    merged_files = []
+    for file_name in os.listdir(folder_path):
+        if file_name.endswith('.csv'):
+            file_path = os.path.join(folder_path, file_name)
+            df = pd.read_csv(file_path)
+            merged_files.append(df)
+    merged_df = pd.concat(merged_files, ignore_index=True)
+    print(merged_df)
