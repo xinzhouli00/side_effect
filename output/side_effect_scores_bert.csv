@@ -1,0 +1,645 @@
+drug,side_effect,score
+concerta,drug ineffective,0.4027575680064186
+concerta,nausea,2.5473000528439553
+concerta,fatigue,2.230472903747344
+concerta,somnolence,0.37618915051092083
+concerta,headache,2.6045752549963
+concerta,vomiting,2.4761830366639686
+concerta,insomnia,0.4185174556100317
+concerta,dizziness,0.3193157473565532
+concerta,abnormal,2.375137076095417
+concerta,suicidal ideation,0.722993109867258
+concerta,depression,2.592877332137354
+concerta,anxiety,2.7189699405444725
+concerta,aggression,2.36516474848086
+concerta,abnormal behaviour,2.634227396322871
+concerta,abdominal pain,0.3880605361328416
+concerta,decreased appetite,0.7627630641654198
+concerta,disturbance in attention,0.41215178876552944
+concerta,irritability,0.4571983406782496
+concerta,hypotension,0.4613940590351863
+concerta,bradycardia,0.39732779845790006
+concerta,no adverse event,0.33844149454411643
+concerta,electrocardiogram qt prolonged,1.169006138542567
+concerta,toxicity to various agents,0.423521969115959
+concerta,agitation,2.457261627564323
+concerta,pain,2.5405172948524117
+concerta,hypertension,0.6224597143590537
+concerta,dyspnoea,0.4196733217280904
+concerta,chronic kidney disease,1.0977924290736285
+concerta,diarrhoea,0.7857397826299266
+concerta,renal failure,1.080417821386556
+concerta,blood pressure increased,0.4953741795006269
+concerta,acute kidney injury,1.3973176436733956
+concerta,asthenia,0.398743143837753
+concerta,death,2.4011197490793355
+concerta,fall,2.2835784811953674
+concerta,suicide,2.4022057756608564
+concerta,rash,2.235169596943047
+concerta,weight increased,1.0898850363596777
+concerta,malaise,0.7854581479691456
+concerta,migraine,0.7572384275960992
+concerta,anger,2.580821505781528
+concerta,withdrawal syndrome,0.6324882798859274
+concerta,seizure,2.1772700261989684
+concerta,application site erythema,0.8127471081836822
+concerta,condition aggravated,0.8202251091339938
+concerta,weight decreased,1.7963757350370395
+ritalin,drug ineffective,0.3939227696392945
+ritalin,nausea,2.4283493787822104
+ritalin,fatigue,2.1027094102177815
+ritalin,somnolence,0.3782790038952414
+ritalin,headache,2.4753735184998247
+ritalin,vomiting,2.3480664069808745
+ritalin,insomnia,0.398138774156889
+ritalin,dizziness,0.29659210718643536
+ritalin,abnormal,2.243622404120261
+ritalin,suicidal ideation,0.7081688536913108
+ritalin,depression,2.4589021096649484
+ritalin,anxiety,2.600003995362238
+ritalin,aggression,2.2526709653433743
+ritalin,abnormal behaviour,2.5243831184861176
+ritalin,abdominal pain,0.37121129124718705
+ritalin,decreased appetite,0.7227010236091849
+ritalin,disturbance in attention,0.39939264900099564
+ritalin,irritability,0.4467689667963727
+ritalin,hypotension,0.45101850503224905
+ritalin,bradycardia,0.3827218579038154
+ritalin,no adverse event,0.3302907355842243
+ritalin,electrocardiogram qt prolonged,1.155689893759345
+ritalin,toxicity to various agents,0.4129516715139374
+ritalin,agitation,2.327768792820779
+ritalin,pain,2.429973955582554
+ritalin,hypertension,0.5923947675582473
+ritalin,dyspnoea,0.4256713038646337
+ritalin,chronic kidney disease,1.0789822001499034
+ritalin,diarrhoea,0.7613749277716757
+ritalin,renal failure,1.061072185617775
+ritalin,blood pressure increased,0.47810606392172894
+ritalin,acute kidney injury,1.3764686926687635
+ritalin,asthenia,0.39945870618237833
+ritalin,death,2.2983798541875577
+ritalin,fall,2.1682738043401857
+ritalin,suicide,2.2815450289242083
+ritalin,rash,2.1055594326064924
+ritalin,weight increased,1.0495604116042616
+ritalin,malaise,0.7560833155186854
+ritalin,migraine,0.7242085694765161
+ritalin,anger,2.4543514407106755
+ritalin,withdrawal syndrome,0.6059948091410238
+ritalin,seizure,2.051471279923958
+ritalin,application site erythema,0.8168890111288998
+ritalin,condition aggravated,0.7875999505414522
+ritalin,weight decreased,1.7248607306608377
+adderall,drug ineffective,0.43118596035325363
+adderall,nausea,2.802781232311102
+adderall,fatigue,2.54584601531902
+adderall,somnolence,0.3901460890522498
+adderall,headache,2.868807247997877
+adderall,vomiting,2.739434389029434
+adderall,insomnia,0.4145501567694003
+adderall,dizziness,0.3365826381299786
+adderall,abnormal,2.661277364337159
+adderall,suicidal ideation,0.7505216805520887
+adderall,depression,2.8436057091711042
+adderall,anxiety,2.94087623315538
+adderall,aggression,2.651171567940902
+adderall,abnormal behaviour,2.8299834489108555
+adderall,abdominal pain,0.38938712169548234
+adderall,decreased appetite,0.7740558589290002
+adderall,disturbance in attention,0.42127393117683853
+adderall,irritability,0.46337011480283835
+adderall,hypotension,0.4552692406905625
+adderall,bradycardia,0.3959674702552026
+adderall,no adverse event,0.33669127238367846
+adderall,electrocardiogram qt prolonged,1.1814130994671594
+adderall,toxicity to various agents,0.436155789924001
+adderall,agitation,2.7327596467293187
+adderall,pain,2.7832750062534437
+adderall,hypertension,0.6390883664111653
+adderall,dyspnoea,0.4277168754451051
+adderall,chronic kidney disease,1.1099404375591202
+adderall,diarrhoea,0.7908957085447634
+adderall,renal failure,1.0924570114015342
+adderall,blood pressure increased,0.4862582028031111
+adderall,acute kidney injury,1.4174312898915207
+adderall,asthenia,0.4134565047518222
+adderall,death,2.690426464239042
+adderall,fall,2.5797971013390613
+adderall,suicide,2.664136118458179
+adderall,rash,2.525837612388555
+adderall,weight increased,1.1257883894169878
+adderall,malaise,0.8506107101004994
+adderall,migraine,0.7767758138046532
+adderall,anger,2.8216814088399063
+adderall,withdrawal syndrome,0.6595248577302087
+adderall,seizure,2.47137214044135
+adderall,application site erythema,0.8398042265288606
+adderall,condition aggravated,0.8852557099448469
+adderall,weight decreased,1.8497900762065442
+dexedrine,drug ineffective,0.39822314862211455
+dexedrine,nausea,2.3770054701247836
+dexedrine,fatigue,2.0554897879377574
+dexedrine,somnolence,0.3740776727437353
+dexedrine,headache,2.423446495732196
+dexedrine,vomiting,2.3003617894073702
+dexedrine,insomnia,0.40170373110545415
+dexedrine,dizziness,0.2962955383873686
+dexedrine,abnormal,2.195106138170141
+dexedrine,suicidal ideation,0.6981118234204684
+dexedrine,depression,2.407752993239806
+dexedrine,anxiety,2.5509144337310725
+dexedrine,aggression,2.1975529027600698
+dexedrine,abnormal behaviour,2.479371158180752
+dexedrine,abdominal pain,0.3687746727664445
+dexedrine,decreased appetite,0.7217683247242824
+dexedrine,disturbance in attention,0.3953461798894692
+dexedrine,irritability,0.4459197457109877
+dexedrine,hypotension,0.45759304862139477
+dexedrine,bradycardia,0.38826889175102763
+dexedrine,no adverse event,0.32824111528009636
+dexedrine,electrocardiogram qt prolonged,1.1593693858515475
+dexedrine,toxicity to various agents,0.4193872291094961
+dexedrine,agitation,2.277756173422947
+dexedrine,pain,2.3771324721283964
+dexedrine,hypertension,0.5938021314901845
+dexedrine,dyspnoea,0.42958674443430067
+dexedrine,chronic kidney disease,1.071459293046347
+dexedrine,diarrhoea,0.764650809080097
+dexedrine,renal failure,1.0537147871216483
+dexedrine,blood pressure increased,0.4778720274264429
+dexedrine,acute kidney injury,1.3626815699119532
+dexedrine,asthenia,0.40190253221096933
+dexedrine,death,2.240782526068399
+dexedrine,fall,2.1168801428036956
+dexedrine,suicide,2.2295652306196287
+dexedrine,rash,2.061426083066643
+dexedrine,weight increased,1.044282828970971
+dexedrine,malaise,0.7421650018019288
+dexedrine,migraine,0.7233877619855243
+dexedrine,anger,2.405603433727958
+dexedrine,withdrawal syndrome,0.596875001453416
+dexedrine,seizure,2.004670891753505
+dexedrine,application site erythema,0.8177796763684091
+dexedrine,condition aggravated,0.7733375968379367
+dexedrine,weight decreased,1.7173611292630064
+dexstrostat,drug ineffective,0.3800978529453278
+dexstrostat,nausea,1.7779175889492036
+dexstrostat,fatigue,1.2971859851479532
+dexstrostat,somnolence,0.34167234420776366
+dexstrostat,headache,1.7840206888318062
+dexstrostat,vomiting,1.696183034181595
+dexstrostat,insomnia,0.44250391364097597
+dexstrostat,dizziness,0.2614828044176102
+dexstrostat,abnormal,1.5219932600855828
+dexstrostat,suicidal ideation,0.6544973933696747
+dexstrostat,depression,1.8280054670572283
+dexstrostat,anxiety,2.0276482641696933
+dexstrostat,aggression,1.5021434696018692
+dexstrostat,abnormal behaviour,2.0388369590044024
+dexstrostat,abdominal pain,0.35662703394889833
+dexstrostat,decreased appetite,0.6798910880088807
+dexstrostat,disturbance in attention,0.37107586026191713
+dexstrostat,irritability,0.4503526628017426
+dexstrostat,hypotension,0.498107932806015
+dexstrostat,bradycardia,0.4172061419486999
+dexstrostat,no adverse event,0.3297712790966034
+dexstrostat,electrocardiogram qt prolonged,1.1996604931354522
+dexstrostat,toxicity to various agents,0.4171499943733215
+dexstrostat,agitation,1.646521901190281
+dexstrostat,pain,1.80368152320385
+dexstrostat,hypertension,0.5795909124612808
+dexstrostat,dyspnoea,0.4469215583801269
+dexstrostat,chronic kidney disease,1.0950131714344025
+dexstrostat,diarrhoea,0.8188436663150787
+dexstrostat,renal failure,1.075523009300232
+dexstrostat,blood pressure increased,0.47359983444213866
+dexstrostat,acute kidney injury,1.3627129065990446
+dexstrostat,asthenia,0.40210782527923583
+dexstrostat,death,1.536893221884966
+dexstrostat,fall,1.366678959131241
+dexstrostat,suicide,1.600711782872677
+dexstrostat,rash,1.3818363687396051
+dexstrostat,weight increased,0.9302339178323745
+dexstrostat,malaise,0.6008942610025406
+dexstrostat,migraine,0.6924850857257843
+dexstrostat,anger,1.8429857099056242
+dexstrostat,withdrawal syndrome,0.5423538768291474
+dexstrostat,seizure,1.297648620605469
+dexstrostat,application site erythema,0.803169459104538
+dexstrostat,condition aggravated,0.6247463312745094
+dexstrostat,weight decreased,1.5630119496583939
+vyvanse,drug ineffective,0.3579887354373932
+vyvanse,nausea,1.8150221963524817
+vyvanse,fatigue,1.3429748657941818
+vyvanse,somnolence,0.33506490468978883
+vyvanse,headache,1.828022801399231
+vyvanse,vomiting,1.738109773516655
+vyvanse,insomnia,0.4177705109119415
+vyvanse,dizziness,0.24661189103126527
+vyvanse,abnormal,1.573274491518736
+vyvanse,suicidal ideation,0.6469913268089295
+vyvanse,depression,1.8621074995994564
+vyvanse,anxiety,2.055072641134262
+vyvanse,aggression,1.560372573912144
+vyvanse,abnormal behaviour,2.0485365461707117
+vyvanse,abdominal pain,0.35445449948310853
+vyvanse,decreased appetite,0.6960304480791092
+vyvanse,disturbance in attention,0.36867202377319336
+vyvanse,irritability,0.4451951434612274
+vyvanse,hypotension,0.4698623549938202
+vyvanse,bradycardia,0.38171572613716126
+vyvanse,no adverse event,0.32149822211265566
+vyvanse,electrocardiogram qt prolonged,1.1316140351295472
+vyvanse,toxicity to various agents,0.39583833289146425
+vyvanse,agitation,1.6994627043008803
+vyvanse,pain,1.8338201941251753
+vyvanse,hypertension,0.5425989656448365
+vyvanse,dyspnoea,0.42360814881324765
+vyvanse,chronic kidney disease,1.071938390493393
+vyvanse,diarrhoea,0.7788745350837707
+vyvanse,renal failure,1.0534170043468476
+vyvanse,blood pressure increased,0.4854877645969391
+vyvanse,acute kidney injury,1.340332726597786
+vyvanse,asthenia,0.3774856803417206
+vyvanse,death,1.5907681633234023
+vyvanse,fall,1.4504383642971517
+vyvanse,suicide,1.6466395432651044
+vyvanse,rash,1.431848011612892
+vyvanse,weight increased,0.9698365807533265
+vyvanse,malaise,0.5945637485384941
+vyvanse,migraine,0.684537205696106
+vyvanse,anger,1.87684335154295
+vyvanse,withdrawal syndrome,0.5309731892347336
+vyvanse,seizure,1.3495858060419559
+vyvanse,application site erythema,0.7858084027767182
+vyvanse,condition aggravated,0.6320531369447708
+vyvanse,weight decreased,1.6149141331911088
+strattera,drug ineffective,0.3971581410355799
+strattera,nausea,2.466574786368029
+strattera,fatigue,2.1273467125942935
+strattera,somnolence,0.3715098767777106
+strattera,headache,2.5179166380229074
+strattera,vomiting,2.4025325822765993
+strattera,insomnia,0.4241419389870693
+strattera,dizziness,0.3169864443677546
+strattera,abnormal,2.2918174488259284
+strattera,suicidal ideation,0.7173818928763083
+strattera,depression,2.5221398837422977
+strattera,anxiety,2.65074392359978
+strattera,aggression,2.2738741250839114
+strattera,abnormal behaviour,2.581770207579089
+strattera,abdominal pain,0.39304133348126813
+strattera,decreased appetite,0.7657213844024514
+strattera,disturbance in attention,0.408595148119507
+strattera,irritability,0.45902217932620637
+strattera,hypotension,0.4760613210860446
+strattera,bradycardia,0.40857836018237864
+strattera,no adverse event,0.34085043154563255
+strattera,electrocardiogram qt prolonged,1.1837800738787951
+strattera,toxicity to various agents,0.42651928249659615
+strattera,agitation,2.3812653891327566
+strattera,pain,2.461531489565835
+strattera,hypertension,0.6291430713725903
+strattera,dyspnoea,0.4316260738154502
+strattera,chronic kidney disease,1.119172313322499
+strattera,diarrhoea,0.8061075676867949
+strattera,renal failure,1.1013844469077283
+strattera,blood pressure increased,0.5029404704296825
+strattera,acute kidney injury,1.4131325117882532
+strattera,asthenia,0.40343419696527066
+strattera,death,2.298613260996727
+strattera,fall,2.1867925147500884
+strattera,suicide,2.3180189281033226
+strattera,rash,2.1478677581614503
+strattera,weight increased,1.0845566413881964
+strattera,malaise,0.7685153232469379
+strattera,migraine,0.7613972719738684
+strattera,anger,2.5090687754472025
+strattera,withdrawal syndrome,0.6272863449003795
+strattera,seizure,2.08204586266856
+strattera,application site erythema,0.8255451879124667
+strattera,condition aggravated,0.8002663660573788
+strattera,weight decreased,1.7931771003900354
+intuniv,drug ineffective,0.34569412446022035
+intuniv,nausea,1.7351813582777977
+intuniv,fatigue,1.2712979092597962
+intuniv,somnolence,0.3211466267108917
+intuniv,headache,1.7562041176557541
+intuniv,vomiting,1.6679599255919455
+intuniv,insomnia,0.4309784653186798
+intuniv,dizziness,0.24012181758880616
+intuniv,abnormal,1.5091987852752207
+intuniv,suicidal ideation,0.6387356114387512
+intuniv,depression,1.8076910721063615
+intuniv,anxiety,1.9962992904782297
+intuniv,aggression,1.48764940276742
+intuniv,abnormal behaviour,2.0216483539938928
+intuniv,abdominal pain,0.3622992599010468
+intuniv,decreased appetite,0.6862794382572174
+intuniv,disturbance in attention,0.3684552652835846
+intuniv,irritability,0.44255155873298646
+intuniv,hypotension,0.47273317861557007
+intuniv,bradycardia,0.39786216378211975
+intuniv,no adverse event,0.33768735742568967
+intuniv,electrocardiogram qt prolonged,1.1590795896053314
+intuniv,toxicity to various agents,0.3834466907978058
+intuniv,agitation,1.6461950235962868
+intuniv,pain,1.7568064591288566
+intuniv,hypertension,0.5644448562860489
+intuniv,dyspnoea,0.420432222366333
+intuniv,chronic kidney disease,1.0864699721336364
+intuniv,diarrhoea,0.7930096700191498
+intuniv,renal failure,1.0686024296283723
+intuniv,blood pressure increased,0.4946882107257843
+intuniv,acute kidney injury,1.3579517850875855
+intuniv,asthenia,0.3768805742263794
+intuniv,death,1.4920428955554965
+intuniv,fall,1.3678729051351546
+intuniv,suicide,1.5804077447056772
+intuniv,rash,1.3634082430005074
+intuniv,weight increased,0.9465697244405746
+intuniv,malaise,0.5741645625829697
+intuniv,migraine,0.6844864063262939
+intuniv,anger,1.8109120688438418
+intuniv,withdrawal syndrome,0.5333936024904251
+intuniv,seizure,1.2868319718837737
+intuniv,application site erythema,0.7808470253944397
+intuniv,condition aggravated,0.6339597598910331
+intuniv,weight decreased,1.5800821976661683
+kapvay,drug ineffective,0.34429460763931274
+kapvay,nausea,1.735183154957162
+kapvay,fatigue,1.314826043943564
+kapvay,somnolence,0.3310355444749196
+kapvay,headache,1.7551224066151514
+kapvay,vomiting,1.662607695079512
+kapvay,insomnia,0.42301896876759
+kapvay,dizziness,0.23383265237013498
+kapvay,abnormal,1.528191098736392
+kapvay,suicidal ideation,0.6302153724763129
+kapvay,depression,1.7879210478729672
+kapvay,anxiety,1.9774352270695896
+kapvay,aggression,1.5061066889514525
+kapvay,abnormal behaviour,2.0035719060235553
+kapvay,abdominal pain,0.3505973170200984
+kapvay,decreased appetite,0.6677375882863998
+kapvay,disturbance in attention,0.3638001051214006
+kapvay,irritability,0.4395616302887599
+kapvay,hypotension,0.47073130971855587
+kapvay,bradycardia,0.3923305985000398
+kapvay,no adverse event,0.3288460688458549
+kapvay,electrocardiogram qt prolonged,1.1650155302551057
+kapvay,toxicity to various agents,0.38074619240230984
+kapvay,agitation,1.6508296177619033
+kapvay,pain,1.7459291434950295
+kapvay,hypertension,0.5491897182332144
+kapvay,dyspnoea,0.43057804306348163
+kapvay,chronic kidney disease,1.0770907468265958
+kapvay,diarrhoea,0.7826312896278169
+kapvay,renal failure,1.059437033202913
+kapvay,blood pressure increased,0.48782281743155587
+kapvay,acute kidney injury,1.346161301765177
+kapvay,asthenia,0.38849428792794544
+kapvay,death,1.507625679175059
+kapvay,fall,1.3894677741660013
+kapvay,suicide,1.5788788153893418
+kapvay,rash,1.3858898017141552
+kapvay,weight increased,0.9328426130943828
+kapvay,malaise,0.5691239808996518
+kapvay,migraine,0.6753199878666136
+kapvay,anger,1.7990823193556733
+kapvay,withdrawal syndrome,0.5205053157276577
+kapvay,seizure,1.3098190700014432
+kapvay,application site erythema,0.7941170152690675
+kapvay,condition aggravated,0.6333687044680119
+kapvay,weight decreased,1.5536818496055074
+wellbutrin,drug ineffective,0.39377526654123934
+wellbutrin,nausea,2.377954127188121
+wellbutrin,fatigue,2.034800709413028
+wellbutrin,somnolence,0.38154801157165746
+wellbutrin,headache,2.4207137995053474
+wellbutrin,vomiting,2.2982366709160753
+wellbutrin,insomnia,0.40794616734680256
+wellbutrin,dizziness,0.29745923456191364
+wellbutrin,abnormal,2.1831189916562037
+wellbutrin,suicidal ideation,0.7066366084143927
+wellbutrin,depression,2.4104712566203066
+wellbutrin,anxiety,2.559352674735252
+wellbutrin,aggression,2.190648357343702
+wellbutrin,abnormal behaviour,2.4910536506762884
+wellbutrin,abdominal pain,0.37502049428558415
+wellbutrin,decreased appetite,0.7218167210883293
+wellbutrin,disturbance in attention,0.39805435998355104
+wellbutrin,irritability,0.4496719039691602
+wellbutrin,hypotension,0.46336540089604633
+wellbutrin,bradycardia,0.3956677596323966
+wellbutrin,no adverse event,0.33571201944672835
+wellbutrin,electrocardiogram qt prolonged,1.1531884366106955
+wellbutrin,toxicity to various agents,0.41782292955722966
+wellbutrin,agitation,2.2726124092524294
+wellbutrin,pain,2.382534447135251
+wellbutrin,hypertension,0.6005106558361666
+wellbutrin,dyspnoea,0.43141425902156233
+wellbutrin,chronic kidney disease,1.0802546595737257
+wellbutrin,diarrhoea,0.7759202792120925
+wellbutrin,renal failure,1.0624857460866208
+wellbutrin,blood pressure increased,0.478726299155931
+wellbutrin,acute kidney injury,1.3730496265075571
+wellbutrin,asthenia,0.40226340501930546
+wellbutrin,death,2.2289074314931216
+wellbutrin,fall,2.0936955920331526
+wellbutrin,suicide,2.223692188457499
+wellbutrin,rash,2.0453901648354753
+wellbutrin,weight increased,1.032345967977995
+wellbutrin,malaise,0.7478870730022671
+wellbutrin,migraine,0.7287363037385576
+wellbutrin,anger,2.4101077423222326
+wellbutrin,withdrawal syndrome,0.607899350510106
+wellbutrin,seizure,1.9854837183200607
+wellbutrin,application site erythema,0.8132565525039787
+wellbutrin,condition aggravated,0.773861878170871
+wellbutrin,weight decreased,1.7060013040655948
+qelbree,drug ineffective,0.39812505239063933
+qelbree,nausea,2.39280830528011
+qelbree,fatigue,2.040183980570933
+qelbree,somnolence,0.36640849162622824
+qelbree,headache,2.439580162545455
+qelbree,vomiting,2.3190666908148634
+qelbree,insomnia,0.4211289138523574
+qelbree,dizziness,0.3093251787202874
+qelbree,abnormal,2.1989100780683692
+qelbree,suicidal ideation,0.708805838872477
+qelbree,depression,2.4288228068923217
+qelbree,anxiety,2.576286869995373
+qelbree,aggression,2.189517177218936
+qelbree,abnormal behaviour,2.5067771418807427
+qelbree,abdominal pain,0.3874722738855893
+qelbree,decreased appetite,0.743238326323401
+qelbree,disturbance in attention,0.40253955088939863
+qelbree,irritability,0.4538379504508579
+qelbree,hypotension,0.4724804424747978
+qelbree,bradycardia,0.40519713114217387
+qelbree,no adverse event,0.33837403940785793
+qelbree,electrocardiogram qt prolonged,1.1777607505468979
+qelbree,toxicity to various agents,0.4230406383878177
+qelbree,agitation,2.2953707380085877
+qelbree,pain,2.3891917998489642
+qelbree,hypertension,0.6157425780578987
+qelbree,dyspnoea,0.4310386870939707
+qelbree,chronic kidney disease,1.1038044352199614
+qelbree,diarrhoea,0.8017012424075727
+qelbree,renal failure,1.086039554089615
+qelbree,blood pressure increased,0.4938005449845619
+qelbree,acute kidney injury,1.3983843266963958
+qelbree,asthenia,0.40222317723883794
+qelbree,death,2.225132659323437
+qelbree,fall,2.0982288699481906
+qelbree,suicide,2.232376607207908
+qelbree,rash,2.0566410387683773
+qelbree,weight increased,1.051251236280215
+qelbree,malaise,0.7514282405376435
+qelbree,migraine,0.7575734841454889
+qelbree,anger,2.429630008032641
+qelbree,withdrawal syndrome,0.6138306834341325
+qelbree,seizure,1.9897493285539838
+qelbree,application site erythema,0.8236599125505722
+qelbree,condition aggravated,0.781759588405029
+qelbree,weight decreased,1.7426596373012386
+lntuniv,drug ineffective,0.3947957394858624
+lntuniv,nausea,2.4259324221725156
+lntuniv,fatigue,2.1008163449929116
+lntuniv,somnolence,0.38088208492766035
+lntuniv,headache,2.473315719778234
+lntuniv,vomiting,2.349028641809808
+lntuniv,insomnia,0.3968608406249513
+lntuniv,dizziness,0.2945113354160431
+lntuniv,abnormal,2.2457223168712983
+lntuniv,suicidal ideation,0.716694589840605
+lntuniv,depression,2.461464243391727
+lntuniv,anxiety,2.604949814873807
+lntuniv,aggression,2.25640486633841
+lntuniv,abnormal behaviour,2.5380048484054014
+lntuniv,abdominal pain,0.3670242580708037
+lntuniv,decreased appetite,0.7153886593402701
+lntuniv,disturbance in attention,0.40316213539306156
+lntuniv,irritability,0.44791064888873
+lntuniv,hypotension,0.4533175197814373
+lntuniv,bradycardia,0.38280438383843035
+lntuniv,no adverse event,0.32357067259702277
+lntuniv,electrocardiogram qt prolonged,1.143494953069281
+lntuniv,toxicity to various agents,0.4099005576143874
+lntuniv,agitation,2.3309710107141357
+lntuniv,pain,2.430016019230193
+lntuniv,hypertension,0.5844398527957024
+lntuniv,dyspnoea,0.4287141205402131
+lntuniv,chronic kidney disease,1.0677714378402587
+lntuniv,diarrhoea,0.7614534285093876
+lntuniv,renal failure,1.0495275472833756
+lntuniv,blood pressure increased,0.46928872310100717
+lntuniv,acute kidney injury,1.3648220212028381
+lntuniv,asthenia,0.3985223705464221
+lntuniv,death,2.2923014024692647
+lntuniv,fall,2.1605837451523926
+lntuniv,suicide,2.2813636088846847
+lntuniv,rash,2.1069056721665755
+lntuniv,weight increased,1.040891090073484
+lntuniv,malaise,0.7617174979093227
+lntuniv,migraine,0.723205939404508
+lntuniv,anger,2.4560330991478674
+lntuniv,withdrawal syndrome,0.6094853815499772
+lntuniv,seizure,2.051008743678636
+lntuniv,application site erythema,0.8113964626002819
+lntuniv,condition aggravated,0.7916294940545204
+lntuniv,weight decreased,1.711562499137635
+clonidine,drug ineffective,0.4093216914858594
+clonidine,nausea,2.610717985511526
+clonidine,fatigue,2.306526603831616
+clonidine,somnolence,0.3854089630430177
+clonidine,headache,2.6634110150146206
+clonidine,vomiting,2.539804317255898
+clonidine,insomnia,0.4207131321748231
+clonidine,dizziness,0.32350812787627614
+clonidine,abnormal,2.441783275386481
+clonidine,suicidal ideation,0.7269101380976855
+clonidine,depression,2.651370992225239
+clonidine,anxiety,2.773277141037553
+clonidine,aggression,2.4427402256144175
+clonidine,abnormal behaviour,2.661531707321937
+clonidine,abdominal pain,0.38103354659756555
+clonidine,decreased appetite,0.7451819502167254
+clonidine,disturbance in attention,0.4117966569660094
+clonidine,irritability,0.4618071404129467
+clonidine,hypotension,0.4534842665063455
+clonidine,bradycardia,0.38931980440080566
+clonidine,no adverse event,0.32847380692876826
+clonidine,electrocardiogram qt prolonged,1.1579893683577145
+clonidine,toxicity to various agents,0.4174700466828458
+clonidine,agitation,2.52578509503963
+clonidine,pain,2.6066924000308913
+clonidine,hypertension,0.6141023978590965
+clonidine,dyspnoea,0.41970765937694765
+clonidine,chronic kidney disease,1.076593804384438
+clonidine,diarrhoea,0.7743962771590525
+clonidine,renal failure,1.058901783208919
+clonidine,blood pressure increased,0.480052301607676
+clonidine,acute kidney injury,1.3771695660464716
+clonidine,asthenia,0.4000582840618671
+clonidine,death,2.4992784577165574
+clonidine,fall,2.381481270287061
+clonidine,suicide,2.4797015982361246
+clonidine,rash,2.3048143029287957
+clonidine,weight increased,1.0762141332630342
+clonidine,malaise,0.7970969636880811
+clonidine,migraine,0.7617776709865004
+clonidine,anger,2.636228959489889
+clonidine,withdrawal syndrome,0.6295585858141816
+clonidine,seizure,2.2560013730929005
+clonidine,application site erythema,0.8073866135772043
+clonidine,condition aggravated,0.8213711343993177
+clonidine,weight decreased,1.7757496220103446
+Vyvanse,drug ineffective,0.41204886678999536
+Vyvanse,nausea,2.612534902646652
+Vyvanse,fatigue,2.322673749321653
+Vyvanse,somnolence,0.3844294931861123
+Vyvanse,headache,2.6755754817813457
+Vyvanse,vomiting,2.5514232157345242
+Vyvanse,insomnia,0.4068405188319779
+Vyvanse,dizziness,0.3233368657600857
+Vyvanse,abnormal,2.454723202021017
+Vyvanse,suicidal ideation,0.7220183877764188
+Vyvanse,depression,2.6492083018034296
+Vyvanse,anxiety,2.7637969362272408
+Vyvanse,aggression,2.4456464450470317
+Vyvanse,abnormal behaviour,2.666632642729955
+Vyvanse,abdominal pain,0.38475815743036323
+Vyvanse,decreased appetite,0.7705700661765408
+Vyvanse,disturbance in attention,0.40902891617818893
+Vyvanse,irritability,0.45442988353132513
+Vyvanse,hypotension,0.4560759010333246
+Vyvanse,bradycardia,0.3899608482669274
+Vyvanse,no adverse event,0.3313334027087162
+Vyvanse,electrocardiogram qt prolonged,1.165566939910634
+Vyvanse,toxicity to various agents,0.4279508377906228
+Vyvanse,agitation,2.528949994329299
+Vyvanse,pain,2.5952347155352933
+Vyvanse,hypertension,0.6220877053012317
+Vyvanse,dyspnoea,0.4218519721287455
+Vyvanse,chronic kidney disease,1.0852039745524382
+Vyvanse,diarrhoea,0.7755198660601581
+Vyvanse,renal failure,1.068166748718886
+Vyvanse,blood pressure increased,0.4906263356588624
+Vyvanse,acute kidney injury,1.3805085948870417
+Vyvanse,asthenia,0.39606606542720907
+Vyvanse,death,2.4798235412751417
+Vyvanse,fall,2.3707861433989024
+Vyvanse,suicide,2.4705121094886495
+Vyvanse,rash,2.321062224640041
+Vyvanse,weight increased,1.1079585835080228
+Vyvanse,malaise,0.8002279361070004
+Vyvanse,migraine,0.7595183091406172
+Vyvanse,anger,2.636383472414484
+Vyvanse,withdrawal syndrome,0.6313258627726341
+Vyvanse,seizure,2.260040145038471
+Vyvanse,application site erythema,0.8179881905639926
+Vyvanse,condition aggravated,0.8324777376686086
+Vyvanse,weight decreased,1.825279683046286

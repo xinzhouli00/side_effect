@@ -1,0 +1,51 @@
+rank,side_effect,comment
+top 1,anxiety,Selling?
+top 1,anxiety,Question 
+top 1,anxiety,Shortage
+top 1,anxiety,Shortage 
+top 1,anxiety,*until
+top 2,headache,Selling?
+top 2,headache,Question 
+top 2,headache,Shortage
+top 2,headache,Shortage 
+top 2,headache,*until
+top 3,depression,Selling?
+top 3,depression,Question 
+top 3,depression,Shortage
+top 3,depression,Shortage 
+top 3,depression,Doctor mistake
+top 4,abnormal behaviour,Selling?
+top 4,abnormal behaviour,Question 
+top 4,abnormal behaviour,Shortage
+top 4,abnormal behaviour,Shortage 
+top 4,abnormal behaviour,Doctor mistake
+top 5,anger,Selling?
+top 5,anger,Question 
+top 5,anger,Shortage
+top 5,anger,Shortage 
+top 5,anger,*until
+tail 1,dizziness,Binge eating
+tail 1,dizziness,Gmud
+tail 1,dizziness,Doctor mistake
+tail 1,dizziness,BEWARE 
+tail 1,dizziness,Selling?
+tail 2,no adverse event,Sleeping heart rate? 
+tail 2,no adverse event,Dosing effectiveness?
+tail 2,no adverse event,Wild out there! 😂
+tail 2,no adverse event,What stimulants cause the most euphoria? 
+tail 2,no adverse event,I’ve always been hyper sensitive to any kind of stimulants.
+tail 3,abdominal pain,Sleeping heart rate? 
+tail 3,abdominal pain,Binge eating
+tail 3,abdominal pain,Dosing effectiveness?
+tail 3,abdominal pain,Advice on eating habits 
+tail 3,abdominal pain,Wild out there! 😂
+tail 4,somnolence,Never-Ending Tolerance BS
+tail 4,somnolence,Lmk
+tail 4,somnolence,DM sent
+tail 4,somnolence,Dm
+tail 4,somnolence,I am!
+tail 5,bradycardia,What stimulants cause the most euphoria? 
+tail 5,bradycardia,Adderall Tolerance too high!
+tail 5,bradycardia,Adderall Tolerance Too High
+tail 5,bradycardia,Sleeping heart rate? 
+tail 5,bradycardia,Dosing effectiveness?

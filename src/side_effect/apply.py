@@ -1,14 +1,3 @@
-import pandas as pd
-from side_effect.embedding_and_keywords import BioBERTEmbedder, KeywordExpander
-from side_effect.analysis import get_comment_similarity, evaluate_score, comment_side_effect
-from side_effect.data_processing import get_comment_dict, get_drugs, pick_drug, get_merged_data
-from side_effect.embedding_and_keywords import BioBERTEmbedder, KeywordExpander
-from side_effect.analysis import (
-    get_comment_similarity,
-    evaluate_score,
-    comment_side_effect,
-)
-from side_effect.data_processing import get_comment_dict, get_drugs, pick_drug
 import sys
 import os
 import pandas as pd
@@ -17,13 +6,26 @@ import pandas as pd
 base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 sys.path.append(base_dir)
 
+import pandas as pd
+from src.side_effect.embedding_and_keywords import BioBERTEmbedder, KeywordExpander
+from src.side_effect.analysis import get_comment_similarity, evaluate_score, comment_side_effect
+from src.side_effect.data_processing import get_comment_dict, get_drugs, pick_drug, get_merged_data
+from src.side_effect.embedding_and_keywords import BioBERTEmbedder, KeywordExpander
+from src.side_effect.analysis import (
+    get_comment_similarity,
+    evaluate_score,
+    comment_side_effect,
+)
+from src.side_effect.data_processing import get_comment_dict, get_drugs, pick_drug
+
+
 
 class SideEffectAnalyzer:
     def __init__(
         self,
         initial_keywords,
         side_effects_official,
-        model_name="dmis-lab/biobert-base-cased-v1.2",
+        model_name="dmis-lab/biobert-base-cased-v1.2"
     ):
         """
         Initializes the SideEffectAnalyzer with initial keywords and a BioBERT model.
@@ -47,7 +49,7 @@ class SideEffectAnalyzer:
         # data = data.drop(columns=["Condition"], errors='ignore')
 
         # Prepare comment dictionary and drug list
-        comment_dict = get_comment_dict(data, "Review Text")
+        comment_dict = get_comment_dict(data, "cleaned_comments")
         drugs = get_drugs(data)
 
         new_comment_dict = []
@@ -73,12 +75,14 @@ class SideEffectAnalyzer:
             side_effect_score = {}
             for kw in self.initial_keywords:
                 # Calculate similarity between keywords and comments
+                print(f"Processing {kw} for {drug}")
                 kw_comment_similarities = get_comment_similarity(
                     kw, expanded_keywords, embeddings
                 )
                 # Evaluate overall score for the keyword
                 score = evaluate_score(kw_comment_similarities, kw, expanded_keywords)
                 side_effect_score[kw] = score
+
                 # Match comments with side effects and rank
                 drug_dict, top_k_comment = comment_side_effect(
                     kw_comment_similarities, kw, expanded_keywords, drug_dict
@@ -129,72 +133,109 @@ if __name__ == "__main__":
 
     # Step 7: Process reddit reviews
     print('Import reddit data...')
-    reddit_df = get_merged_data("../../data/cleaned_reddit")
+    reddit_df = get_merged_data("data/cleaned_reddit")
 
-    data = pd.concat([cleaned_simulants, cleaned_non_simulants, reddit_df, ])
-    print(data)
+    data = pd.concat([cleaned_simulants, cleaned_non_simulants, reddit_df])
 
-    # # Step 3: Preprocess and save cleaned reviews for simulants
-    # print("Processing and cleaning simulants reviews...")
-    # simulants_data = pd.read_csv("data/simulants_reviews.csv")
-    # simulants_data["Review Text"] = simulants_data["Review Text"].str.replace("For ADHD", "", regex=False)
-    # simulants_data = simulants_data.drop(columns=["Condition"], errors="ignore")
+    filtered_data = data[data['cleaned_comments'].apply(lambda x: len(str(x).split()) <= 512)]
+    # m = max([len(x.split()) for x in filtered_data['cleaned_comments']])
+    # print(m)
 
-    # # Clean reviews using get_comment_dict
-    # simulants_comment_dict = get_comment_dict(simulants_data, "Review Text")
+    data = filtered_data.drop_duplicates(subset = ['Drug Name', 'Review Text'])
+    data = data.dropna()
+    data.to_csv("reviews.csv", index=False)
 
-    # # Save cleaned reviews
-    # cleaned_simulants = pd.DataFrame(simulants_comment_dict)
-    # cleaned_simulants.to_csv("cleaned_simulants_reviews.csv", index=False)
-    # print("Cleaned simulants reviews saved to 'cleaned_simulants_reviews.csv'.")
 
-    # # Step 4: Analyze simulants
-    # print("Analyzing simulants reviews...")
-    # simulants_results = analyzer.process_file("cleaned_simulants_reviews.csv")
+    # Step 8: Analyze reddit reviews
+    print("Analyzing reviews...")
+    # reddit_results = analyzer.process_file("reviews.csv")
+    new_comment_dict, side_effect_scores, top_k_comments = analyzer.process_file("reviews.csv")
+    print(new_comment_dict)
+    print(side_effect_scores)
+    print(top_k_comments)
 
-    # # Step 5: Repeat the process for non-simulants
-    # print("Processing and cleaning non-simulants reviews...")
-    # non_simulants_data = pd.read_csv("data/non_simulants_reviews.csv")
-    # non_simulants_data["Review Text"] = non_simulants_data["Review Text"].str.replace("For ADHD", "", regex=False)
-    # non_simulants_data = non_simulants_data.drop(columns=["Condition"], errors="ignore")
+    df = pd.DataFrame([
+        {"drug": drug, "side_effect": side_effect, "score": score}
+        for drug, effects in side_effect_scores.items()
+        for side_effect, score in effects.items()
+    ])
 
-    # # Clean reviews using get_comment_dict
-    # non_simulants_comment_dict = get_comment_dict(non_simulants_data, "Review Text")
+    # pd.DataFrame(new_comment_dict).to_csv("new_comment_dict.csv", index=False)
+    # df.to_csv("side_effect_scores.csv", index=False)
+    # pd.DataFrame(top_k_comments).to_csv("top_k_comments.csv", index=False)
 
-    # # Save cleaned reviews
-    # cleaned_non_simulants = pd.DataFrame(non_simulants_comment_dict)
-    # cleaned_non_simulants.to_csv("cleaned_non_simulants_reviews.csv", index=False)
-    # print("Cleaned non-simulants reviews saved to 'cleaned_non_simulants_reviews.csv'.")
+    pd.DataFrame(new_comment_dict).to_csv("new_comment_dict_bert.csv", index=False)
+    df.to_csv("side_effect_scores_bert.csv", index=False)
+    pd.DataFrame(top_k_comments).to_csv("top_k_comments_bert.csv", index=False)
 
-    # # Step 6: Analyze non-simulants
-    # print("Analyzing non-simulants reviews...")
-    # non_simulants_results = analyzer.process_file("cleaned_non_simulants_reviews.csv")
 
-    # # Step 7: Process reddit reviews
-    # print('Import reddit data...')
-    # reddit_df = get_merged_data("../../data/cleaned_reddit")
-    # reddit_dict = get_comment_dict(reddit_df, cleaned_data = True)
-    # reddit_df.to_csv("reddit_reviews.csv", index = False)
-    # print("Merged reddit reviews saved to 'reddit_reviews.csv'.")
 
-    # # Step 8: Analyze reddit reviews
-    # print("Analyzing reddit reviews...")
-    # reddit_results = analyzer.process_file("reddit_reviews.csv")
+    # # Step 5: Save results
+    # print("Saving results...")
+    # output_dir = "output/"
+    # os.makedirs(output_dir, exist_ok=True)
 
-    # # Combine and save results
-    # combined_comment_dict = simulants_results[0] + non_simulants_results[0] + reddit_results[0]
-    # combined_side_effect_scores = {**simulants_results[1], **non_simulants_results[1], **reddit_results[1]}
-    # combined_top_k_comments = simulants_results[2] + non_simulants_results[2] + reddit_results[2]
 
-    # print("Saving results to CSV...")
-    # pd.DataFrame(combined_comment_dict).to_csv("updated_comments.csv", index=False)
+    # # Save results for each drug
+    # for drug, scores in side_effect_scores.items():
+    #     scores_df = pd.DataFrame(
+    #         [{"Side Effect": se, "Score": sc} for se, sc in scores.items()]
+    #     ).sort_values(by="Score", ascending=False)
 
-    # pd.DataFrame(
-    #     [
-    #         {"Drug Name": drug, **scores}
-    #         for drug, scores in combined_side_effect_scores.items()
-    #     ]
-    # ).to_csv("side_effect_scores.csv", index=False)
-    # pd.DataFrame(combined_top_k_comments).to_csv("top_k_comments.csv", index=False)
-    # print("Results saved to CSV.")
+    #     # Mark Top 5 and Bottom 5
+    #     scores_df["Type"] = ["Top 5"] * 5 + ["Bottom 5"] * 5 if len(scores_df) > 10 else ["Top" if i < 5 else "Bottom" for i in range(len(scores_df))]
 
+    #     # Get comments for the drug
+    #     drug_comments = [c for c in top_k_comments if c["drug"] == drug]
+
+    #     # Merge scores and comments
+    #     results = []
+    #     for _, row in scores_df.iterrows():
+    #         side_effect = row["Side Effect"]
+    #         related_comments = [c for c in drug_comments if c["side_effect"] == side_effect]
+    #         for comment in related_comments:
+    #             results.append({
+    #                 "Drug": drug,
+    #                 "Side Effect": side_effect,
+    #                 "Score": row["Score"],
+    #                 "Type": row["Type"],
+    #                 "Comment": comment["comment"],
+    #                 "Comment Score": comment["score"]
+    #             })
+
+    #     # Save to a CSV file for the drug
+    #     pd.DataFrame(results).to_csv(f"{output_dir}/{drug}_results.csv", index=False)
+
+    # # Save overall side effect scores
+    # overall_scores = [
+    #     {"Drug": drug, "Side Effect": se, "Score": sc} for drug, scores in side_effect_scores.items() for se, sc in scores.items()
+    # ]
+    # pd.DataFrame(overall_scores).to_csv(f"{output_dir}/overall_side_effect_scores.csv", index=False)
+
+    # print("All results saved.")
+    for drug, score in side_effect_scores.items():
+        # print(drug)
+        # print(score)
+        k = 5
+        rank_score = sorted(score.items(), key=lambda x: x[1], reverse=True)
+        top_k = dict(sorted(score.items(), key=lambda x: x[1], reverse=True)[:k])
+        tail_k = dict(sorted(score.items(), key=lambda x: x[1], reverse=False)[:k])
+        rank_top = {f"top {i + 1}": key for i, (key, _) in enumerate(top_k.items())}
+        rank_tail = {f"tail {i + 1}": key for i, (key, _) in enumerate(tail_k.items())}
+        rank = {**rank_top, **rank_tail}
+        rank_df = pd.DataFrame(rank.items(), columns=["rank", "side_effect"])
+        se_col = []
+        comment_col = []
+        for se in rank_df['side_effect']:
+            se_tmp = []
+            comment_tmp = []
+            for item in top_k_comments:
+                if item['drug'] == drug and item['side_effect'] == se:
+                    se_tmp.append(se)
+                    comment_tmp.append(item['comment'])
+            se_col.extend(se_tmp[:k])
+            comment_col.extend(comment_tmp[:k])
+        print(se_col)
+        comment_df = pd.DataFrame({'side_effect': se_col, 'comment': comment_col})
+        df = rank_df.merge(comment_df, how = 'left')
+        df.to_csv(f"{drug}_rank_bert.csv", index = False)

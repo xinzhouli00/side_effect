@@ -1,24 +1,33 @@
 from transformers import AutoTokenizer, AutoModel
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.corpus import wordnet
+import torch
 
 class BioBERTEmbedder:
     def __init__(self, model_name="dmis-lab/biobert-base-cased-v1.2"):
         """
         Initializes the BioBERT model and tokenizer.
         """
+        model_name = "bert-base-uncased"
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModel.from_pretrained(model_name)
+       
+    # def get_embeddings(self, text):
+    #     """
+    #     Generate BioBERT embeddings for a given text.
+    #     :param text: Input text.
+    #     :return: NumPy array representing the text's embedding.
+    #     """
+    #     inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
+    #     outputs = self.model(**inputs)
+    #     return outputs.last_hidden_state.mean(dim=1).detach().numpy()
 
+# 获取文本的 BERT 嵌入
     def get_embeddings(self, text):
-        """
-        Generate BioBERT embeddings for a given text.
-        :param text: Input text.
-        :return: NumPy array representing the text's embedding.
-        """
-        inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True)
-        outputs = self.model(**inputs)
-        return outputs.last_hidden_state.mean(dim=1).detach().numpy()
+        tokens = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=128)
+        with torch.no_grad():
+            output = self.model(**tokens)
+        return output.last_hidden_state.mean(dim=1).detach().numpy()
 
 class KeywordExpander:
     def __init__(self, embedder: BioBERTEmbedder, side_effects_official):
@@ -40,7 +49,7 @@ class KeywordExpander:
         for effect in initial_keywords:
             synonym_set = set()
             words = effect.split(' ') + [effect]
-            abandon = ['pain', 'hurt']
+            abandon = ['pain', 'hurt', 'prescribed', 'overdose', 'condition', 'no', 'adverse', 'event', 'intentional', 'to', 'in', 'site', 'decreased', 'increased', 'drug']
             words = [word for word in words if word not in abandon]
             for word in words:
                 for syn in wordnet.synsets(word):
@@ -62,6 +71,7 @@ class KeywordExpander:
         similarities = []
         for word in reference_words:
             word_emb = self.embedder.get_embeddings(word)[0]
+            # sim = cosine_similarity([target_emb], [word_emb])[0][0]
             sim = cosine_similarity([target_emb], [word_emb])[0][0]
             if sim >= threshold:
                 similarities.append({word: sim})

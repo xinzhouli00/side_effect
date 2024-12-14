@@ -33,7 +33,7 @@ def get_drugs(df):
     """
     return df['Drug Name'].unique()
 
-def get_comment_dict(df, comment_col_name, cleaned_data = False):
+def get_comment_dict(df, comment_col_name = None, cleaned_data = False):
     """
     Cleans comments and prepares a dictionary of all comments and their metadata.
     :param df: Pandas DataFrame containing comments.
@@ -44,7 +44,7 @@ def get_comment_dict(df, comment_col_name, cleaned_data = False):
         comments = df[comment_col_name]
         cleaned_comments = [preprocess_text(comment) for comment in comments]
         df['cleaned_comments'] = cleaned_comments
-        df['side_effects'] = [[] for _ in range(len(cleaned_comments))]
+    df['side_effects'] = [[] for _ in range(len(cleaned_comments))]
     return df.to_dict(orient='records')
 
 def pick_drug(comment_dict, drug_name):
@@ -66,4 +66,4 @@ def merge_data(folder_path):
             df = pd.read_csv(file_path)
             merged_files.append(df)
     merged_df = pd.concat(merged_files, ignore_index=True)
-    print(merged_df)
+    return merged_df
