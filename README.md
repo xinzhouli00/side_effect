@@ -44,34 +44,18 @@ To update the dependencies to their latest compatible versions, run:
 poetry update
 ```
 
-## Installation
-
-```bash
-pip install side_effect
-```
-
-## Usage
-
-- TODO
-
-## Contributing
-
-Clone and set up the repository with
-
-```bash
-git clone TODO && cd side_effect
-pip install -e ".[dev]"
-```
-
-Install pre-commit hooks with
-
-```bash
-pre-commit install
-```
+## Test
 
 Run tests using
 
 ```
 pytest -v tests
 ```
+
+
+## Usage
+
+- TODO
+
+
 
