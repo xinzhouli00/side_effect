@@ -167,7 +167,7 @@ if __name__ == "__main__":
     file_path = "data/reviews.csv"
 
     if args.process_data:
-        prepare_data(file_path)
+        data = prepare_data(file_path)
     log_progress("Data are ready!")
 
     data = pd.read_csv(file_path)
