@@ -1,5 +1,5 @@
 import pandas as pd
-from .side_effect import get_comment_dict, pick_drug, merge_data
+from .side_effect import get_comment_dict, pick_drug, merge_data, remove_comment, remove_positive_comments
 
 def load_data(file_path):
     """
@@ -16,7 +16,8 @@ def prepare_comment_dict(data, comment_col_name='Review Text', cleaned_data = Fa
     :param comment_col_name: The name of the column containing comments.
     :return: Comment dictionary ready for analysis.
     """
-    return get_comment_dict(data, comment_col_name)
+    dict = get_comment_dict(data, comment_col_name)
+    return get_negative_comment(dict)
 
 def filter_comments_by_drug(comment_dict, drug_name):
     """
@@ -37,3 +38,9 @@ def get_drugs(df):
 
 def get_merged_data(path):
     return merge_data(path)
+
+def get_long_comment(dict, lim = 30):
+    return remove_comment(dict, lim)
+
+def get_negative_comment(df):
+    return remove_positive_comments(df)

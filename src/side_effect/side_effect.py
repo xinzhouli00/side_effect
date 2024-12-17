@@ -4,6 +4,7 @@ import pandas as pd
 from nltk.corpus import wordnet
 import nltk
 import os
+from nltk.sentiment import SentimentIntensityAnalyzer
 
 # 忽略 SSL 问题
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -45,7 +46,8 @@ def get_comment_dict(df, comment_col_name = None, cleaned_data = False):
         cleaned_comments = [preprocess_text(comment) for comment in comments]
         df['cleaned_comments'] = cleaned_comments
     df['side_effects'] = [[] for _ in range(len(cleaned_comments))]
-    return df.to_dict(orient='records')
+    dict = df.to_dict(orient='records')
+    return dict
 
 def pick_drug(comment_dict, drug_name):
     """
@@ -67,3 +69,22 @@ def merge_data(folder_path):
             merged_files.append(df)
     merged_df = pd.concat(merged_files, ignore_index=True)
     return merged_df
+
+def remove_comment(dict, lim):
+    rm_sc = [obj for obj in dict if len(obj['cleaned_comments'].split()) > lim]
+    print(len(rm_sc))
+    return rm_sc
+
+def remove_positive_comments(df):
+    sentiment_scores = []
+    sia = SentimentIntensityAnalyzer()
+
+    for text in df['Review Text']:
+        score = sia.polarity_scores(text)
+        sentiment_scores.append(score['compound'])
+
+    df['sentiment_score'] = sentiment_scores
+    df = df[df['sentiment_score'] < 0].reset_index()
+
+    df.drop(columns = ['sentiment_score'], inplace = True)
+    return df
