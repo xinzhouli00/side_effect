@@ -9,7 +9,7 @@ def load_data(file_path):
     """
     return pd.read_csv(file_path)
 
-def prepare_comment_dict(data, comment_col_name='Review Text', cleaned_data = False):
+def prepare_comment_dict(data, comment_col_name='Review Text', cleaned_data = False, lim = 30):
     """
     Cleans and preprocesses comments, preparing a dictionary for further analysis.
     :param data: Pandas DataFrame containing review data.
@@ -17,7 +17,7 @@ def prepare_comment_dict(data, comment_col_name='Review Text', cleaned_data = Fa
     :return: Comment dictionary ready for analysis.
     """
     dict = get_comment_dict(data, comment_col_name)
-    return get_negative_comment(dict)
+    return get_long_comment(dict, lim)
 
 def filter_comments_by_drug(comment_dict, drug_name):
     """
@@ -39,7 +39,7 @@ def get_drugs(df):
 def get_merged_data(path):
     return merge_data(path)
 
-def get_long_comment(dict, lim = 30):
+def get_long_comment(dict, lim):
     return remove_comment(dict, lim)
 
 def get_negative_comment(df):

@@ -9,14 +9,13 @@ sys.path.append(base_dir)
 import pandas as pd
 from src.side_effect.embedding_and_keywords import BioBERTEmbedder, KeywordExpander
 from src.side_effect.analysis import get_comment_similarity, evaluate_score, comment_side_effect
-from src.side_effect.data_processing import get_comment_dict, get_drugs, pick_drug, get_merged_data, get_long_comment, get_negative_comment
+from src.side_effect.data_processing import prepare_comment_dict, get_drugs, pick_drug, get_merged_data, get_negative_comment, prepare_comment_dict
 from src.side_effect.embedding_and_keywords import BioBERTEmbedder, KeywordExpander
 from src.side_effect.analysis import (
     get_comment_similarity,
     evaluate_score,
     comment_side_effect,
 )
-from src.side_effect.data_processing import get_comment_dict, get_drugs, pick_drug
 import argparse
 import logging
 
@@ -58,11 +57,9 @@ class SideEffectAnalyzer:
         """
         # Load and preprocess data
         data = pd.read_csv(file_path)
-        # data['Review Text'] = data['Review Text'].str.replace('For ADHD', '', regex=False)
-        # data = data.drop(columns=["Condition"], errors='ignore')
 
         # Prepare comment dictionary and drug list
-        comment_dict = get_comment_dict(data, "cleaned_comments")
+        comment_dict = prepare_comment_dict(data, "cleaned_comments")
         drugs = get_drugs(data)
 
         new_comment_dict = []
@@ -112,58 +109,83 @@ class SideEffectAnalyzer:
         return new_comment_dict, side_effect_scores, top_k_comments
 
 
-if __name__ == "__main__":
-    # Step 1: Initialize keywords and official side effects
-    side_effects_df = pd.read_csv("data/side_effects.csv")
-    side_effects_official = [effect.lower() for effect in side_effects_df['Reaction']]
-    initial_keywords = side_effects_official
-
-    # Step 2: Initialize the SideEffectAnalyzer
-    analyzer = SideEffectAnalyzer(initial_keywords, side_effects_official)
-
-    # Step 3: Preprocess and save cleaned reviews for simulants
+def prepare_data(file_path):
+    # Preprocess and save cleaned reviews for simulants
     log_progress("Processing and cleaning simulants reviews...")
     simulants_data = pd.read_csv("data/simulants_reviews.csv")
     simulants_data["Review Text"] = simulants_data["Review Text"].str.replace("For ADHD", "", regex=False)
     simulants_data = simulants_data.drop(columns=["Condition"], errors="ignore")
-
-    # Clean reviews using get_comment_dict
-    simulants_comment_dict = get_comment_dict(simulants_data, "Review Text")
-
+    # Clean reviews using prepare_comment_dict
+    simulants_comment_dict = prepare_comment_dict(simulants_data, "Review Text")
     # Save cleaned reviews
     cleaned_simulants = pd.DataFrame(simulants_comment_dict)
 
-    # Step 5: Repeat the process for non-simulants
+    # Repeat the process for non-simulants
     log_progress("Processing and cleaning non-simulants reviews...")
     non_simulants_data = pd.read_csv("data/non_simulants_reviews.csv")
     non_simulants_data["Review Text"] = non_simulants_data["Review Text"].str.replace("For ADHD", "", regex=False)
     non_simulants_data = non_simulants_data.drop(columns=["Condition"], errors="ignore")
-
-    # Clean reviews using get_comment_dict
-    non_simulants_comment_dict = get_comment_dict(non_simulants_data, "Review Text")
-
+    # Clean reviews using prepare_comment_dict
+    non_simulants_comment_dict = prepare_comment_dict(non_simulants_data, "Review Text")
     # Save cleaned reviews
     cleaned_non_simulants = pd.DataFrame(non_simulants_comment_dict)
 
-
-    # Step 7: Process reddit reviews
+    # Process reddit reviews
     log_progress("Processing and cleaning reddit reviews...")
     reddit_df = get_merged_data("data/cleaned_reddit")
 
+    # Combine dataset
     data = pd.concat([cleaned_simulants, cleaned_non_simulants, reddit_df])
     data = get_negative_comment(data)
 
+    # Clean dataset
     filtered_data = data[data['cleaned_comments'].apply(lambda x: len(str(x).split()) <= 512)]
-
     data = filtered_data.drop_duplicates(subset = ['Drug Name', 'Review Text'])
     data = data.dropna()
-    data.to_csv("data/reviews.csv", index=False)
+
+    # Save dataset to file
+    data.to_csv(file_path, index=False)
+    return data
+
+
+if __name__ == "__main__":
+    # Step 1: Initialize keywords and official side effects
+    side_effects_df = pd.read_csv("data/side_effects.csv")
+    side_effects_official = [effect.lower() for effect in side_effects_df['Reaction']]
+    
+    def parse_choices(value):
+        list = value.split(',')
+        list = [l.lower() for l in list]
+        return list
+    
+    parser = argparse.ArgumentParser(description="Durg_Side_Effect_Search")
+    parser.add_argument("-d", "--drug", type = parse_choices, help = "Input a drug name")
+    parser.add_argument("-se", "--side_effect", type = parse_choices, help = "Input a side_effect")
+    parser.add_argument("--process_data", action = "store_true")
+    args = parser.parse_args()
+
+    file_path = "data/reviews.csv"
+
+    if args.process_data:
+        prepare_data(file_path)
     log_progress("Data are ready!")
 
+    data = pd.read_csv(file_path)
+    comment_dict = prepare_comment_dict(data, "cleaned_comments")
+    drugs = get_drugs(data)
+    if args.drug:
+        drugs = args.drug
+
+    initial_keywords = side_effects_official
+    if args.side_effect:
+        initial_keywords = args.side_effect
+
+    # Step 2: Initialize the SideEffectAnalyzer
+    analyzer = SideEffectAnalyzer(initial_keywords, side_effects_official)
 
     # Step 8: Analyze reddit reviews
     log_progress("Analyzing reviews...")
-    new_comment_dict, side_effect_scores, top_k_comments = analyzer.process_file("data/reviews.csv")
+    new_comment_dict, side_effect_scores, top_k_comments = analyzer.process_file(file_path)
     log_progress("Saving results to files ...")
     print(new_comment_dict)
     print(side_effect_scores)
