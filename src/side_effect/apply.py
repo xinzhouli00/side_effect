@@ -21,7 +21,7 @@ import argparse
 import logging
 
 logging.basicConfig(
-    filename="../../logs.txt",
+    filename="logs.txt",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     filemode="w",
@@ -74,7 +74,7 @@ class SideEffectAnalyzer:
             log_progress(f"Processing drug: {drug}")
             # Filter comments for the specific drug
             drug_dict, comments = pick_drug(comment_dict, drug)
-
+            log_progress("Embedding comments...")
             # Generate embeddings for comments
             embeddings = [
                 self.embedder.get_embeddings(comment)[0] for comment in comments
