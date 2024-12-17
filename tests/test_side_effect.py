@@ -1,6 +1,7 @@
 import pytest
 import pandas as pd
 import numpy as np
+
 from sklearn.metrics.pairwise import cosine_similarity
 from src.side_effect.side_effect import preprocess_text, get_drugs, get_comment_dict, pick_drug
 from src.side_effect.embedding_and_keywords import BioBERTEmbedder, KeywordExpander
