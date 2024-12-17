@@ -1,0 +1,9 @@
+{
+  "index": "Introduction",
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "find_medicine":"Find Drugs",
+  "medicine": "Drugs"
+}

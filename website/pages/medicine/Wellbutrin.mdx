@@ -1,0 +1,59 @@
+import DrugSideEffects from '../../components/DrugSideEffects';
+import DrugSideEffects_fda from '../../components/DrugSideEffects_fda';
+import DrugReviews from '../../components/reviews';
+
+<style>
+{`
+  /* Styles for the two-column layout */
+  .two-column-layout {
+    display: grid; /* Use a grid layout */
+    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+    gap: 2rem; /* Space between the columns */
+    margin: 2rem 0; /* Vertical margin for the entire block */
+  }
+  @media (max-width: 768px) {
+    /* For smaller screens, use a single-column layout */
+    .two-column-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Styles for the side-effect block */
+  .side-effect-block {
+    display: flex; /* Use a flex layout */
+    flex-direction: column; /* Arrange content vertically */
+    align-items: flex-start; /* Align content to the left */
+  }
+
+  /* Styles for the side-effect title */
+  .side-effect-title {
+    font-weight: bold; /* Make the font bold */
+    font-size: 1.25rem; /* Set the font size */
+    margin-bottom: 1rem; /* Add space below the title */
+  }
+`}
+</style>
+
+{/* Page title */}
+# Wellbutrin
+
+{/* Two-column layout for displaying side effects */}
+<div className="two-column-layout">
+  {/* Column for FDA-reported side effects */}
+  <div className="side-effect-block">
+    <div className="side-effect-title">Side Effects from FDA</div>
+    {/* Component to show FDA-reported side effects for Wellbutrin */}
+    <DrugSideEffects_fda drugName="Wellbutrin" />
+  </div>
+
+  {/* Column for user review-reported side effects */}
+  <div className="side-effect-block">
+    <div className="side-effect-title">Side Effects from Review</div>
+    {/* Component to show user review-reported side effects for Wellbutrin */}
+    <DrugSideEffects drugName="Wellbutrin" />
+  </div>
+</div>
+
+{/* Section for social sentiment analysis */}
+<div className="side-effect-title">Social Sentiments</div>
+      <DrugReviews drugName="Wellbutrin" />
