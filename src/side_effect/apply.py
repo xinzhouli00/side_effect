@@ -174,6 +174,7 @@ if __name__ == "__main__":
     comment_dict = prepare_comment_dict(data, "cleaned_comments")
     drugs = get_drugs(data)
     if args.drug:
+        assert all(drug in drugs for drug in args.drug), f"This drug is not included in the list: {[drug for drug in args.drug if drug not in drugs]}"
         drugs = args.drug
 
     initial_keywords = side_effects_official
