@@ -1,11 +1,719 @@
-2024-12-17 20:01:44,752 - INFO - Data are ready!
-2024-12-17 20:01:45,244 - INFO - Analyzing reviews...
-2024-12-17 20:01:45,467 - INFO - Begin iterate over drugs...
-2024-12-17 20:01:45,467 - INFO - Processing drug: adderall
-2024-12-17 20:01:45,467 - INFO - Embedding comments...
-2024-12-17 20:01:53,082 - INFO - Processing bad for adderall
-2024-12-17 20:01:53,460 - INFO - Side effect scores for adderall: {'bad': np.float32(5.00111)}
+2024-12-17 20:10:19,687 - INFO - Data are ready!
+2024-12-17 20:10:20,241 - INFO - Analyzing reviews...
+2024-12-17 20:10:20,453 - INFO - Begin iterate over drugs...
+2024-12-17 20:10:20,453 - INFO - Processing drug: concerta
+2024-12-17 20:10:20,453 - INFO - Embedding comments...
+2024-12-17 20:11:41,179 - INFO - Processing drug ineffective for concerta
+2024-12-17 20:11:41,540 - INFO - Processing nausea for concerta
+2024-12-17 20:11:42,038 - INFO - Processing fatigue for concerta
+2024-12-17 20:11:42,560 - INFO - Processing somnolence for concerta
+2024-12-17 20:11:43,064 - INFO - Processing headache for concerta
+2024-12-17 20:11:43,556 - INFO - Processing vomiting for concerta
+2024-12-17 20:11:44,039 - INFO - Processing insomnia for concerta
+2024-12-17 20:11:44,537 - INFO - Processing dizziness for concerta
+2024-12-17 20:11:45,093 - INFO - Processing abnormal for concerta
+2024-12-17 20:11:45,601 - INFO - Processing suicidal ideation for concerta
+2024-12-17 20:11:46,104 - INFO - Processing depression for concerta
+2024-12-17 20:11:46,618 - INFO - Processing anxiety for concerta
+2024-12-17 20:11:47,131 - INFO - Processing aggression for concerta
+2024-12-17 20:11:47,622 - INFO - Processing abnormal behaviour for concerta
+2024-12-17 20:11:48,149 - INFO - Processing abdominal pain for concerta
+2024-12-17 20:11:48,629 - INFO - Processing decreased appetite for concerta
+2024-12-17 20:11:49,107 - INFO - Processing disturbance in attention for concerta
+2024-12-17 20:11:49,603 - INFO - Processing irritability for concerta
+2024-12-17 20:11:50,136 - INFO - Processing hypotension for concerta
+2024-12-17 20:11:50,638 - INFO - Processing bradycardia for concerta
+2024-12-17 20:11:51,175 - INFO - Processing no adverse event for concerta
+2024-12-17 20:11:51,297 - INFO - Processing electrocardiogram qt prolonged for concerta
+2024-12-17 20:11:51,651 - INFO - Processing toxicity to various agents for concerta
+2024-12-17 20:11:52,149 - INFO - Processing agitation for concerta
+2024-12-17 20:11:52,634 - INFO - Processing pain for concerta
+2024-12-17 20:11:53,161 - INFO - Processing hypertension for concerta
+2024-12-17 20:11:53,644 - INFO - Processing dyspnoea for concerta
+2024-12-17 20:11:54,190 - INFO - Processing chronic kidney disease for concerta
+2024-12-17 20:11:54,687 - INFO - Processing diarrhoea for concerta
+2024-12-17 20:11:55,225 - INFO - Processing renal failure for concerta
+2024-12-17 20:11:55,747 - INFO - Processing blood pressure increased for concerta
+2024-12-17 20:11:56,255 - INFO - Processing acute kidney injury for concerta
+2024-12-17 20:11:56,755 - INFO - Processing asthenia for concerta
+2024-12-17 20:11:57,248 - INFO - Processing death for concerta
+2024-12-17 20:11:57,814 - INFO - Processing fall for concerta
+2024-12-17 20:11:58,303 - INFO - Processing suicide for concerta
+2024-12-17 20:11:58,887 - INFO - Processing rash for concerta
+2024-12-17 20:11:59,390 - INFO - Processing weight increased for concerta
+2024-12-17 20:12:00,152 - INFO - Processing malaise for concerta
+2024-12-17 20:12:00,645 - INFO - Processing migraine for concerta
+2024-12-17 20:12:01,150 - INFO - Processing anger for concerta
+2024-12-17 20:12:01,661 - INFO - Processing withdrawal syndrome for concerta
+2024-12-17 20:12:02,166 - INFO - Processing seizure for concerta
+2024-12-17 20:12:02,659 - INFO - Processing application site erythema for concerta
+2024-12-17 20:12:03,127 - INFO - Processing condition aggravated for concerta
+2024-12-17 20:12:03,390 - INFO - Processing weight decreased for concerta
+2024-12-17 20:12:03,894 - INFO - Side effect scores for concerta: {'drug ineffective': 5.573904710365277, 'nausea': 4.752373503703698, 'fatigue': 4.749732906035348, 'somnolence': 6.022658745739974, 'headache': 4.760242795827342, 'vomiting': 5.561712970044099, 'insomnia': 5.903419527060845, 'dizziness': 6.246092368574703, 'abnormal': 4.821212480173392, 'suicidal ideation': 5.850523694180975, 'depression': 4.9113443496764875, 'anxiety': 4.763359514229437, 'aggression': 4.719566611974847, 'abnormal behaviour': 5.689605482068716, 'abdominal pain': 5.782933816021564, 'decreased appetite': 5.82918851632698, 'disturbance in attention': 5.687156431815203, 'irritability': 6.276840191261441, 'hypotension': 6.122794353786636, 'bradycardia': 6.081341673053948, 'no adverse event': 0.6612633057669097, 'electrocardiogram qt prolonged': 3.184091378076404, 'toxicity to various agents': 5.7851893974869855, 'agitation': 4.881273099312596, 'pain': 4.658466480818449, 'hypertension': 5.995013478047708, 'dyspnoea': 6.154816259648286, 'chronic kidney disease': 5.729756753234303, 'diarrhoea': 5.711942925757053, 'renal failure': 5.880290773569369, 'blood pressure increased': 5.894982418885418, 'acute kidney injury': 5.786985867455893, 'asthenia': 5.743935111398789, 'death': 4.671784720876638, 'fall': 4.882693300060198, 'suicide': 4.6474214275093635, 'rash': 5.871781022525301, 'weight increased': 5.511515468066815, 'malaise': 5.891363820316744, 'migraine': 5.832959580363012, 'anger': 4.767447619753725, 'withdrawal syndrome': 5.62921892194187, 'seizure': 4.656248577669555, 'application site erythema': 6.111290145154093, 'condition aggravated': 1.9004997575984282, 'weight decreased': 5.673374918746013}
 
-2024-12-17 20:01:53,460 - INFO - Processing drug: concerta
-2024-12-17 20:01:53,460 - INFO - Embedding comments...
-2024-12-17 20:01:59,601 - INFO - Processing bad for concerta
+2024-12-17 20:12:03,894 - INFO - Processing drug: ritalin
+2024-12-17 20:12:03,896 - INFO - Embedding comments...
+2024-12-17 20:14:31,275 - INFO - Processing drug ineffective for ritalin
+2024-12-17 20:14:31,656 - INFO - Processing nausea for ritalin
+2024-12-17 20:14:32,216 - INFO - Processing fatigue for ritalin
+2024-12-17 20:14:32,753 - INFO - Processing somnolence for ritalin
+2024-12-17 20:14:33,278 - INFO - Processing headache for ritalin
+2024-12-17 20:14:33,770 - INFO - Processing vomiting for ritalin
+2024-12-17 20:14:34,299 - INFO - Processing insomnia for ritalin
+2024-12-17 20:14:34,808 - INFO - Processing dizziness for ritalin
+2024-12-17 20:14:35,350 - INFO - Processing abnormal for ritalin
+2024-12-17 20:14:35,853 - INFO - Processing suicidal ideation for ritalin
+2024-12-17 20:14:36,379 - INFO - Processing depression for ritalin
+2024-12-17 20:14:36,911 - INFO - Processing anxiety for ritalin
+2024-12-17 20:14:37,442 - INFO - Processing aggression for ritalin
+2024-12-17 20:14:37,989 - INFO - Processing abnormal behaviour for ritalin
+2024-12-17 20:14:38,475 - INFO - Processing abdominal pain for ritalin
+2024-12-17 20:14:38,967 - INFO - Processing decreased appetite for ritalin
+2024-12-17 20:14:39,548 - INFO - Processing disturbance in attention for ritalin
+2024-12-17 20:14:40,106 - INFO - Processing irritability for ritalin
+2024-12-17 20:14:40,563 - INFO - Processing hypotension for ritalin
+2024-12-17 20:14:41,094 - INFO - Processing bradycardia for ritalin
+2024-12-17 20:14:41,636 - INFO - Processing no adverse event for ritalin
+2024-12-17 20:14:41,758 - INFO - Processing electrocardiogram qt prolonged for ritalin
+2024-12-17 20:14:42,150 - INFO - Processing toxicity to various agents for ritalin
+2024-12-17 20:14:42,687 - INFO - Processing agitation for ritalin
+2024-12-17 20:14:43,213 - INFO - Processing pain for ritalin
+2024-12-17 20:14:43,779 - INFO - Processing hypertension for ritalin
+2024-12-17 20:14:44,334 - INFO - Processing dyspnoea for ritalin
+2024-12-17 20:14:44,862 - INFO - Processing chronic kidney disease for ritalin
+2024-12-17 20:14:45,372 - INFO - Processing diarrhoea for ritalin
+2024-12-17 20:14:45,818 - INFO - Processing renal failure for ritalin
+2024-12-17 20:14:46,352 - INFO - Processing blood pressure increased for ritalin
+2024-12-17 20:14:46,844 - INFO - Processing acute kidney injury for ritalin
+2024-12-17 20:14:47,386 - INFO - Processing asthenia for ritalin
+2024-12-17 20:14:47,921 - INFO - Processing death for ritalin
+2024-12-17 20:14:48,458 - INFO - Processing fall for ritalin
+2024-12-17 20:14:48,969 - INFO - Processing suicide for ritalin
+2024-12-17 20:14:49,461 - INFO - Processing rash for ritalin
+2024-12-17 20:14:50,037 - INFO - Processing weight increased for ritalin
+2024-12-17 20:14:50,755 - INFO - Processing malaise for ritalin
+2024-12-17 20:14:51,316 - INFO - Processing migraine for ritalin
+2024-12-17 20:14:51,870 - INFO - Processing anger for ritalin
+2024-12-17 20:14:52,419 - INFO - Processing withdrawal syndrome for ritalin
+2024-12-17 20:14:52,962 - INFO - Processing seizure for ritalin
+2024-12-17 20:14:53,519 - INFO - Processing application site erythema for ritalin
+2024-12-17 20:14:54,005 - INFO - Processing condition aggravated for ritalin
+2024-12-17 20:14:54,287 - INFO - Processing weight decreased for ritalin
+2024-12-17 20:14:54,891 - INFO - Side effect scores for ritalin: {'drug ineffective': 5.539584674742181, 'nausea': 4.736395428807749, 'fatigue': 4.7343225077225295, 'somnolence': 5.995747921094728, 'headache': 4.75506677438069, 'vomiting': 5.5503777289493925, 'insomnia': 5.873563435863208, 'dizziness': 6.18962511061933, 'abnormal': 4.82210991835663, 'suicidal ideation': 5.805504870363053, 'depression': 4.88640305286198, 'anxiety': 4.749443488589601, 'aggression': 4.710786190715139, 'abnormal behaviour': 5.656068789166522, 'abdominal pain': 5.740503164557363, 'decreased appetite': 5.781878441641097, 'disturbance in attention': 5.648828555652171, 'irritability': 6.228412387446862, 'hypotension': 6.068585859419983, 'bradycardia': 6.051268382120683, 'no adverse event': 0.6568616552332233, 'electrocardiogram qt prolonged': 3.1678916629856033, 'toxicity to various agents': 5.766642968106821, 'agitation': 4.892654185298551, 'pain': 4.644708397502155, 'hypertension': 5.946679540159386, 'dyspnoea': 6.10122213291295, 'chronic kidney disease': 5.690318649817753, 'diarrhoea': 5.658963011851201, 'renal failure': 5.839471597823104, 'blood pressure increased': 5.8523509341685065, 'acute kidney injury': 5.749925450989276, 'asthenia': 5.732060437180059, 'death': 4.678674561345163, 'fall': 4.903231840946771, 'suicide': 4.636884637409551, 'rash': 5.839176602377368, 'weight increased': 5.477426569792576, 'malaise': 5.857990287011758, 'migraine': 5.798644000791402, 'anger': 4.755315022799321, 'withdrawal syndrome': 5.60227350726982, 'seizure': 4.657233490282399, 'application site erythema': 6.082877242427341, 'condition aggravated': 1.8937881075061127, 'weight decreased': 5.630664074851597}
+
+2024-12-17 20:14:54,892 - INFO - Processing drug: adderall
+2024-12-17 20:14:54,892 - INFO - Embedding comments...
+2024-12-17 20:16:16,662 - INFO - Processing drug ineffective for adderall
+2024-12-17 20:16:17,080 - INFO - Processing nausea for adderall
+2024-12-17 20:16:17,736 - INFO - Processing fatigue for adderall
+2024-12-17 20:16:18,266 - INFO - Processing somnolence for adderall
+2024-12-17 20:16:18,752 - INFO - Processing headache for adderall
+2024-12-17 20:16:19,270 - INFO - Processing vomiting for adderall
+2024-12-17 20:16:19,768 - INFO - Processing insomnia for adderall
+2024-12-17 20:16:20,243 - INFO - Processing dizziness for adderall
+2024-12-17 20:16:20,723 - INFO - Processing abnormal for adderall
+2024-12-17 20:16:21,230 - INFO - Processing suicidal ideation for adderall
+2024-12-17 20:16:21,726 - INFO - Processing depression for adderall
+2024-12-17 20:16:22,243 - INFO - Processing anxiety for adderall
+2024-12-17 20:16:22,738 - INFO - Processing aggression for adderall
+2024-12-17 20:16:23,371 - INFO - Processing abnormal behaviour for adderall
+2024-12-17 20:16:23,878 - INFO - Processing abdominal pain for adderall
+2024-12-17 20:16:24,398 - INFO - Processing decreased appetite for adderall
+2024-12-17 20:16:24,947 - INFO - Processing disturbance in attention for adderall
+2024-12-17 20:16:25,481 - INFO - Processing irritability for adderall
+2024-12-17 20:16:25,995 - INFO - Processing hypotension for adderall
+2024-12-17 20:16:26,453 - INFO - Processing bradycardia for adderall
+2024-12-17 20:16:26,959 - INFO - Processing no adverse event for adderall
+2024-12-17 20:16:27,068 - INFO - Processing electrocardiogram qt prolonged for adderall
+2024-12-17 20:16:27,404 - INFO - Processing toxicity to various agents for adderall
+2024-12-17 20:16:27,893 - INFO - Processing agitation for adderall
+2024-12-17 20:16:28,382 - INFO - Processing pain for adderall
+2024-12-17 20:16:28,858 - INFO - Processing hypertension for adderall
+2024-12-17 20:16:29,402 - INFO - Processing dyspnoea for adderall
+2024-12-17 20:16:29,900 - INFO - Processing chronic kidney disease for adderall
+2024-12-17 20:16:30,412 - INFO - Processing diarrhoea for adderall
+2024-12-17 20:16:30,913 - INFO - Processing renal failure for adderall
+2024-12-17 20:16:31,373 - INFO - Processing blood pressure increased for adderall
+2024-12-17 20:16:31,887 - INFO - Processing acute kidney injury for adderall
+2024-12-17 20:16:32,357 - INFO - Processing asthenia for adderall
+2024-12-17 20:16:32,869 - INFO - Processing death for adderall
+2024-12-17 20:16:33,364 - INFO - Processing fall for adderall
+2024-12-17 20:16:33,861 - INFO - Processing suicide for adderall
+2024-12-17 20:16:34,346 - INFO - Processing rash for adderall
+2024-12-17 20:16:34,826 - INFO - Processing weight increased for adderall
+2024-12-17 20:16:35,352 - INFO - Processing malaise for adderall
+2024-12-17 20:16:35,854 - INFO - Processing migraine for adderall
+2024-12-17 20:16:36,345 - INFO - Processing anger for adderall
+2024-12-17 20:16:36,874 - INFO - Processing withdrawal syndrome for adderall
+2024-12-17 20:16:37,407 - INFO - Processing seizure for adderall
+2024-12-17 20:16:37,931 - INFO - Processing application site erythema for adderall
+2024-12-17 20:16:38,445 - INFO - Processing condition aggravated for adderall
+2024-12-17 20:16:38,724 - INFO - Processing weight decreased for adderall
+2024-12-17 20:16:39,217 - INFO - Side effect scores for adderall: {'drug ineffective': 5.5645711831339115, 'nausea': 4.7521154808474115, 'fatigue': 4.751973471798739, 'somnolence': 6.018335571000864, 'headache': 4.76481132716923, 'vomiting': 5.565774243611556, 'insomnia': 5.891300448349544, 'dizziness': 6.221975849224971, 'abnormal': 4.823371924869306, 'suicidal ideation': 5.825889506182827, 'depression': 4.904531242755743, 'anxiety': 4.764109867614704, 'aggression': 4.719462428119157, 'abnormal behaviour': 5.676371074639834, 'abdominal pain': 5.7676135164040785, 'decreased appetite': 5.809246972039507, 'disturbance in attention': 5.671058210697803, 'irritability': 6.2514474617910905, 'hypotension': 6.097978609603839, 'bradycardia': 6.074916969943832, 'no adverse event': 0.6624551251694396, 'electrocardiogram qt prolonged': 3.179099155978842, 'toxicity to various agents': 5.77869720707883, 'agitation': 4.884875572644747, 'pain': 4.659233199043588, 'hypertension': 5.966881499185666, 'dyspnoea': 6.139988520315715, 'chronic kidney disease': 5.7167807054388655, 'diarrhoea': 5.692289389424272, 'renal failure': 5.8675270178815815, 'blood pressure increased': 5.879696991417434, 'acute kidney injury': 5.774341185669322, 'asthenia': 5.747171378070182, 'death': 4.679089280602696, 'fall': 4.900959968894393, 'suicide': 4.648357261013199, 'rash': 5.860702791711786, 'weight increased': 5.499379049290668, 'malaise': 5.880003564632856, 'migraine': 5.824241904112008, 'anger': 4.768427065113089, 'withdrawal syndrome': 5.624701135761134, 'seizure': 4.660207223106217, 'application site erythema': 6.108332706349236, 'condition aggravated': 1.8925983660168701, 'weight decreased': 5.661727445793676}
+
+2024-12-17 20:16:39,219 - INFO - Processing drug: dexedrine
+2024-12-17 20:16:39,220 - INFO - Embedding comments...
+2024-12-17 20:18:43,969 - INFO - Processing drug ineffective for dexedrine
+2024-12-17 20:18:44,223 - INFO - Processing nausea for dexedrine
+2024-12-17 20:18:44,792 - INFO - Processing fatigue for dexedrine
+2024-12-17 20:18:45,345 - INFO - Processing somnolence for dexedrine
+2024-12-17 20:18:45,801 - INFO - Processing headache for dexedrine
+2024-12-17 20:18:46,362 - INFO - Processing vomiting for dexedrine
+2024-12-17 20:18:46,851 - INFO - Processing insomnia for dexedrine
+2024-12-17 20:18:47,381 - INFO - Processing dizziness for dexedrine
+2024-12-17 20:18:47,892 - INFO - Processing abnormal for dexedrine
+2024-12-17 20:18:48,384 - INFO - Processing suicidal ideation for dexedrine
+2024-12-17 20:18:48,935 - INFO - Processing depression for dexedrine
+2024-12-17 20:18:49,468 - INFO - Processing anxiety for dexedrine
+2024-12-17 20:18:49,995 - INFO - Processing aggression for dexedrine
+2024-12-17 20:18:50,539 - INFO - Processing abnormal behaviour for dexedrine
+2024-12-17 20:18:51,114 - INFO - Processing abdominal pain for dexedrine
+2024-12-17 20:18:51,627 - INFO - Processing decreased appetite for dexedrine
+2024-12-17 20:18:52,201 - INFO - Processing disturbance in attention for dexedrine
+2024-12-17 20:18:52,741 - INFO - Processing irritability for dexedrine
+2024-12-17 20:18:53,245 - INFO - Processing hypotension for dexedrine
+2024-12-17 20:18:53,690 - INFO - Processing bradycardia for dexedrine
+2024-12-17 20:18:54,148 - INFO - Processing no adverse event for dexedrine
+2024-12-17 20:18:54,284 - INFO - Processing electrocardiogram qt prolonged for dexedrine
+2024-12-17 20:18:54,651 - INFO - Processing toxicity to various agents for dexedrine
+2024-12-17 20:18:55,172 - INFO - Processing agitation for dexedrine
+2024-12-17 20:18:55,695 - INFO - Processing pain for dexedrine
+2024-12-17 20:18:56,201 - INFO - Processing hypertension for dexedrine
+2024-12-17 20:18:56,738 - INFO - Processing dyspnoea for dexedrine
+2024-12-17 20:18:57,282 - INFO - Processing chronic kidney disease for dexedrine
+2024-12-17 20:18:57,835 - INFO - Processing diarrhoea for dexedrine
+2024-12-17 20:18:58,252 - INFO - Processing renal failure for dexedrine
+2024-12-17 20:18:58,813 - INFO - Processing blood pressure increased for dexedrine
+2024-12-17 20:18:59,478 - INFO - Processing acute kidney injury for dexedrine
+2024-12-17 20:19:00,043 - INFO - Processing asthenia for dexedrine
+2024-12-17 20:19:00,573 - INFO - Processing death for dexedrine
+2024-12-17 20:19:01,095 - INFO - Processing fall for dexedrine
+2024-12-17 20:19:01,632 - INFO - Processing suicide for dexedrine
+2024-12-17 20:19:02,191 - INFO - Processing rash for dexedrine
+2024-12-17 20:19:02,661 - INFO - Processing weight increased for dexedrine
+2024-12-17 20:19:03,206 - INFO - Processing malaise for dexedrine
+2024-12-17 20:19:03,735 - INFO - Processing migraine for dexedrine
+2024-12-17 20:19:04,257 - INFO - Processing anger for dexedrine
+2024-12-17 20:19:04,714 - INFO - Processing withdrawal syndrome for dexedrine
+2024-12-17 20:19:05,249 - INFO - Processing seizure for dexedrine
+2024-12-17 20:19:05,814 - INFO - Processing application site erythema for dexedrine
+2024-12-17 20:19:06,304 - INFO - Processing condition aggravated for dexedrine
+2024-12-17 20:19:06,584 - INFO - Processing weight decreased for dexedrine
+2024-12-17 20:19:07,115 - INFO - Side effect scores for dexedrine: {'drug ineffective': 5.550385363375352, 'nausea': 4.75451658093486, 'fatigue': 4.752829016166285, 'somnolence': 5.9988156383195195, 'headache': 4.774196789333643, 'vomiting': 5.563909553126855, 'insomnia': 5.87707381781714, 'dizziness': 6.192138236637943, 'abnormal': 4.837411180113958, 'suicidal ideation': 5.807693163422513, 'depression': 4.90248180050249, 'anxiety': 4.768059452555397, 'aggression': 4.727848072817996, 'abnormal behaviour': 5.666828747943414, 'abdominal pain': 5.7494926368402055, 'decreased appetite': 5.792374455978061, 'disturbance in attention': 5.657926704309696, 'irritability': 6.229927104957833, 'hypotension': 6.071348368505801, 'bradycardia': 6.054974688257068, 'no adverse event': 0.657399516435694, 'electrocardiogram qt prolonged': 3.1689470731276126, 'toxicity to various agents': 5.768922986114813, 'agitation': 4.908649217515938, 'pain': 4.66256142054215, 'hypertension': 5.946991743603029, 'dyspnoea': 6.106136617015217, 'chronic kidney disease': 5.693429494014949, 'diarrhoea': 5.662004535725295, 'renal failure': 5.842794778191847, 'blood pressure increased': 5.861185424596316, 'acute kidney injury': 5.754865392352923, 'asthenia': 5.740435753910502, 'death': 4.69452979322061, 'fall': 4.921642070799328, 'suicide': 4.654470008131394, 'rash': 5.844363088992017, 'weight increased': 5.491745148697668, 'malaise': 5.860447087268199, 'migraine': 5.801205160130154, 'anger': 4.7745814828833275, 'withdrawal syndrome': 5.612363860380551, 'seizure': 4.673939796346278, 'application site erythema': 6.0860777984227035, 'condition aggravated': 1.8927221380728336, 'weight decreased': 5.6453020109618}
+
+2024-12-17 20:19:07,115 - INFO - Processing drug: dexstrostat
+2024-12-17 20:19:07,115 - INFO - Embedding comments...
+2024-12-17 20:20:23,661 - INFO - Processing drug ineffective for dexstrostat
+2024-12-17 20:20:23,982 - INFO - Processing nausea for dexstrostat
+2024-12-17 20:20:24,315 - INFO - Processing fatigue for dexstrostat
+2024-12-17 20:20:24,669 - INFO - Processing somnolence for dexstrostat
+2024-12-17 20:20:25,013 - INFO - Processing headache for dexstrostat
+2024-12-17 20:20:25,344 - INFO - Processing vomiting for dexstrostat
+2024-12-17 20:20:25,657 - INFO - Processing insomnia for dexstrostat
+2024-12-17 20:20:25,962 - INFO - Processing dizziness for dexstrostat
+2024-12-17 20:20:26,267 - INFO - Processing abnormal for dexstrostat
+2024-12-17 20:20:26,585 - INFO - Processing suicidal ideation for dexstrostat
+2024-12-17 20:20:26,921 - INFO - Processing depression for dexstrostat
+2024-12-17 20:20:27,247 - INFO - Processing anxiety for dexstrostat
+2024-12-17 20:20:27,504 - INFO - Processing aggression for dexstrostat
+2024-12-17 20:20:27,807 - INFO - Processing abnormal behaviour for dexstrostat
+2024-12-17 20:20:28,145 - INFO - Processing abdominal pain for dexstrostat
+2024-12-17 20:20:28,437 - INFO - Processing decreased appetite for dexstrostat
+2024-12-17 20:20:28,762 - INFO - Processing disturbance in attention for dexstrostat
+2024-12-17 20:20:29,118 - INFO - Processing irritability for dexstrostat
+2024-12-17 20:20:29,453 - INFO - Processing hypotension for dexstrostat
+2024-12-17 20:20:29,750 - INFO - Processing bradycardia for dexstrostat
+2024-12-17 20:20:30,062 - INFO - Processing no adverse event for dexstrostat
+2024-12-17 20:20:30,094 - INFO - Processing electrocardiogram qt prolonged for dexstrostat
+2024-12-17 20:20:30,222 - INFO - Processing toxicity to various agents for dexstrostat
+2024-12-17 20:20:30,550 - INFO - Processing agitation for dexstrostat
+2024-12-17 20:20:30,875 - INFO - Processing pain for dexstrostat
+2024-12-17 20:20:31,193 - INFO - Processing hypertension for dexstrostat
+2024-12-17 20:20:31,540 - INFO - Processing dyspnoea for dexstrostat
+2024-12-17 20:20:31,846 - INFO - Processing chronic kidney disease for dexstrostat
+2024-12-17 20:20:32,161 - INFO - Processing diarrhoea for dexstrostat
+2024-12-17 20:20:32,434 - INFO - Processing renal failure for dexstrostat
+2024-12-17 20:20:32,747 - INFO - Processing blood pressure increased for dexstrostat
+2024-12-17 20:20:33,099 - INFO - Processing acute kidney injury for dexstrostat
+2024-12-17 20:20:33,403 - INFO - Processing asthenia for dexstrostat
+2024-12-17 20:20:33,731 - INFO - Processing death for dexstrostat
+2024-12-17 20:20:34,063 - INFO - Processing fall for dexstrostat
+2024-12-17 20:20:34,326 - INFO - Processing suicide for dexstrostat
+2024-12-17 20:20:34,656 - INFO - Processing rash for dexstrostat
+2024-12-17 20:20:34,979 - INFO - Processing weight increased for dexstrostat
+2024-12-17 20:20:35,285 - INFO - Processing malaise for dexstrostat
+2024-12-17 20:20:35,574 - INFO - Processing migraine for dexstrostat
+2024-12-17 20:20:35,885 - INFO - Processing anger for dexstrostat
+2024-12-17 20:20:36,224 - INFO - Processing withdrawal syndrome for dexstrostat
+2024-12-17 20:20:36,582 - INFO - Processing seizure for dexstrostat
+2024-12-17 20:20:36,903 - INFO - Processing application site erythema for dexstrostat
+2024-12-17 20:20:37,220 - INFO - Processing condition aggravated for dexstrostat
+2024-12-17 20:20:37,314 - INFO - Processing weight decreased for dexstrostat
+2024-12-17 20:20:37,632 - INFO - Side effect scores for dexstrostat: {'drug ineffective': 5.391070544719696, 'nausea': 4.591222140192985, 'fatigue': 4.59575717151165, 'somnolence': 5.875202143192292, 'headache': 4.582477128505707, 'vomiting': 5.359659031033516, 'insomnia': 5.729622396826744, 'dizziness': 6.0899155110120775, 'abnormal': 4.633336734771729, 'suicidal ideation': 5.692642852663995, 'depression': 4.757543817162513, 'anxiety': 4.6037463545799255, 'aggression': 4.553314507007599, 'abnormal behaviour': 5.485467717051506, 'abdominal pain': 5.589683958888053, 'decreased appetite': 5.623496955633163, 'disturbance in attention': 5.489331012964248, 'irritability': 6.119609719514847, 'hypotension': 5.983790263533593, 'bradycardia': 5.931733876466751, 'no adverse event': 0.6470403850078583, 'electrocardiogram qt prolonged': 3.1066984117031096, 'toxicity to various agents': 5.624241062998772, 'agitation': 4.680629804730415, 'pain': 4.50379621386528, 'hypertension': 5.853913986682892, 'dyspnoea': 6.01890672147274, 'chronic kidney disease': 5.596698299050332, 'diarrhoea': 5.5940725028514855, 'renal failure': 5.753860914707184, 'blood pressure increased': 5.711425700783729, 'acute kidney injury': 5.639557430148125, 'asthenia': 5.566485753655432, 'death': 4.501067158579827, 'fall': 4.696038177609444, 'suicide': 4.488290092349052, 'rash': 5.69247879087925, 'weight increased': 5.302503669261932, 'malaise': 5.733418628573417, 'migraine': 5.686405748128891, 'anger': 4.600809180736541, 'withdrawal syndrome': 5.448608881235122, 'seizure': 4.481441411375999, 'application site erythema': 5.971007296442986, 'condition aggravated': 1.853625750541687, 'weight decreased': 5.4734507471323015}
+
+2024-12-17 20:20:37,632 - INFO - Processing drug: vyvanse
+2024-12-17 20:20:37,633 - INFO - Embedding comments...
+2024-12-17 20:21:49,317 - INFO - Processing drug ineffective for vyvanse
+2024-12-17 20:21:49,601 - INFO - Processing nausea for vyvanse
+2024-12-17 20:21:50,150 - INFO - Processing fatigue for vyvanse
+2024-12-17 20:21:50,671 - INFO - Processing somnolence for vyvanse
+2024-12-17 20:21:51,198 - INFO - Processing headache for vyvanse
+2024-12-17 20:21:51,687 - INFO - Processing vomiting for vyvanse
+2024-12-17 20:21:52,230 - INFO - Processing insomnia for vyvanse
+2024-12-17 20:21:52,762 - INFO - Processing dizziness for vyvanse
+2024-12-17 20:21:53,302 - INFO - Processing abnormal for vyvanse
+2024-12-17 20:21:53,799 - INFO - Processing suicidal ideation for vyvanse
+2024-12-17 20:21:54,332 - INFO - Processing depression for vyvanse
+2024-12-17 20:21:54,874 - INFO - Processing anxiety for vyvanse
+2024-12-17 20:21:55,409 - INFO - Processing aggression for vyvanse
+2024-12-17 20:21:55,932 - INFO - Processing abnormal behaviour for vyvanse
+2024-12-17 20:21:56,483 - INFO - Processing abdominal pain for vyvanse
+2024-12-17 20:21:57,021 - INFO - Processing decreased appetite for vyvanse
+2024-12-17 20:21:57,563 - INFO - Processing disturbance in attention for vyvanse
+2024-12-17 20:21:58,111 - INFO - Processing irritability for vyvanse
+2024-12-17 20:21:58,631 - INFO - Processing hypotension for vyvanse
+2024-12-17 20:21:59,161 - INFO - Processing bradycardia for vyvanse
+2024-12-17 20:21:59,722 - INFO - Processing no adverse event for vyvanse
+2024-12-17 20:21:59,823 - INFO - Processing electrocardiogram qt prolonged for vyvanse
+2024-12-17 20:22:00,187 - INFO - Processing toxicity to various agents for vyvanse
+2024-12-17 20:22:00,749 - INFO - Processing agitation for vyvanse
+2024-12-17 20:22:01,355 - INFO - Processing pain for vyvanse
+2024-12-17 20:22:01,872 - INFO - Processing hypertension for vyvanse
+2024-12-17 20:22:02,456 - INFO - Processing dyspnoea for vyvanse
+2024-12-17 20:22:02,989 - INFO - Processing chronic kidney disease for vyvanse
+2024-12-17 20:22:03,534 - INFO - Processing diarrhoea for vyvanse
+2024-12-17 20:22:04,037 - INFO - Processing renal failure for vyvanse
+2024-12-17 20:22:04,586 - INFO - Processing blood pressure increased for vyvanse
+2024-12-17 20:22:05,114 - INFO - Processing acute kidney injury for vyvanse
+2024-12-17 20:22:05,661 - INFO - Processing asthenia for vyvanse
+2024-12-17 20:22:06,159 - INFO - Processing death for vyvanse
+2024-12-17 20:22:06,681 - INFO - Processing fall for vyvanse
+2024-12-17 20:22:07,222 - INFO - Processing suicide for vyvanse
+2024-12-17 20:22:07,769 - INFO - Processing rash for vyvanse
+2024-12-17 20:22:08,314 - INFO - Processing weight increased for vyvanse
+2024-12-17 20:22:08,843 - INFO - Processing malaise for vyvanse
+2024-12-17 20:22:09,325 - INFO - Processing migraine for vyvanse
+2024-12-17 20:22:09,837 - INFO - Processing anger for vyvanse
+2024-12-17 20:22:10,321 - INFO - Processing withdrawal syndrome for vyvanse
+2024-12-17 20:22:10,817 - INFO - Processing seizure for vyvanse
+2024-12-17 20:22:11,301 - INFO - Processing application site erythema for vyvanse
+2024-12-17 20:22:11,778 - INFO - Processing condition aggravated for vyvanse
+2024-12-17 20:22:12,054 - INFO - Processing weight decreased for vyvanse
+2024-12-17 20:22:12,511 - INFO - Side effect scores for vyvanse: {'drug ineffective': 5.41553113857905, 'nausea': 4.592590722110537, 'fatigue': 4.593926572137408, 'somnolence': 5.878523821300931, 'headache': 4.570755557881461, 'vomiting': 5.366839912202623, 'insomnia': 5.756727954414156, 'dizziness': 6.130980988343556, 'abnormal': 4.6197660896513195, 'suicidal ideation': 5.727146828836863, 'depression': 4.76315170791414, 'anxiety': 4.603231751256518, 'aggression': 4.55172929233975, 'abnormal behaviour': 5.518783175283008, 'abdominal pain': 5.629749047756195, 'decreased appetite': 5.67589244974984, 'disturbance in attention': 5.532613302601709, 'irritability': 6.151229761706459, 'hypotension': 6.004497980409199, 'bradycardia': 5.935905512836245, 'no adverse event': 0.6443855060471428, 'electrocardiogram qt prolonged': 3.111103841993544, 'toxicity to various agents': 5.630936127238804, 'agitation': 4.670922606521183, 'pain': 4.49781442615721, 'hypertension': 5.881201814280616, 'dyspnoea': 6.037407247225444, 'chronic kidney disease': 5.608283565441768, 'diarrhoea': 5.612746255927616, 'renal failure': 5.759904633627998, 'blood pressure increased': 5.749542651573817, 'acute kidney injury': 5.651679011848238, 'asthenia': 5.572585611210929, 'death': 4.502578131357829, 'fall': 4.657215295235317, 'suicide': 4.489376244942346, 'rash': 5.715846880276999, 'weight increased': 5.341812605990303, 'malaise': 5.756508678197861, 'migraine': 5.70172801150216, 'anger': 4.59670846329795, 'withdrawal syndrome': 5.462322883473502, 'seizure': 4.469206228521135, 'application site erythema': 5.970121228694916, 'condition aggravated': 1.852364393075307, 'weight decreased': 5.5105959819422825}
+
+2024-12-17 20:22:12,512 - INFO - Processing drug: strattera
+2024-12-17 20:22:12,512 - INFO - Embedding comments...
+2024-12-17 20:23:33,040 - INFO - Processing drug ineffective for strattera
+2024-12-17 20:23:33,358 - INFO - Processing nausea for strattera
+2024-12-17 20:23:33,886 - INFO - Processing fatigue for strattera
+2024-12-17 20:23:34,436 - INFO - Processing somnolence for strattera
+2024-12-17 20:23:34,972 - INFO - Processing headache for strattera
+2024-12-17 20:23:35,467 - INFO - Processing vomiting for strattera
+2024-12-17 20:23:35,969 - INFO - Processing insomnia for strattera
+2024-12-17 20:23:36,477 - INFO - Processing dizziness for strattera
+2024-12-17 20:23:37,031 - INFO - Processing abnormal for strattera
+2024-12-17 20:23:37,526 - INFO - Processing suicidal ideation for strattera
+2024-12-17 20:23:38,104 - INFO - Processing depression for strattera
+2024-12-17 20:23:38,636 - INFO - Processing anxiety for strattera
+2024-12-17 20:23:39,195 - INFO - Processing aggression for strattera
+2024-12-17 20:23:39,692 - INFO - Processing abnormal behaviour for strattera
+2024-12-17 20:23:40,269 - INFO - Processing abdominal pain for strattera
+2024-12-17 20:23:40,756 - INFO - Processing decreased appetite for strattera
+2024-12-17 20:23:41,269 - INFO - Processing disturbance in attention for strattera
+2024-12-17 20:23:41,781 - INFO - Processing irritability for strattera
+2024-12-17 20:23:42,251 - INFO - Processing hypotension for strattera
+2024-12-17 20:23:42,750 - INFO - Processing bradycardia for strattera
+2024-12-17 20:23:43,259 - INFO - Processing no adverse event for strattera
+2024-12-17 20:23:43,368 - INFO - Processing electrocardiogram qt prolonged for strattera
+2024-12-17 20:23:43,731 - INFO - Processing toxicity to various agents for strattera
+2024-12-17 20:23:44,217 - INFO - Processing agitation for strattera
+2024-12-17 20:23:44,716 - INFO - Processing pain for strattera
+2024-12-17 20:23:45,161 - INFO - Processing hypertension for strattera
+2024-12-17 20:23:45,725 - INFO - Processing dyspnoea for strattera
+2024-12-17 20:23:46,190 - INFO - Processing chronic kidney disease for strattera
+2024-12-17 20:23:46,721 - INFO - Processing diarrhoea for strattera
+2024-12-17 20:23:47,166 - INFO - Processing renal failure for strattera
+2024-12-17 20:23:47,678 - INFO - Processing blood pressure increased for strattera
+2024-12-17 20:23:48,202 - INFO - Processing acute kidney injury for strattera
+2024-12-17 20:23:48,713 - INFO - Processing asthenia for strattera
+2024-12-17 20:23:49,227 - INFO - Processing death for strattera
+2024-12-17 20:23:49,751 - INFO - Processing fall for strattera
+2024-12-17 20:23:50,221 - INFO - Processing suicide for strattera
+2024-12-17 20:23:50,748 - INFO - Processing rash for strattera
+2024-12-17 20:23:51,313 - INFO - Processing weight increased for strattera
+2024-12-17 20:23:51,830 - INFO - Processing malaise for strattera
+2024-12-17 20:23:52,399 - INFO - Processing migraine for strattera
+2024-12-17 20:23:52,916 - INFO - Processing anger for strattera
+2024-12-17 20:23:53,353 - INFO - Processing withdrawal syndrome for strattera
+2024-12-17 20:23:53,837 - INFO - Processing seizure for strattera
+2024-12-17 20:23:54,301 - INFO - Processing application site erythema for strattera
+2024-12-17 20:23:54,775 - INFO - Processing condition aggravated for strattera
+2024-12-17 20:23:55,061 - INFO - Processing weight decreased for strattera
+2024-12-17 20:23:55,548 - INFO - Side effect scores for strattera: {'drug ineffective': 5.523120852698266, 'nausea': 4.698939744877604, 'fatigue': 4.697981756345361, 'somnolence': 5.988748982153108, 'headache': 4.701451947731254, 'vomiting': 5.50152607908291, 'insomnia': 5.861880807486255, 'dizziness': 6.210191998861533, 'abnormal': 4.75832302987048, 'suicidal ideation': 5.80741209081844, 'depression': 4.8609335952627974, 'anxiety': 4.708600244690887, 'aggression': 4.662783338960294, 'abnormal behaviour': 5.634279753254578, 'abdominal pain': 5.735593855117274, 'decreased appetite': 5.782300670062546, 'disturbance in attention': 5.640551525934607, 'irritability': 6.240147887605481, 'hypotension': 6.0874035648540055, 'bradycardia': 6.045202427205786, 'no adverse event': 0.6574685568303134, 'electrocardiogram qt prolonged': 3.1652563034960655, 'toxicity to various agents': 5.734420161331649, 'agitation': 4.813913182083485, 'pain': 4.60646309604687, 'hypertension': 5.9462773786709375, 'dyspnoea': 6.123205738784992, 'chronic kidney disease': 5.681888850653067, 'diarrhoea': 5.685060301185709, 'renal failure': 5.832802053046438, 'blood pressure increased': 5.851186079261578, 'acute kidney injury': 5.736577635845252, 'asthenia': 5.697611218268892, 'death': 4.607793892115618, 'fall': 4.808840538548157, 'suicide': 4.590730351156893, 'rash': 5.825103562490075, 'weight increased': 5.4611925437914595, 'malaise': 5.851039782562086, 'migraine': 5.791289090319018, 'anger': 4.7113748873229575, 'withdrawal syndrome': 5.576666796101932, 'seizure': 4.593805701331755, 'application site erythema': 6.074967015897277, 'condition aggravated': 1.8888378214519634, 'weight decreased': 5.622281407096745}
+
+2024-12-17 20:23:55,548 - INFO - Processing drug: intuniv
+2024-12-17 20:23:55,550 - INFO - Embedding comments...
+2024-12-17 20:25:13,896 - INFO - Processing drug ineffective for intuniv
+2024-12-17 20:25:14,209 - INFO - Processing nausea for intuniv
+2024-12-17 20:25:14,758 - INFO - Processing fatigue for intuniv
+2024-12-17 20:25:15,311 - INFO - Processing somnolence for intuniv
+2024-12-17 20:25:15,847 - INFO - Processing headache for intuniv
+2024-12-17 20:25:16,409 - INFO - Processing vomiting for intuniv
+2024-12-17 20:25:16,948 - INFO - Processing insomnia for intuniv
+2024-12-17 20:25:17,494 - INFO - Processing dizziness for intuniv
+2024-12-17 20:25:18,043 - INFO - Processing abnormal for intuniv
+2024-12-17 20:25:18,590 - INFO - Processing suicidal ideation for intuniv
+2024-12-17 20:25:19,147 - INFO - Processing depression for intuniv
+2024-12-17 20:25:19,694 - INFO - Processing anxiety for intuniv
+2024-12-17 20:25:20,235 - INFO - Processing aggression for intuniv
+2024-12-17 20:25:20,779 - INFO - Processing abnormal behaviour for intuniv
+2024-12-17 20:25:21,345 - INFO - Processing abdominal pain for intuniv
+2024-12-17 20:25:21,876 - INFO - Processing decreased appetite for intuniv
+2024-12-17 20:25:22,418 - INFO - Processing disturbance in attention for intuniv
+2024-12-17 20:25:22,976 - INFO - Processing irritability for intuniv
+2024-12-17 20:25:23,513 - INFO - Processing hypotension for intuniv
+2024-12-17 20:25:24,015 - INFO - Processing bradycardia for intuniv
+2024-12-17 20:25:24,542 - INFO - Processing no adverse event for intuniv
+2024-12-17 20:25:24,812 - INFO - Processing electrocardiogram qt prolonged for intuniv
+2024-12-17 20:25:25,203 - INFO - Processing toxicity to various agents for intuniv
+2024-12-17 20:25:25,702 - INFO - Processing agitation for intuniv
+2024-12-17 20:25:26,191 - INFO - Processing pain for intuniv
+2024-12-17 20:25:26,678 - INFO - Processing hypertension for intuniv
+2024-12-17 20:25:27,173 - INFO - Processing dyspnoea for intuniv
+2024-12-17 20:25:27,676 - INFO - Processing chronic kidney disease for intuniv
+2024-12-17 20:25:28,215 - INFO - Processing diarrhoea for intuniv
+2024-12-17 20:25:28,640 - INFO - Processing renal failure for intuniv
+2024-12-17 20:25:29,156 - INFO - Processing blood pressure increased for intuniv
+2024-12-17 20:25:29,668 - INFO - Processing acute kidney injury for intuniv
+2024-12-17 20:25:30,185 - INFO - Processing asthenia for intuniv
+2024-12-17 20:25:30,700 - INFO - Processing death for intuniv
+2024-12-17 20:25:31,231 - INFO - Processing fall for intuniv
+2024-12-17 20:25:31,744 - INFO - Processing suicide for intuniv
+2024-12-17 20:25:32,261 - INFO - Processing rash for intuniv
+2024-12-17 20:25:32,775 - INFO - Processing weight increased for intuniv
+2024-12-17 20:25:33,252 - INFO - Processing malaise for intuniv
+2024-12-17 20:25:33,731 - INFO - Processing migraine for intuniv
+2024-12-17 20:25:34,535 - INFO - Processing anger for intuniv
+2024-12-17 20:25:35,210 - INFO - Processing withdrawal syndrome for intuniv
+2024-12-17 20:25:35,712 - INFO - Processing seizure for intuniv
+2024-12-17 20:25:36,228 - INFO - Processing application site erythema for intuniv
+2024-12-17 20:25:36,722 - INFO - Processing condition aggravated for intuniv
+2024-12-17 20:25:37,060 - INFO - Processing weight decreased for intuniv
+2024-12-17 20:25:37,814 - INFO - Side effect scores for intuniv: {'drug ineffective': 5.529633927448042, 'nausea': 4.6880962391351835, 'fatigue': 4.690261932796445, 'somnolence': 5.983669818989162, 'headache': 4.676270492117981, 'vomiting': 5.488312747457932, 'insomnia': 5.860934430669094, 'dizziness': 6.215614297266664, 'abnormal': 4.735929293879147, 'suicidal ideation': 5.818820594199773, 'depression': 4.851692612828879, 'anxiety': 4.697796816969739, 'aggression': 4.649902599125073, 'abnormal behaviour': 5.6399332259235715, 'abdominal pain': 5.741152412418661, 'decreased appetite': 5.790047845963774, 'disturbance in attention': 5.647596057119041, 'irritability': 6.244020598201916, 'hypotension': 6.105826362453658, 'bradycardia': 6.054006459384128, 'no adverse event': 0.6560014702122787, 'electrocardiogram qt prolonged': 3.1709561748751276, 'toxicity to various agents': 5.749112924625134, 'agitation': 4.788573544087082, 'pain': 4.594875287906877, 'hypertension': 5.983757095090274, 'dyspnoea': 6.141089595597365, 'chronic kidney disease': 5.713287771261973, 'diarrhoea': 5.705282146560735, 'renal failure': 5.866069524966436, 'blood pressure increased': 5.859201326966285, 'acute kidney injury': 5.766173152060345, 'asthenia': 5.691698604616626, 'death': 4.591359649238915, 'fall': 4.763755076404275, 'suicide': 4.579808973546686, 'rash': 5.821639553740106, 'weight increased': 5.453601557119139, 'malaise': 5.854649171233176, 'migraine': 5.797920951555516, 'anger': 4.698625867222917, 'withdrawal syndrome': 5.582121304910759, 'seizure': 4.575270355261606, 'application site erythema': 6.077803946260748, 'condition aggravated': 1.8857849517772938, 'weight decreased': 5.623831177579945}
+
+2024-12-17 20:25:37,814 - INFO - Processing drug: kapvay
+2024-12-17 20:25:37,815 - INFO - Embedding comments...
+2024-12-17 20:26:53,543 - INFO - Processing drug ineffective for kapvay
+2024-12-17 20:26:53,833 - INFO - Processing nausea for kapvay
+2024-12-17 20:26:54,170 - INFO - Processing fatigue for kapvay
+2024-12-17 20:26:54,488 - INFO - Processing somnolence for kapvay
+2024-12-17 20:26:54,794 - INFO - Processing headache for kapvay
+2024-12-17 20:26:55,092 - INFO - Processing vomiting for kapvay
+2024-12-17 20:26:55,406 - INFO - Processing insomnia for kapvay
+2024-12-17 20:26:55,714 - INFO - Processing dizziness for kapvay
+2024-12-17 20:26:56,135 - INFO - Processing abnormal for kapvay
+2024-12-17 20:26:56,484 - INFO - Processing suicidal ideation for kapvay
+2024-12-17 20:26:56,785 - INFO - Processing depression for kapvay
+2024-12-17 20:26:57,064 - INFO - Processing anxiety for kapvay
+2024-12-17 20:26:57,384 - INFO - Processing aggression for kapvay
+2024-12-17 20:26:57,779 - INFO - Processing abnormal behaviour for kapvay
+2024-12-17 20:26:58,083 - INFO - Processing abdominal pain for kapvay
+2024-12-17 20:26:58,388 - INFO - Processing decreased appetite for kapvay
+2024-12-17 20:26:58,692 - INFO - Processing disturbance in attention for kapvay
+2024-12-17 20:26:58,961 - INFO - Processing irritability for kapvay
+2024-12-17 20:26:59,184 - INFO - Processing hypotension for kapvay
+2024-12-17 20:26:59,497 - INFO - Processing bradycardia for kapvay
+2024-12-17 20:26:59,808 - INFO - Processing no adverse event for kapvay
+2024-12-17 20:26:59,840 - INFO - Processing electrocardiogram qt prolonged for kapvay
+2024-12-17 20:27:00,002 - INFO - Processing toxicity to various agents for kapvay
+2024-12-17 20:27:00,314 - INFO - Processing agitation for kapvay
+2024-12-17 20:27:00,634 - INFO - Processing pain for kapvay
+2024-12-17 20:27:00,888 - INFO - Processing hypertension for kapvay
+2024-12-17 20:27:01,130 - INFO - Processing dyspnoea for kapvay
+2024-12-17 20:27:01,385 - INFO - Processing chronic kidney disease for kapvay
+2024-12-17 20:27:01,638 - INFO - Processing diarrhoea for kapvay
+2024-12-17 20:27:01,904 - INFO - Processing renal failure for kapvay
+2024-12-17 20:27:02,210 - INFO - Processing blood pressure increased for kapvay
+2024-12-17 20:27:02,519 - INFO - Processing acute kidney injury for kapvay
+2024-12-17 20:27:02,828 - INFO - Processing asthenia for kapvay
+2024-12-17 20:27:03,142 - INFO - Processing death for kapvay
+2024-12-17 20:27:03,452 - INFO - Processing fall for kapvay
+2024-12-17 20:27:03,762 - INFO - Processing suicide for kapvay
+2024-12-17 20:27:04,057 - INFO - Processing rash for kapvay
+2024-12-17 20:27:04,368 - INFO - Processing weight increased for kapvay
+2024-12-17 20:27:04,681 - INFO - Processing malaise for kapvay
+2024-12-17 20:27:04,990 - INFO - Processing migraine for kapvay
+2024-12-17 20:27:05,289 - INFO - Processing anger for kapvay
+2024-12-17 20:27:05,616 - INFO - Processing withdrawal syndrome for kapvay
+2024-12-17 20:27:05,938 - INFO - Processing seizure for kapvay
+2024-12-17 20:27:06,256 - INFO - Processing application site erythema for kapvay
+2024-12-17 20:27:06,563 - INFO - Processing condition aggravated for kapvay
+2024-12-17 20:27:06,652 - INFO - Processing weight decreased for kapvay
+2024-12-17 20:27:06,915 - INFO - Side effect scores for kapvay: {'drug ineffective': 5.5247830003499985, 'nausea': 4.673641670495272, 'fatigue': 4.67936198040843, 'somnolence': 6.015896633267403, 'headache': 4.671871297061443, 'vomiting': 5.496220871806145, 'insomnia': 5.874002926051617, 'dizziness': 6.214943207800388, 'abnormal': 4.732487875968218, 'suicidal ideation': 5.816005516797304, 'depression': 4.83767556399107, 'anxiety': 4.684638127684593, 'aggression': 4.638178717344999, 'abnormal behaviour': 5.631683841347694, 'abdominal pain': 5.729781668633223, 'decreased appetite': 5.7787370309233665, 'disturbance in attention': 5.643250819295645, 'irritability': 6.264152392745018, 'hypotension': 6.109999570995569, 'bradycardia': 6.082352627068758, 'no adverse event': 0.6541328206658363, 'electrocardiogram qt prolonged': 3.182553246617317, 'toxicity to various agents': 5.750499952584505, 'agitation': 4.7886364087462425, 'pain': 4.583740450441837, 'hypertension': 5.966034326702356, 'dyspnoea': 6.160838574171066, 'chronic kidney disease': 5.696060497313738, 'diarrhoea': 5.707885339856148, 'renal failure': 5.852608535438776, 'blood pressure increased': 5.857549000531435, 'acute kidney injury': 5.752747520804405, 'asthenia': 5.710165295749903, 'death': 4.581515692174435, 'fall': 4.773462451994419, 'suicide': 4.56714391335845, 'rash': 5.8209236934781075, 'weight increased': 5.446686912328005, 'malaise': 5.858180269598961, 'migraine': 5.797324869781733, 'anger': 4.689572531729937, 'withdrawal syndrome': 5.577958166599274, 'seizure': 4.569631647318602, 'application site erythema': 6.100794207304716, 'condition aggravated': 1.8928880169987679, 'weight decreased': 5.618685312569141}
+
+2024-12-17 20:27:06,916 - INFO - Processing drug: wellbutrin
+2024-12-17 20:27:06,916 - INFO - Embedding comments...
+2024-12-17 20:29:28,897 - INFO - Processing drug ineffective for wellbutrin
+2024-12-17 20:29:29,219 - INFO - Processing nausea for wellbutrin
+2024-12-17 20:29:29,744 - INFO - Processing fatigue for wellbutrin
+2024-12-17 20:29:30,301 - INFO - Processing somnolence for wellbutrin
+2024-12-17 20:29:30,867 - INFO - Processing headache for wellbutrin
+2024-12-17 20:29:31,444 - INFO - Processing vomiting for wellbutrin
+2024-12-17 20:29:32,000 - INFO - Processing insomnia for wellbutrin
+2024-12-17 20:29:32,534 - INFO - Processing dizziness for wellbutrin
+2024-12-17 20:29:33,079 - INFO - Processing abnormal for wellbutrin
+2024-12-17 20:29:33,611 - INFO - Processing suicidal ideation for wellbutrin
+2024-12-17 20:29:34,162 - INFO - Processing depression for wellbutrin
+2024-12-17 20:29:34,716 - INFO - Processing anxiety for wellbutrin
+2024-12-17 20:29:35,335 - INFO - Processing aggression for wellbutrin
+2024-12-17 20:29:35,901 - INFO - Processing abnormal behaviour for wellbutrin
+2024-12-17 20:29:36,497 - INFO - Processing abdominal pain for wellbutrin
+2024-12-17 20:29:37,048 - INFO - Processing decreased appetite for wellbutrin
+2024-12-17 20:29:37,644 - INFO - Processing disturbance in attention for wellbutrin
+2024-12-17 20:29:38,185 - INFO - Processing irritability for wellbutrin
+2024-12-17 20:29:38,692 - INFO - Processing hypotension for wellbutrin
+2024-12-17 20:29:39,153 - INFO - Processing bradycardia for wellbutrin
+2024-12-17 20:29:39,673 - INFO - Processing no adverse event for wellbutrin
+2024-12-17 20:29:39,769 - INFO - Processing electrocardiogram qt prolonged for wellbutrin
+2024-12-17 20:29:40,135 - INFO - Processing toxicity to various agents for wellbutrin
+2024-12-17 20:29:40,747 - INFO - Processing agitation for wellbutrin
+2024-12-17 20:29:41,310 - INFO - Processing pain for wellbutrin
+2024-12-17 20:29:41,883 - INFO - Processing hypertension for wellbutrin
+2024-12-17 20:29:42,475 - INFO - Processing dyspnoea for wellbutrin
+2024-12-17 20:29:43,015 - INFO - Processing chronic kidney disease for wellbutrin
+2024-12-17 20:29:43,631 - INFO - Processing diarrhoea for wellbutrin
+2024-12-17 20:29:44,139 - INFO - Processing renal failure for wellbutrin
+2024-12-17 20:29:44,661 - INFO - Processing blood pressure increased for wellbutrin
+2024-12-17 20:29:45,266 - INFO - Processing acute kidney injury for wellbutrin
+2024-12-17 20:29:45,863 - INFO - Processing asthenia for wellbutrin
+2024-12-17 20:29:46,408 - INFO - Processing death for wellbutrin
+2024-12-17 20:29:46,982 - INFO - Processing fall for wellbutrin
+2024-12-17 20:29:47,469 - INFO - Processing suicide for wellbutrin
+2024-12-17 20:29:48,059 - INFO - Processing rash for wellbutrin
+2024-12-17 20:29:48,632 - INFO - Processing weight increased for wellbutrin
+2024-12-17 20:29:49,241 - INFO - Processing malaise for wellbutrin
+2024-12-17 20:29:49,891 - INFO - Processing migraine for wellbutrin
+2024-12-17 20:29:50,463 - INFO - Processing anger for wellbutrin
+2024-12-17 20:29:51,076 - INFO - Processing withdrawal syndrome for wellbutrin
+2024-12-17 20:29:51,694 - INFO - Processing seizure for wellbutrin
+2024-12-17 20:29:52,217 - INFO - Processing application site erythema for wellbutrin
+2024-12-17 20:29:52,783 - INFO - Processing condition aggravated for wellbutrin
+2024-12-17 20:29:53,030 - INFO - Processing weight decreased for wellbutrin
+2024-12-17 20:29:53,606 - INFO - Side effect scores for wellbutrin: {'drug ineffective': 5.539154416371844, 'nausea': 4.739078961289149, 'fatigue': 4.736522647394511, 'somnolence': 5.986825861844672, 'headache': 4.748159453225574, 'vomiting': 5.5398837262475205, 'insomnia': 5.871787037135834, 'dizziness': 6.190161442597908, 'abnormal': 4.809772899219638, 'suicidal ideation': 5.807234215997184, 'depression': 4.898671670623724, 'anxiety': 4.753568307831459, 'aggression': 4.71274925571835, 'abnormal behaviour': 5.652168569785172, 'abdominal pain': 5.737948927515735, 'decreased appetite': 5.782309861408433, 'disturbance in attention': 5.64745026671894, 'irritability': 6.225946891549726, 'hypotension': 6.066180889997288, 'bradycardia': 6.042399400045545, 'no adverse event': 0.6549226951395022, 'electrocardiogram qt prolonged': 3.161671359514843, 'toxicity to various agents': 5.758756266414325, 'agitation': 4.879041166578052, 'pain': 4.648111915098918, 'hypertension': 5.947703936051627, 'dyspnoea': 6.0985216029890745, 'chronic kidney disease': 5.687753617026494, 'diarrhoea': 5.656067483906664, 'renal failure': 5.838411502544837, 'blood pressure increased': 5.852884535367684, 'acute kidney injury': 5.746456731420268, 'asthenia': 5.722916206936709, 'death': 4.6708335569654, 'fall': 4.875309471964609, 'suicide': 4.639825849676329, 'rash': 5.827515383725236, 'weight increased': 5.474963651430251, 'malaise': 5.853695892293618, 'migraine': 5.788914217193746, 'anger': 4.756966220714583, 'withdrawal syndrome': 5.598661637185265, 'seizure': 4.648806322420331, 'application site erythema': 6.071823717788873, 'condition aggravated': 1.890122880966662, 'weight decreased': 5.63260125299383}
+
+2024-12-17 20:29:53,607 - INFO - Processing drug: qelbree
+2024-12-17 20:29:53,608 - INFO - Embedding comments...
+2024-12-17 20:31:20,381 - INFO - Processing drug ineffective for qelbree
+2024-12-17 20:31:20,812 - INFO - Processing nausea for qelbree
+2024-12-17 20:31:21,417 - INFO - Processing fatigue for qelbree
+2024-12-17 20:31:21,988 - INFO - Processing somnolence for qelbree
+2024-12-17 20:31:22,595 - INFO - Processing headache for qelbree
+2024-12-17 20:31:23,137 - INFO - Processing vomiting for qelbree
+2024-12-17 20:31:23,700 - INFO - Processing insomnia for qelbree
+2024-12-17 20:31:24,320 - INFO - Processing dizziness for qelbree
+2024-12-17 20:31:24,771 - INFO - Processing abnormal for qelbree
+2024-12-17 20:31:25,296 - INFO - Processing suicidal ideation for qelbree
+2024-12-17 20:31:25,829 - INFO - Processing depression for qelbree
+2024-12-17 20:31:26,424 - INFO - Processing anxiety for qelbree
+2024-12-17 20:31:26,969 - INFO - Processing aggression for qelbree
+2024-12-17 20:31:27,520 - INFO - Processing abnormal behaviour for qelbree
+2024-12-17 20:31:28,001 - INFO - Processing abdominal pain for qelbree
+2024-12-17 20:31:28,565 - INFO - Processing decreased appetite for qelbree
+2024-12-17 20:31:29,094 - INFO - Processing disturbance in attention for qelbree
+2024-12-17 20:31:29,649 - INFO - Processing irritability for qelbree
+2024-12-17 20:31:30,175 - INFO - Processing hypotension for qelbree
+2024-12-17 20:31:30,710 - INFO - Processing bradycardia for qelbree
+2024-12-17 20:31:31,232 - INFO - Processing no adverse event for qelbree
+2024-12-17 20:31:31,343 - INFO - Processing electrocardiogram qt prolonged for qelbree
+2024-12-17 20:31:31,690 - INFO - Processing toxicity to various agents for qelbree
+2024-12-17 20:31:32,185 - INFO - Processing agitation for qelbree
+2024-12-17 20:31:32,731 - INFO - Processing pain for qelbree
+2024-12-17 20:31:33,208 - INFO - Processing hypertension for qelbree
+2024-12-17 20:31:33,733 - INFO - Processing dyspnoea for qelbree
+2024-12-17 20:31:34,244 - INFO - Processing chronic kidney disease for qelbree
+2024-12-17 20:31:34,716 - INFO - Processing diarrhoea for qelbree
+2024-12-17 20:31:35,214 - INFO - Processing renal failure for qelbree
+2024-12-17 20:31:35,738 - INFO - Processing blood pressure increased for qelbree
+2024-12-17 20:31:36,255 - INFO - Processing acute kidney injury for qelbree
+2024-12-17 20:31:36,779 - INFO - Processing asthenia for qelbree
+2024-12-17 20:31:37,350 - INFO - Processing death for qelbree
+2024-12-17 20:31:37,903 - INFO - Processing fall for qelbree
+2024-12-17 20:31:38,448 - INFO - Processing suicide for qelbree
+2024-12-17 20:31:38,959 - INFO - Processing rash for qelbree
+2024-12-17 20:31:39,488 - INFO - Processing weight increased for qelbree
+2024-12-17 20:31:40,052 - INFO - Processing malaise for qelbree
+2024-12-17 20:31:40,591 - INFO - Processing migraine for qelbree
+2024-12-17 20:31:41,114 - INFO - Processing anger for qelbree
+2024-12-17 20:31:41,603 - INFO - Processing withdrawal syndrome for qelbree
+2024-12-17 20:31:42,162 - INFO - Processing seizure for qelbree
+2024-12-17 20:31:42,629 - INFO - Processing application site erythema for qelbree
+2024-12-17 20:31:43,185 - INFO - Processing condition aggravated for qelbree
+2024-12-17 20:31:43,472 - INFO - Processing weight decreased for qelbree
+2024-12-17 20:31:44,035 - INFO - Side effect scores for qelbree: {'drug ineffective': 5.5502740404544735, 'nausea': 4.727905393665672, 'fatigue': 4.723296703436436, 'somnolence': 6.04168038439547, 'headache': 4.741492816780367, 'vomiting': 5.554299306156289, 'insomnia': 5.9091765686996975, 'dizziness': 6.2493556669125185, 'abnormal': 4.802253263118939, 'suicidal ideation': 5.843874965722745, 'depression': 4.882871126007831, 'anxiety': 4.738591303937456, 'aggression': 4.695490393883143, 'abnormal behaviour': 5.66428107354376, 'abdominal pain': 5.7666726792470016, 'decreased appetite': 5.808073194617899, 'disturbance in attention': 5.670620394822879, 'irritability': 6.287245774625713, 'hypotension': 6.123638559865136, 'bradycardia': 6.095754586478583, 'no adverse event': 0.6653841030903351, 'electrocardiogram qt prolonged': 3.1893481584186225, 'toxicity to various agents': 5.778280793856351, 'agitation': 4.8618052655305615, 'pain': 4.634280356077047, 'hypertension': 5.9787472117150955, 'dyspnoea': 6.168772777685753, 'chronic kidney disease': 5.718002064869954, 'diarrhoea': 5.725271921127272, 'renal failure': 5.871248344835053, 'blood pressure increased': 5.874946185920992, 'acute kidney injury': 5.772436060202428, 'asthenia': 5.740969843844064, 'death': 4.650291678997187, 'fall': 4.868664932047199, 'suicide': 4.623641341924667, 'rash': 5.871224646130178, 'weight increased': 5.484423183477841, 'malaise': 5.8930111980845785, 'migraine': 5.840586331919727, 'anger': 4.743677952860155, 'withdrawal syndrome': 5.614221750925749, 'seizure': 4.636272887134145, 'application site erythema': 6.129323589241403, 'condition aggravated': 1.9049445074847622, 'weight decreased': 5.6457473332555885}
+
+2024-12-17 20:31:44,035 - INFO - Processing drug: lntuniv
+2024-12-17 20:31:44,036 - INFO - Embedding comments...
+2024-12-17 20:33:26,667 - INFO - Processing drug ineffective for lntuniv
+2024-12-17 20:33:27,051 - INFO - Processing nausea for lntuniv
+2024-12-17 20:33:27,792 - INFO - Processing fatigue for lntuniv
+2024-12-17 20:33:28,352 - INFO - Processing somnolence for lntuniv
+2024-12-17 20:33:28,922 - INFO - Processing headache for lntuniv
+2024-12-17 20:33:29,550 - INFO - Processing vomiting for lntuniv
+2024-12-17 20:33:30,129 - INFO - Processing insomnia for lntuniv
+2024-12-17 20:33:30,709 - INFO - Processing dizziness for lntuniv
+2024-12-17 20:33:31,286 - INFO - Processing abnormal for lntuniv
+2024-12-17 20:33:31,777 - INFO - Processing suicidal ideation for lntuniv
+2024-12-17 20:33:32,309 - INFO - Processing depression for lntuniv
+2024-12-17 20:33:32,900 - INFO - Processing anxiety for lntuniv
+2024-12-17 20:33:33,431 - INFO - Processing aggression for lntuniv
+2024-12-17 20:33:34,020 - INFO - Processing abnormal behaviour for lntuniv
+2024-12-17 20:33:34,622 - INFO - Processing abdominal pain for lntuniv
+2024-12-17 20:33:35,191 - INFO - Processing decreased appetite for lntuniv
+2024-12-17 20:33:35,784 - INFO - Processing disturbance in attention for lntuniv
+2024-12-17 20:33:36,285 - INFO - Processing irritability for lntuniv
+2024-12-17 20:33:36,778 - INFO - Processing hypotension for lntuniv
+2024-12-17 20:33:37,318 - INFO - Processing bradycardia for lntuniv
+2024-12-17 20:33:37,881 - INFO - Processing no adverse event for lntuniv
+2024-12-17 20:33:37,992 - INFO - Processing electrocardiogram qt prolonged for lntuniv
+2024-12-17 20:33:38,364 - INFO - Processing toxicity to various agents for lntuniv
+2024-12-17 20:33:38,863 - INFO - Processing agitation for lntuniv
+2024-12-17 20:33:39,455 - INFO - Processing pain for lntuniv
+2024-12-17 20:33:40,013 - INFO - Processing hypertension for lntuniv
+2024-12-17 20:33:40,592 - INFO - Processing dyspnoea for lntuniv
+2024-12-17 20:33:41,153 - INFO - Processing chronic kidney disease for lntuniv
+2024-12-17 20:33:41,726 - INFO - Processing diarrhoea for lntuniv
+2024-12-17 20:33:42,278 - INFO - Processing renal failure for lntuniv
+2024-12-17 20:33:42,891 - INFO - Processing blood pressure increased for lntuniv
+2024-12-17 20:33:43,483 - INFO - Processing acute kidney injury for lntuniv
+2024-12-17 20:33:44,075 - INFO - Processing asthenia for lntuniv
+2024-12-17 20:33:44,702 - INFO - Processing death for lntuniv
+2024-12-17 20:33:45,230 - INFO - Processing fall for lntuniv
+2024-12-17 20:33:45,777 - INFO - Processing suicide for lntuniv
+2024-12-17 20:33:46,342 - INFO - Processing rash for lntuniv
+2024-12-17 20:33:46,908 - INFO - Processing weight increased for lntuniv
+2024-12-17 20:33:47,385 - INFO - Processing malaise for lntuniv
+2024-12-17 20:33:47,906 - INFO - Processing migraine for lntuniv
+2024-12-17 20:33:48,442 - INFO - Processing anger for lntuniv
+2024-12-17 20:33:48,925 - INFO - Processing withdrawal syndrome for lntuniv
+2024-12-17 20:33:49,426 - INFO - Processing seizure for lntuniv
+2024-12-17 20:33:49,930 - INFO - Processing application site erythema for lntuniv
+2024-12-17 20:33:50,451 - INFO - Processing condition aggravated for lntuniv
+2024-12-17 20:33:50,748 - INFO - Processing weight decreased for lntuniv
+2024-12-17 20:33:51,231 - INFO - Side effect scores for lntuniv: {'drug ineffective': 5.470403606891631, 'nausea': 4.678439917862415, 'fatigue': 4.67577567478021, 'somnolence': 5.920957151154677, 'headache': 4.6945488710204755, 'vomiting': 5.477882301608721, 'insomnia': 5.807400587300459, 'dizziness': 6.125008940994739, 'abnormal': 4.758461484611034, 'suicidal ideation': 5.739245535433293, 'depression': 4.826630128721397, 'anxiety': 4.691666797200838, 'aggression': 4.6518707660834, 'abnormal behaviour': 5.58515248487393, 'abdominal pain': 5.67064645310243, 'decreased appetite': 5.7120664594570805, 'disturbance in attention': 5.5796668571233745, 'irritability': 6.16167689293623, 'hypotension': 5.995154739022255, 'bradycardia': 5.975546636780102, 'no adverse event': 0.6480563906828563, 'electrocardiogram qt prolonged': 3.132191684345404, 'toxicity to various agents': 5.695459757745266, 'agitation': 4.827692878345649, 'pain': 4.588024542629719, 'hypertension': 5.874226426879566, 'dyspnoea': 6.023579768737157, 'chronic kidney disease': 5.617783884108066, 'diarrhoea': 5.591474142968654, 'renal failure': 5.763852386871973, 'blood pressure increased': 5.780634487271309, 'acute kidney injury': 5.67269377231598, 'asthenia': 5.660456006626288, 'death': 4.620288265248139, 'fall': 4.83538094997406, 'suicide': 4.580111619134744, 'rash': 5.770571914414564, 'weight increased': 5.410772358477115, 'malaise': 5.791401528517406, 'migraine': 5.730753041505815, 'anger': 4.695224926173686, 'withdrawal syndrome': 5.530129896700383, 'seizure': 4.597685493032137, 'application site erythema': 6.0116644258300465, 'condition aggravated': 1.8725447539488473, 'weight decreased': 5.561043095986048}
+
+2024-12-17 20:33:51,232 - INFO - Processing drug: clonidine
+2024-12-17 20:33:51,232 - INFO - Embedding comments...
+2024-12-17 20:35:33,312 - INFO - Processing drug ineffective for clonidine
+2024-12-17 20:35:33,703 - INFO - Processing nausea for clonidine
+2024-12-17 20:35:34,260 - INFO - Processing fatigue for clonidine
+2024-12-17 20:35:34,810 - INFO - Processing somnolence for clonidine
+2024-12-17 20:35:35,343 - INFO - Processing headache for clonidine
+2024-12-17 20:35:35,877 - INFO - Processing vomiting for clonidine
+2024-12-17 20:35:36,583 - INFO - Processing insomnia for clonidine
+2024-12-17 20:35:37,106 - INFO - Processing dizziness for clonidine
+2024-12-17 20:35:37,605 - INFO - Processing abnormal for clonidine
+2024-12-17 20:35:38,126 - INFO - Processing suicidal ideation for clonidine
+2024-12-17 20:35:38,599 - INFO - Processing depression for clonidine
+2024-12-17 20:35:39,101 - INFO - Processing anxiety for clonidine
+2024-12-17 20:35:39,606 - INFO - Processing aggression for clonidine
+2024-12-17 20:35:40,153 - INFO - Processing abnormal behaviour for clonidine
+2024-12-17 20:35:40,657 - INFO - Processing abdominal pain for clonidine
+2024-12-17 20:35:41,113 - INFO - Processing decreased appetite for clonidine
+2024-12-17 20:35:41,596 - INFO - Processing disturbance in attention for clonidine
+2024-12-17 20:35:42,126 - INFO - Processing irritability for clonidine
+2024-12-17 20:35:42,622 - INFO - Processing hypotension for clonidine
+2024-12-17 20:35:43,127 - INFO - Processing bradycardia for clonidine
+2024-12-17 20:35:43,716 - INFO - Processing no adverse event for clonidine
+2024-12-17 20:35:43,856 - INFO - Processing electrocardiogram qt prolonged for clonidine
+2024-12-17 20:35:44,219 - INFO - Processing toxicity to various agents for clonidine
+2024-12-17 20:35:44,762 - INFO - Processing agitation for clonidine
+2024-12-17 20:35:45,278 - INFO - Processing pain for clonidine
+2024-12-17 20:35:45,820 - INFO - Processing hypertension for clonidine
+2024-12-17 20:35:46,368 - INFO - Processing dyspnoea for clonidine
+2024-12-17 20:35:46,862 - INFO - Processing chronic kidney disease for clonidine
+2024-12-17 20:35:47,350 - INFO - Processing diarrhoea for clonidine
+2024-12-17 20:35:47,799 - INFO - Processing renal failure for clonidine
+2024-12-17 20:35:48,311 - INFO - Processing blood pressure increased for clonidine
+2024-12-17 20:35:48,838 - INFO - Processing acute kidney injury for clonidine
+2024-12-17 20:35:49,364 - INFO - Processing asthenia for clonidine
+2024-12-17 20:35:49,876 - INFO - Processing death for clonidine
+2024-12-17 20:35:50,534 - INFO - Processing fall for clonidine
+2024-12-17 20:35:51,087 - INFO - Processing suicide for clonidine
+2024-12-17 20:35:51,542 - INFO - Processing rash for clonidine
+2024-12-17 20:35:52,032 - INFO - Processing weight increased for clonidine
+2024-12-17 20:35:52,527 - INFO - Processing malaise for clonidine
+2024-12-17 20:35:53,016 - INFO - Processing migraine for clonidine
+2024-12-17 20:35:53,537 - INFO - Processing anger for clonidine
+2024-12-17 20:35:54,042 - INFO - Processing withdrawal syndrome for clonidine
+2024-12-17 20:35:54,578 - INFO - Processing seizure for clonidine
+2024-12-17 20:35:55,111 - INFO - Processing application site erythema for clonidine
+2024-12-17 20:35:55,655 - INFO - Processing condition aggravated for clonidine
+2024-12-17 20:35:55,944 - INFO - Processing weight decreased for clonidine
+2024-12-17 20:35:56,455 - INFO - Side effect scores for clonidine: {'drug ineffective': 5.627250133179858, 'nausea': 4.812353844047951, 'fatigue': 4.812766504450647, 'somnolence': 6.090266302737126, 'headache': 4.838065698437376, 'vomiting': 5.644630493498609, 'insomnia': 5.970599878010825, 'dizziness': 6.278466297037782, 'abnormal': 4.9077341355604025, 'suicidal ideation': 5.894319104849613, 'depression': 4.956954628161254, 'anxiety': 4.824516699362996, 'aggression': 4.784323823886472, 'abnormal behaviour': 5.752837523444638, 'abdominal pain': 5.83719857142292, 'decreased appetite': 5.884658993716121, 'disturbance in attention': 5.746119013679869, 'irritability': 6.319525905241999, 'hypotension': 6.153145190727194, 'bradycardia': 6.143162498713083, 'no adverse event': 0.6649553703827304, 'electrocardiogram qt prolonged': 3.2124153064703886, 'toxicity to various agents': 5.841073560076586, 'agitation': 4.973433118135348, 'pain': 4.717979498835522, 'hypertension': 6.023279191013892, 'dyspnoea': 6.20442062752122, 'chronic kidney disease': 5.7657589154797435, 'diarrhoea': 5.735895142672002, 'renal failure': 5.919939017784621, 'blood pressure increased': 5.946989190198295, 'acute kidney injury': 5.827913548245788, 'asthenia': 5.821184324512178, 'death': 4.749763463990835, 'fall': 4.990241703995267, 'suicide': 4.709572420033344, 'rash': 5.926387355580144, 'weight increased': 5.575473531843046, 'malaise': 5.938943865155305, 'migraine': 5.874767634958233, 'anger': 4.8323588688987265, 'withdrawal syndrome': 5.690308746009862, 'seizure': 4.7360994458062775, 'application site erythema': 6.164794356988612, 'condition aggravated': 1.9097103014893846, 'weight decreased': 5.727122941226242}
+
+2024-12-17 20:35:56,455 - INFO - Processing drug: Vyvanse
+2024-12-17 20:35:56,456 - INFO - Embedding comments...
+2024-12-17 20:37:15,259 - INFO - Processing drug ineffective for Vyvanse
+2024-12-17 20:37:15,515 - INFO - Processing nausea for Vyvanse
+2024-12-17 20:37:16,038 - INFO - Processing fatigue for Vyvanse
+2024-12-17 20:37:16,610 - INFO - Processing somnolence for Vyvanse
+2024-12-17 20:37:17,147 - INFO - Processing headache for Vyvanse
+2024-12-17 20:37:17,668 - INFO - Processing vomiting for Vyvanse
+2024-12-17 20:37:18,164 - INFO - Processing insomnia for Vyvanse
+2024-12-17 20:37:18,663 - INFO - Processing dizziness for Vyvanse
+2024-12-17 20:37:19,103 - INFO - Processing abnormal for Vyvanse
+2024-12-17 20:37:19,607 - INFO - Processing suicidal ideation for Vyvanse
+2024-12-17 20:37:20,108 - INFO - Processing depression for Vyvanse
+2024-12-17 20:37:20,638 - INFO - Processing anxiety for Vyvanse
+2024-12-17 20:37:21,164 - INFO - Processing aggression for Vyvanse
+2024-12-17 20:37:21,691 - INFO - Processing abnormal behaviour for Vyvanse
+2024-12-17 20:37:22,233 - INFO - Processing abdominal pain for Vyvanse
+2024-12-17 20:37:22,767 - INFO - Processing decreased appetite for Vyvanse
+2024-12-17 20:37:23,286 - INFO - Processing disturbance in attention for Vyvanse
+2024-12-17 20:37:23,801 - INFO - Processing irritability for Vyvanse
+2024-12-17 20:37:24,498 - INFO - Processing hypotension for Vyvanse
+2024-12-17 20:37:25,012 - INFO - Processing bradycardia for Vyvanse
+2024-12-17 20:37:25,515 - INFO - Processing no adverse event for Vyvanse
+2024-12-17 20:37:25,614 - INFO - Processing electrocardiogram qt prolonged for Vyvanse
+2024-12-17 20:37:25,910 - INFO - Processing toxicity to various agents for Vyvanse
+2024-12-17 20:37:26,480 - INFO - Processing agitation for Vyvanse
+2024-12-17 20:37:26,981 - INFO - Processing pain for Vyvanse
+2024-12-17 20:37:27,572 - INFO - Processing hypertension for Vyvanse
+2024-12-17 20:37:28,064 - INFO - Processing dyspnoea for Vyvanse
+2024-12-17 20:37:28,544 - INFO - Processing chronic kidney disease for Vyvanse
+2024-12-17 20:37:29,056 - INFO - Processing diarrhoea for Vyvanse
+2024-12-17 20:37:29,522 - INFO - Processing renal failure for Vyvanse
+2024-12-17 20:37:30,030 - INFO - Processing blood pressure increased for Vyvanse
+2024-12-17 20:37:30,553 - INFO - Processing acute kidney injury for Vyvanse
+2024-12-17 20:37:31,077 - INFO - Processing asthenia for Vyvanse
+2024-12-17 20:37:31,679 - INFO - Processing death for Vyvanse
+2024-12-17 20:37:32,160 - INFO - Processing fall for Vyvanse
+2024-12-17 20:37:32,667 - INFO - Processing suicide for Vyvanse
+2024-12-17 20:37:33,175 - INFO - Processing rash for Vyvanse
+2024-12-17 20:37:33,720 - INFO - Processing weight increased for Vyvanse
+2024-12-17 20:37:34,284 - INFO - Processing malaise for Vyvanse
+2024-12-17 20:37:34,765 - INFO - Processing migraine for Vyvanse
+2024-12-17 20:37:35,297 - INFO - Processing anger for Vyvanse
+2024-12-17 20:37:35,786 - INFO - Processing withdrawal syndrome for Vyvanse
+2024-12-17 20:37:36,320 - INFO - Processing seizure for Vyvanse
+2024-12-17 20:37:36,811 - INFO - Processing application site erythema for Vyvanse
+2024-12-17 20:37:37,363 - INFO - Processing condition aggravated for Vyvanse
+2024-12-17 20:37:37,611 - INFO - Processing weight decreased for Vyvanse
+2024-12-17 20:37:38,145 - INFO - Side effect scores for Vyvanse: {'drug ineffective': 5.617767265348723, 'nausea': 4.787209516221826, 'fatigue': 4.785265546404954, 'somnolence': 6.084575014583992, 'headache': 4.815784572200342, 'vomiting': 5.639426731702054, 'insomnia': 5.953388547807029, 'dizziness': 6.279279158873992, 'abnormal': 4.88537154324127, 'suicidal ideation': 5.883459917072094, 'depression': 4.935214722246835, 'anxiety': 4.79726418627031, 'aggression': 4.758880715478551, 'abnormal behaviour': 5.741861951622096, 'abdominal pain': 5.834342576789132, 'decreased appetite': 5.87552267809709, 'disturbance in attention': 5.737910599871115, 'irritability': 6.320579428564418, 'hypotension': 6.164981260895729, 'bradycardia': 6.140881028139231, 'no adverse event': 0.6665493972373732, 'electrocardiogram qt prolonged': 3.211085298747727, 'toxicity to various agents': 5.83399760677959, 'agitation': 4.9493595298492545, 'pain': 4.69246758385138, 'hypertension': 6.024097814252883, 'dyspnoea': 6.2011620230746995, 'chronic kidney disease': 5.761997885324739, 'diarrhoea': 5.747227312037438, 'renal failure': 5.909027468977553, 'blood pressure increased': 5.941568381858595, 'acute kidney injury': 5.8277312092708815, 'asthenia': 5.811274144234079, 'death': 4.717380799578898, 'fall': 4.972784458687811, 'suicide': 4.682795661416921, 'rash': 5.927052294214566, 'weight increased': 5.5682499377113395, 'malaise': 5.933173775672913, 'migraine': 5.873748893087559, 'anger': 4.808308270392996, 'withdrawal syndrome': 5.682763623920355, 'seizure': 4.711441094225102, 'application site erythema': 6.172420491774876, 'condition aggravated': 1.9173884202133524, 'weight decreased': 5.721593338431735}
+
+2024-12-17 20:37:39,164 - INFO - Saving results to files ...
+2024-12-17 20:37:40,405 - INFO - Calculate ranks...
+2024-12-17 20:37:40,416 - INFO - Save side effect scores for concerta...
+2024-12-17 20:37:40,421 - INFO - Save side effect scores for ritalin...
+2024-12-17 20:37:40,429 - INFO - Save side effect scores for adderall...
+2024-12-17 20:37:40,454 - INFO - Save side effect scores for dexedrine...
+2024-12-17 20:37:40,460 - INFO - Save side effect scores for dexstrostat...
+2024-12-17 20:37:40,466 - INFO - Save side effect scores for vyvanse...
+2024-12-17 20:37:40,477 - INFO - Save side effect scores for strattera...
+2024-12-17 20:37:40,483 - INFO - Save side effect scores for intuniv...
+2024-12-17 20:37:40,488 - INFO - Save side effect scores for kapvay...
+2024-12-17 20:37:40,492 - INFO - Save side effect scores for wellbutrin...
+2024-12-17 20:37:40,497 - INFO - Save side effect scores for qelbree...
+2024-12-17 20:37:40,500 - INFO - Save side effect scores for lntuniv...
+2024-12-17 20:37:40,504 - INFO - Save side effect scores for clonidine...
+2024-12-17 20:37:40,508 - INFO - Save side effect scores for Vyvanse...
