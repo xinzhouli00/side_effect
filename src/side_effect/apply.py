@@ -33,12 +33,7 @@ def log_progress(message):
 
 
 class SideEffectAnalyzer:
-    def __init__(
-        self,
-        initial_keywords,
-        side_effects_official,
-        model_name="dmis-lab/biobert-base-cased-v1.2"
-    ):
+    def __init__(self, initial_keywords, side_effects_official, model_name="dmis-lab/biobert-base-cased-v1.2"):
         """
         Initializes the SideEffectAnalyzer with initial keywords and a BioBERT model.
         :param initial_keywords: List of initial side effect keywords.
@@ -73,36 +68,27 @@ class SideEffectAnalyzer:
             drug_dict, comments = pick_drug(comment_dict, drug)
             log_progress("Embedding comments...")
             # Generate embeddings for comments
-            embeddings = [
-                self.embedder.get_embeddings(comment)[0] for comment in comments
-            ]
+            embeddings = [self.embedder.get_embeddings(comment)[0] for comment in comments]
 
             # Expand keywords
-            expanded_keywords = self.keyword_expander.expand_keywords(
-                self.initial_keywords
-            )
+            expanded_keywords = self.keyword_expander.expand_keywords(self.initial_keywords)
 
             # Analyze side effects
             side_effect_score = {}
             for kw in self.initial_keywords:
                 # Calculate similarity between keywords and comments
                 log_progress(f"Processing {kw} for {drug}")
-                kw_comment_similarities = get_comment_similarity(
-                    kw, expanded_keywords, embeddings
-                )
+                kw_comment_similarities = get_comment_similarity(kw, expanded_keywords, embeddings)
                 # Evaluate overall score for the keyword
                 score = evaluate_score(kw_comment_similarities, kw, expanded_keywords)
                 side_effect_score[kw] = score
 
                 # Match comments with side effects and rank
-                drug_dict, top_k_comment = comment_side_effect(
-                    kw_comment_similarities, kw, expanded_keywords, drug_dict
-                )
+                drug_dict, top_k_comment = comment_side_effect( kw_comment_similarities, kw, expanded_keywords, drug_dict )
                 top_k_comments.extend(top_k_comment)
 
             new_comment_dict.extend(drug_dict)
             side_effect_scores[drug] = side_effect_score
-            #top_k_comments.extend(top_k_comment)
 
             log_progress(f"Side effect scores for {drug}: {side_effect_score}\n")
         print(new_comment_dict)
@@ -153,7 +139,8 @@ def parse_choices(value):
     return list
 
 if __name__ == "__main__":
-    
+     
+    # Allow user interact in terminal
     parser = argparse.ArgumentParser(description="Durg_Side_Effect_Search")
     parser.add_argument("-d", "--drug", type = parse_choices, help = "Input a drug name")
     parser.add_argument("-se", "--side_effect", type = parse_choices, help = "Input a side_effect")
@@ -162,17 +149,20 @@ if __name__ == "__main__":
 
     file_path = "data/reviews.csv"
 
+    # If user called process_data, apply prepare_data function to build precessed dataset and save to certain path. Terminate  running.
     if args.process_data:
         log_progress("Preparing data ...")
         prepare_data(file_path)
         sys.exit()
     
-    # Step 1: Initialize keywords and official side effects
+    # Step 1: Setup official side effects
     side_effects_df = pd.read_csv("data/side_effects.csv")
     side_effects_official = [effect.lower() for effect in side_effects_df['Reaction']]
 
     log_progress("Data are ready!")
-
+    
+    # Step 2: Deal with user's request if needed. If no argument parsed, use default value
+    # By default, initial_keywords will be set to the official side effect, drugs will set to all drugs in our dataset
     data = pd.read_csv(file_path)
     comment_dict = prepare_comment_dict(data, "cleaned_comments")
     drugs = get_drugs(data)
@@ -185,10 +175,10 @@ if __name__ == "__main__":
     if args.side_effect:
         initial_keywords = args.side_effect
 
-    # Step 2: Initialize the SideEffectAnalyzer
+    # Step 3: Initialize the SideEffectAnalyzer
     analyzer = SideEffectAnalyzer(initial_keywords, side_effects_official)
 
-    # Step 8: Analyze reddit reviews
+    # Step 4: Analyze reddit reviews
     log_progress("Analyzing reviews...")
     new_comment_dict, side_effect_scores, top_k_comments = analyzer.process_file(file_path, drugs, initial_keywords)
     log_progress("Saving results to files ...")
@@ -196,7 +186,7 @@ if __name__ == "__main__":
     print(side_effect_scores)
     print(top_k_comments)
 
-    # Step 9: Save results to file
+    # Step 5: Save results to file
     df = pd.DataFrame([
         {"drug": drug, "side_effect": side_effect, "score": score}
         for drug, effects in side_effect_scores.items()
@@ -207,6 +197,8 @@ if __name__ == "__main__":
     df.to_csv("output/side_effect_scores.csv", index=False)
     pd.DataFrame(top_k_comments).to_csv("output/top_k_comments.csv", index=False)
 
+
+    # Step 6: Calculate side effect rank for each drug
     log_progress("Calculate ranks...")
     for drug, score in side_effect_scores.items():
         k = 5
