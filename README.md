@@ -1,9 +1,11 @@
 # **Side Effect Analysis Pipeline**
 
 ## **Project Overview**
-This project analyzes user reviews from **Reddit** and **Drugs.com** to identify and rank potential **side effects** of ADHD medications. Using **BioBERT embeddings**, **keyword expansion**, **sentiment analysis**, and **similarity analysis**, the system extracts, scores, and ranks drug-related side effects from user-generated content.
+
+This project analyzes user reviews from **Reddit** and **Drugs.com** to identify and rank potential **side effects** of ADHD medications. Using **BioBERT embeddings**, **keyword expansion**, **sentiment analysis**, and **similarity analysis**, the system extracts, scores, and ranks drug-related side effects from user-generated content and compares them against official side effect data retrieved from openFDA.
 
 The pipeline combines **Natural Language Processing (NLP)** and **machine learning** techniques to:
+
 1. Preprocess and clean raw review data.
 2. Expand official side effect keywords with **WordNet** and **BioBERT**.
 3. Perform **sentiment analysis** to focus on negative user experiences.
@@ -17,6 +19,7 @@ The pipeline combines **Natural Language Processing (NLP)** and **machine learni
 If you haven't had your poetry setup, please following the step in **Installation Package** part below.
 
 1. **Prepare Input Data**:
+
    - Place raw Reddit and Drugs.com review data in the `data` directory.
 
 2. **Run the Pipeline**:
@@ -27,6 +30,7 @@ If you haven't had your poetry setup, please following the step in **Installatio
    ```
 
    Optional Command-Line Arguments:
+
    - `--process_data`: Preprocess input data before running the analysis.
    - `--drug`: Specify a list of drugs to analyze.
    - `--side_effect`: Specify side effects to focus the analysis on.
@@ -52,7 +56,7 @@ Example Output for side_effect_scores.csv
 | Adderall  | Nausea      | 4.752 |
 | Adderall  | Headache    | 4.749 |
 
-   - `output/top_k_comments.csv` lists the most relevant user comments.
+- `output/top_k_comments.csv` lists the most relevant user comments.
 
 Example Output for top_k_comments.csv
 
@@ -62,9 +66,9 @@ Example Output for top_k_comments.csv
 | Vyvanse   | Nausea      | "This drug made me feel nauseous all day."   | 4.752 |
 | Ritalin   | Headache    | "I developed a severe headache after use."   | 4.749 |
 
-   - `output/{drug}_rank.csv` provides drug-specific side effect rankings.
+- `output/{drug}_rank.csv` provides drug-specific side effect rankings.
 
-Example Output for {drug}_rank.csv
+Example Output for {drug}\_rank.csv
 
 | rank  | Side Effect | Comment                                      |
 | ----- | ----------- | -------------------------------------------- |
@@ -74,27 +78,34 @@ Example Output for {drug}_rank.csv
 | tail2 | Pain        | "I developed a severe headache after use."   |
 
 ---
+
 #### Data Link: [Google Drive](https://drive.google.com/drive/folders/1P2-KvY0kwX7ekzFFEEPDT35ErD6i2LNZ)
 
 ## **Key Features**
+
 1. **Data Collection and Cleaning**:
+
    - Reviews from **Reddit** and **Drugs.com** are preprocessed, cleaned, and stored in structured CSV files.
    <!-- - `side_effect.py` and `data_processing.py` handles **Drugs.com** reviews.
    - `data_processing_reddit.py` processes **Reddit** reviews. -->
 
 2. **Sentiment Analysis**:
+
    - Negative comments are extracted using **VADER Sentiment Analyzer** (from NLTK).
    - Positive comments are removed to focus on reviews indicating adverse experiences.
 
 3. **Keyword Expansion**:
+
    - Official side effect keywords are expanded using **WordNet synonyms** and **BioBERT embeddings**.
    - Enhances coverage and accuracy of side effect detection.
 
 4. **Similarity Analysis**:
+
    - Computes **cosine similarity** between expanded keywords and user comment embeddings using BioBERT.
    - Identifies comments closely associated with specific side effects.
 
 5. **Ranking and Scoring**:
+
    - Side effects are ranked based on their relevance scores.
    - Top K comments for each drug and side effect are extracted for analysis.
 
@@ -105,7 +116,7 @@ Example Output for {drug}_rank.csv
 
 ---
 
-## **Project Directory Structure**
+## **Main Content in Project Directory Structure**
 
 ```bash
 ├── data
@@ -117,11 +128,12 @@ Example Output for {drug}_rank.csv
 │
 ├── src
 │   └── side_effect
-│       ├── data_processing.py       # Processes Drugs.com reviews
+│       ├── data_processing.py       # Processes entire data sets to obtain data with proper structure and contents
 │       ├── data_processing_reddit.py # Processes Reddit reviews
 │       ├── embedding_and_keywords.py # BioBERT and WordNet for keyword expansion
 │       ├── analysis.py              # Similarity and ranking analysis
-│       └── side_effect.py           # Core utilities for cleaning & filtering (including sentiment analysis and selecting comments with at least 30 words)
+│       └── side_effect.py           # Core utilities for cleaning & filtering (including sentiment analysis and selecting comments with certain limitation)
+│       └── apply.py                # Main script:runs the entire pipeline
 │
 ├── output
 │   ├── side_effect_scores.csv     # Ranked side effects with scores
@@ -132,10 +144,9 @@ Example Output for {drug}_rank.csv
 │   ├── components                 # React components
 │   └── pages                      # Webpages for each drug
 │
-├── apply.py                       # Main script: runs the entire pipeline
 ├── README.md                      # Documentation (you are here)
 ├── LICENSE                        # Project license
-└── requirements.txt               # Python dependencies
+└── pyproject.toml
 ```
 
 ---
@@ -225,27 +236,32 @@ project/
 ```
 
 ### Processing Steps:
+
 1. Script reads CSV files from `output/` directory
 2. Converts data to appropriate JSON format
 3. Automatically saves files to `website/public/data/`
 4. Files become accessible to website components
 
 ### File Mapping:
+
 - `side_effect_scores.csv` → `drugSideEffectsData.json`
 - `drug_reactions.csv` → `formatted_drug_reactions.json`
 - `merged_drug_data.csv` → `reviews.json`
 
 These JSON files are placed in the `website/public/data/` directory and are utilized by the website for:
+
 - Interactive visualizations
 - Drug comparison features
 - Side effect frequency analysis
 - User experience insights
 
 To run the website:
+
 ```bash
 pnpm i        # Install dependencies
 pnpm dev      # Start development server
 ```
+
 Then visit localhost:3000 to view the interactive dashboard.
 
 ### How to Use Our ADHD Medication Side Effect Analysis Tool
@@ -253,34 +269,41 @@ Then visit localhost:3000 to view the interactive dashboard.
 Our website provides two main features to help users understand and compare ADHD medication side effects:
 
 #### Individual Drug Pages
+
 ![Individual Drug Page](drug_page_example.png)
 Each medication has a dedicated page showing:
 
 1. **Side Effects Comparison**
-  - FDA-reported side effects ranking
-  - User review-based side effects ranking
-  - Allows users to compare official data with real user experiences
+
+- FDA-reported side effects ranking
+- User review-based side effects ranking
+- Allows users to compare official data with real user experiences
 
 2. **Social Sentiments**
-  - Actual user comments and experiences
-  - Provides real-world context for side effects
+
+- Actual user comments and experiences
+- Provides real-world context for side effects
 
 #### Find Drugs by Side Effect Feature
+
 ![Find Drugs Page](find_drugs_example.png)
 This tool helps users make informed decisions about medication choices:
 
 1. **Search Function**
-  - Select a specific side effect from dropdown menu
-  - Click "Search" to view results
+
+- Select a specific side effect from dropdown menu
+- Click "Search" to view results
 
 2. **Results Display**
-  - Shows Top 3 drugs with strongest association to the selected side effect
-  - Shows Bottom 3 drugs with weakest association
-  - Helps users identify medications that might minimize specific side effects
+
+- Shows Top 3 drugs with strongest association to the selected side effect
+- Shows Bottom 3 drugs with weakest association
+- Helps users identify medications that might minimize specific side effects
 
 3. **Interactive Navigation**
-  - Click on any drug name to view its detailed page
-  - Allows users to learn more about medications with promising profiles
+
+- Click on any drug name to view its detailed page
+- Allows users to learn more about medications with promising profiles
 
 This tool is particularly useful for:
 
@@ -293,15 +316,19 @@ This tool is particularly useful for:
 ## **Future Plans**
 
 1. **Model Optimization**:
+
    - Improve the performance of similarity scoring and ranking algorithms to enhance accuracy.
 
 2. **Vocabulary Expansion**:
+
    - Include more diverse and comprehensive terms in the keyword expansion process to improve coverage of side effect detection.
 
 3. **Audience Segmentation**:
+
    - Segment users into different groups to gain a more nuanced understanding of feedback and side effect patterns.
 
 4. **Advanced Similarity Matching**:
+
    - Experiment with various similarity measures to determine the most effective method for matching and analyzing textual data.
 
 5. **Frontend-Backend Integration**:
@@ -310,6 +337,7 @@ This tool is particularly useful for:
 ---
 
 ## **Team Members**
+
 - **Siyu Hu**
 - **Xinzhou Li**
 - **Qingyang Wang**
@@ -318,11 +346,13 @@ This tool is particularly useful for:
 ---
 
 ## **License**
+
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## **Acknowledgments**
+
 - BioBERT model: [DMIS Lab](https://huggingface.co/dmis-lab/biobert-base-cased-v1.2)
 - OpenFDA: Source for official side effects data. [OpenFDA](https://open.fda.gov/)
 - NLTK WordNet: For keyword expansion.

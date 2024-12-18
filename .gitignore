@@ -143,4 +143,6 @@ dmypy.json
 
 .vscode/
 
-data/
+/data/
+/output/
+/tests.data/
