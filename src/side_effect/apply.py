@@ -49,7 +49,7 @@ class SideEffectAnalyzer:
         self.embedder = BioBERTEmbedder(model_name)
         self.keyword_expander = KeywordExpander(self.embedder, side_effects_official)
 
-    def process_file(self, file_path):
+    def process_file(self, file_path, drugs, initial_keywords):
         """
         Processes a CSV file containing drug reviews.
         :param file_path: Path to the CSV file.
@@ -60,7 +60,7 @@ class SideEffectAnalyzer:
 
         # Prepare comment dictionary and drug list
         comment_dict = prepare_comment_dict(data, "cleaned_comments")
-        drugs = get_drugs(data)
+        self.initial_keywords = initial_keywords
 
         new_comment_dict = []
         side_effect_scores = {}
@@ -99,13 +99,15 @@ class SideEffectAnalyzer:
                     kw_comment_similarities, kw, expanded_keywords, drug_dict
                 )
                 top_k_comments.extend(top_k_comment)
+                break
 
             new_comment_dict.extend(drug_dict)
             side_effect_scores[drug] = side_effect_score
             #top_k_comments.extend(top_k_comment)
+            break
 
             log_progress(f"Side effect scores for {drug}: {side_effect_score}\n")
-
+        print(new_comment_dict)
         return new_comment_dict, side_effect_scores, top_k_comments
 
 
@@ -142,21 +144,17 @@ def prepare_data(file_path):
     filtered_data = data[data['cleaned_comments'].apply(lambda x: len(str(x).split()) <= 512)]
     data = filtered_data.drop_duplicates(subset = ['Drug Name', 'Review Text'])
     data = data.dropna()
+    data = data.drop(columns = ['index'])
 
     # Save dataset to file
     data.to_csv(file_path, index=False)
-    return data
 
+def parse_choices(value):
+    list = value.split(',')
+    list = [l.lower() for l in list]
+    return list
 
 if __name__ == "__main__":
-    # Step 1: Initialize keywords and official side effects
-    side_effects_df = pd.read_csv("data/side_effects.csv")
-    side_effects_official = [effect.lower() for effect in side_effects_df['Reaction']]
-    
-    def parse_choices(value):
-        list = value.split(',')
-        list = [l.lower() for l in list]
-        return list
     
     parser = argparse.ArgumentParser(description="Durg_Side_Effect_Search")
     parser.add_argument("-d", "--drug", type = parse_choices, help = "Input a drug name")
@@ -167,7 +165,14 @@ if __name__ == "__main__":
     file_path = "data/reviews.csv"
 
     if args.process_data:
-        data = prepare_data(file_path)
+        log_progress("Preparing data ...")
+        prepare_data(file_path)
+        sys.exit()
+    
+    # Step 1: Initialize keywords and official side effects
+    side_effects_df = pd.read_csv("data/side_effects.csv")
+    side_effects_official = [effect.lower() for effect in side_effects_df['Reaction']]
+
     log_progress("Data are ready!")
 
     data = pd.read_csv(file_path)
@@ -176,6 +181,7 @@ if __name__ == "__main__":
     if args.drug:
         assert all(drug in drugs for drug in args.drug), f"This drug is not included in the list: {[drug for drug in args.drug if drug not in drugs]}"
         drugs = args.drug
+    print(drugs)
 
     initial_keywords = side_effects_official
     if args.side_effect:
@@ -186,7 +192,7 @@ if __name__ == "__main__":
 
     # Step 8: Analyze reddit reviews
     log_progress("Analyzing reviews...")
-    new_comment_dict, side_effect_scores, top_k_comments = analyzer.process_file(file_path)
+    new_comment_dict, side_effect_scores, top_k_comments = analyzer.process_file(file_path, drugs, initial_keywords)
     log_progress("Saving results to files ...")
     print(new_comment_dict)
     print(side_effect_scores)
