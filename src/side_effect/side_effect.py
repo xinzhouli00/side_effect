@@ -6,11 +6,8 @@ import nltk
 import os
 from nltk.sentiment import SentimentIntensityAnalyzer
 
-# 忽略 SSL 问题
 ssl._create_default_https_context = ssl._create_unverified_context
 
-
-# 下载 NLTK 数据
 nltk.download('wordnet')
 
 def preprocess_text(text):

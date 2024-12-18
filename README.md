@@ -5,7 +5,7 @@ This project analyzes user reviews from **Reddit** and **Drugs.com** to identify
 
 The pipeline combines **Natural Language Processing (NLP)** and **machine learning** techniques to:
 1. Preprocess and clean raw review data.
-2. Expand official side effect keywords with WordNet and BioBERT.
+2. Expand official side effect keywords with **WordNet** and **BioBERT**.
 3. Perform **sentiment analysis** to focus on negative user experiences.
 4. Calculate similarity between user comments and expanded side effect keywords.
 5. Rank side effects for each drug and extract relevant user comments.
@@ -15,8 +15,8 @@ The pipeline combines **Natural Language Processing (NLP)** and **machine learni
 ## **Key Features**
 1. **Data Collection and Cleaning**:
    - Reviews from **Reddit** and **Drugs.com** are preprocessed, cleaned, and stored in structured CSV files.
-   - `data_processing.py` handles **Drugs.com** reviews.
-   - `data_processing_reddit.py` processes **Reddit** reviews.
+   <!-- - `side_effect.py` and `data_processing.py` handles **Drugs.com** reviews.
+   - `data_processing_reddit.py` processes **Reddit** reviews. -->
 
 2. **Sentiment Analysis**:
    - Negative comments are extracted using **VADER Sentiment Analyzer** (from NLTK).
@@ -62,7 +62,7 @@ The pipeline combines **Natural Language Processing (NLP)** and **machine learni
 │       ├── data_processing_reddit.py # Processes Reddit reviews
 │       ├── embedding_and_keywords.py # BioBERT and WordNet for keyword expansion
 │       ├── analysis.py              # Similarity and ranking analysis
-│       └── side_effect.py           # Core utilities for cleaning and filtering
+│       └── side_effect.py           # Core utilities for cleaning & filtering (including sentiment analysis and selecting comments with at least 30 words)
 │
 ├── output
 │   ├── side_effect_scores.csv     # Ranked side effects with scores
@@ -84,6 +84,14 @@ The pipeline combines **Natural Language Processing (NLP)** and **machine learni
 ## **Pipeline Diagram**
 
 Below is the high-level architecture of the side effect analysis pipeline:
+
+The process of determining the most relevant comments for a given side effect is as follows:
+
+![](diagram1.png)
+
+The process for determining the number of most relevant comments and subsequently calculating the relevance score between the input drug and side effect is as follows:
+
+![](diagram2.png)
 
 ## **Installation Package**
 

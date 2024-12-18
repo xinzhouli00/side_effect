@@ -85,7 +85,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="project-overview" class="level2">
 <h2 class="anchored" data-anchor-id="project-overview"><strong>Project Overview</strong></h2>
 <p>This project analyzes user reviews from <strong>Reddit</strong> and <strong>Drugs.com</strong> to identify and rank potential <strong>side effects</strong> of ADHD medications. Using <strong>BioBERT embeddings</strong>, <strong>keyword expansion</strong>, <strong>sentiment analysis</strong>, and <strong>similarity analysis</strong>, the system extracts, scores, and ranks drug-related side effects from user-generated content.</p>
-<p>The pipeline combines <strong>Natural Language Processing (NLP)</strong> and <strong>machine learning</strong> techniques to: 1. Preprocess and clean raw review data. 2. Expand official side effect keywords with WordNet and BioBERT. 3. Perform <strong>sentiment analysis</strong> to focus on negative user experiences. 4. Calculate similarity between user comments and expanded side effect keywords. 5. Rank side effects for each drug and extract relevant user comments.</p>
+<p>The pipeline combines <strong>Natural Language Processing (NLP)</strong> and <strong>machine learning</strong> techniques to: 1. Preprocess and clean raw review data. 2. Expand official side effect keywords with <strong>WordNet</strong> and <strong>BioBERT</strong>. 3. Perform <strong>sentiment analysis</strong> to focus on negative user experiences. 4. Calculate similarity between user comments and expanded side effect keywords. 5. Rank side effects for each drug and extract relevant user comments.</p>
 <hr>
 </section>
 <section id="key-features" class="level2">
@@ -93,9 +93,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><strong>Data Collection and Cleaning</strong>:
 <ul>
-<li>Reviews from <strong>Reddit</strong> and <strong>Drugs.com</strong> are preprocessed, cleaned, and stored in structured CSV files.</li>
-<li><code>data_processing.py</code> handles <strong>Drugs.com</strong> reviews.</li>
-<li><code>data_processing_reddit.py</code> processes <strong>Reddit</strong> reviews.</li>
+<li>Reviews from <strong>Reddit</strong> and <strong>Drugs.com</strong> are preprocessed, cleaned, and stored in structured CSV files. <!-- - `side_effect.py` and `data_processing.py` handles **Drugs.com** reviews.
+- `data_processing_reddit.py` processes **Reddit** reviews. --></li>
 </ul></li>
 <li><strong>Sentiment Analysis</strong>:
 <ul>
@@ -147,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── data_processing_reddit.py <span class="co"># Processes Reddit reviews</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── embedding_and_keywords.py <span class="co"># BioBERT and WordNet for keyword expansion</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── analysis.py              <span class="co"># Similarity and ranking analysis</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       └── side_effect.py           <span class="co"># Core utilities for cleaning and filtering</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       └── side_effect.py           <span class="co"># Core utilities for cleaning &amp; filtering (including sentiment analysis and selecting comments with at least 30 words)</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> output</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── side_effect_scores.csv     <span class="co"># Ranked side effects with scores</span></span>
@@ -167,60 +166,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="pipeline-diagram" class="level2">
 <h2 class="anchored" data-anchor-id="pipeline-diagram"><strong>Pipeline Diagram</strong></h2>
 <p>Below is the high-level architecture of the side effect analysis pipeline:</p>
-<pre class="plaintext"><code>+-------------------+
-| Input Data        |
-| (Reviews)         |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Preprocessing     |
-| (Clean &amp; Filter)  |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Sentiment Analysis|
-| (Negative Filter) |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Keyword Expansion |
-| (BioBERT/WordNet) |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Similarity Scoring|
-| (Cosine Sim)      |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Analysis          |
-| (Rank Comments,   |
-| Side Effects)     |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Outputs           |
-| (Ranked Data,     |
-| Top Comments)     |
-+-------------------+
-
-
-## **Installation Package**
-
-1. **Clone the Repository**
-
-   First, clone the repository using Git:
-
-   ```bash
-   git clone https://github.com/xinzhouli00/side_effect.git
-   cd side_effect</code></pre>
-<ol start="2" type="1">
+<p>The process of determining the most relevant comments for a given side effect is as follows:</p>
+<p><img src="diagram1.png" class="img-fluid"></p>
+<p>The process for determining the number of most relevant comments and subsequently calculating the relevance score between the input drug and side effect is as follows:</p>
+<p><img src="diagram2.png" class="img-fluid"></p>
+</section>
+<section id="installation-package" class="level2">
+<h2 class="anchored" data-anchor-id="installation-package"><strong>Installation Package</strong></h2>
+<ol type="1">
+<li><p><strong>Clone the Repository</strong></p>
+<p>First, clone the repository using Git:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xinzhouli00/side_effect.git</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> side_effect</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>Install Dependencies</strong></p>
 <p>Within the cloned directory, run the following command to install the project dependencies with Poetry:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
