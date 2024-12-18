@@ -3,9 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/medicine/Concerta": "pages/medicine/Concerta.js",
-  "/medicine/Qelbree": "pages/medicine/Qelbree.js",
-  "/medicine/Adderall": "pages/medicine/Adderall.js",
-  "/medicine/Dexedrine": "pages/medicine/Dexedrine.js",
-  "/medicine/Intuniv": "pages/medicine/Intuniv.js"
+  "/medicine/Dexedrine": "pages/medicine/Dexedrine.js"
 }
