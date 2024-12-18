@@ -44,17 +44,18 @@ class SideEffectProcessor:
         df = pd.read_csv(file_path)
 
         # Remove rows where Comment contains '[ Removed by Reddit ]' or '[deleted]'
-        df = df[~df["Comment"].isin(["[ Removed by Reddit ]", "[deleted]", "[removed]"])]
+        df = df[
+            ~df["Comment"].isin(["[ Removed by Reddit ]", "[deleted]", "[removed]"])
+        ]
 
         # Extract drug name from the file name
         drug_name = self.extract_drug_name(file_path)
 
-
-        title_to_comment  = df['Post Title'].unique().tolist()
+        title_to_comment = df["Post Title"].unique().tolist()
         comments = df["Comment"].unique().tolist()
         # print(len(df['Post Title']), len(df["Comment"]), len(comments), len(title_to_comment))
         title_to_comment.extend(comments)
-        df = pd.DataFrame({'Review Text':title_to_comment})
+        df = pd.DataFrame({"Review Text": title_to_comment})
         # print(df)
 
         # Clean the combined comments

@@ -4,7 +4,10 @@ from src.side_effect.embedding_and_keywords import BioBERTEmbedder
 
 embedder = BioBERTEmbedder()
 
-def get_comment_similarity(initial_kw, expanded_keywords, comment_embeddings, threshold=0.5):
+
+def get_comment_similarity(
+    initial_kw, expanded_keywords, comment_embeddings, threshold=0.5
+):
     """
     Calculate similarity between expanded keywords and comments.
     :param initial_kw: The initial keyword being analyzed.
@@ -20,6 +23,7 @@ def get_comment_similarity(initial_kw, expanded_keywords, comment_embeddings, th
         similarities = cosine_similarity([emb], comment_embeddings)[0]
         kw_comment_similarities[kw] = similarities
     return kw_comment_similarities
+
 
 def evaluate_score(comment_similarity, initial_kw, expanded_keywords):
     """
@@ -39,7 +43,10 @@ def evaluate_score(comment_similarity, initial_kw, expanded_keywords):
         score += sum(word_score * comment_score) / len(comment_score)
     return score
 
-def comment_side_effect(comment_similarity, initial_kw, expanded_keywords, drug_dict, top_k=10):
+
+def comment_side_effect(
+    comment_similarity, initial_kw, expanded_keywords, drug_dict, top_k=10
+):
     """
     Match comments with side effects and rank them by relevance.
     :param comment_similarity: Dictionary of keyword-comment similarities.
@@ -63,11 +70,16 @@ def comment_side_effect(comment_similarity, initial_kw, expanded_keywords, drug_
     comment_idx = [i for i in range(len(scores)) if scores[i] >= upper_quartile]
     top_k_comments = []
     for idx in comment_idx:
-        drug_dict[idx]['side_effects'].append(initial_kw)
-        top_k_comments.append({
-            'drug': drug_dict[idx]['Drug Name'],
-            'side_effect': initial_kw,
-            'comment': drug_dict[idx]['Review Text'],
-            'score': scores[idx]
-        })
-    return drug_dict, sorted(top_k_comments, key=lambda x: x['score'], reverse=True)[:top_k]
+        drug_dict[idx]["side_effects"].append(initial_kw)
+        top_k_comments.append(
+            {
+                "drug": drug_dict[idx]["Drug Name"],
+                "side_effect": initial_kw,
+                "comment": drug_dict[idx]["Review Text"],
+                "score": scores[idx],
+            }
+        )
+    return (
+        drug_dict,
+        sorted(top_k_comments, key=lambda x: x["score"], reverse=True)[:top_k],
+    )

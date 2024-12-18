@@ -4,6 +4,7 @@ import csv
 import json
 from collections import defaultdict
 
+
 def csv_to_json_grouped(csv_file, json_file):
     """
     Convert a CSV file to a JSON file grouped by drug, with side effects as a dictionary.
@@ -14,8 +15,10 @@ def csv_to_json_grouped(csv_file, json_file):
     grouped_data = defaultdict(lambda: {"drugName": "", "sideEffects": {}})
 
     # Open and read the CSV file
-    with open(csv_file, mode='r', encoding='utf-8') as file:
-        csv_reader = csv.DictReader(file)  # Use DictReader to process each row as a dictionary
+    with open(csv_file, mode="r", encoding="utf-8") as file:
+        csv_reader = csv.DictReader(
+            file
+        )  # Use DictReader to process each row as a dictionary
 
         # Process each row in the CSV file
         for row in csv_reader:
@@ -24,7 +27,9 @@ def csv_to_json_grouped(csv_file, json_file):
             score = row.get("score")  # Get the 'score' value
 
             if not drug or not side_effect or not score:
-                raise ValueError("Missing required fields ('drug', 'side_effect', 'score') in CSV file.")
+                raise ValueError(
+                    "Missing required fields ('drug', 'side_effect', 'score') in CSV file."
+                )
 
             # Capitalize the first letter of the side effect and drug
             drug = drug.title()
@@ -42,21 +47,25 @@ def csv_to_json_grouped(csv_file, json_file):
     result = list(grouped_data.values())
 
     # Write the grouped data to a JSON file
-    with open(json_file, mode='w', encoding='utf-8') as file:
-        json.dump(result, file, indent=4, ensure_ascii=False)  # ensure_ascii=False ensures proper display of non-ASCII characters
+    with open(json_file, mode="w", encoding="utf-8") as file:
+        json.dump(
+            result, file, indent=4, ensure_ascii=False
+        )  # ensure_ascii=False ensures proper display of non-ASCII characters
     print(f"Successfully converted {csv_file} to {json_file}.")
+
 
 # Example call
 if __name__ == "__main__":
     # Path to the input CSV file
-    input_csv = "output/side_effect_scores.csv"  
+    input_csv = "output/side_effect_scores.csv"
     # Path to the output JSON file
-    output_json = "website/public/data/drugSideEffectsData.json"  
+    output_json = "website/public/data/drugSideEffectsData.json"
 
     # Call the conversion function
     csv_to_json_grouped(input_csv, output_json)
 
 # --------------------------side_effect_fda-----------------------------
+
 
 def csv_to_json_grouped(csv_file, json_file):
     """
@@ -68,8 +77,10 @@ def csv_to_json_grouped(csv_file, json_file):
     grouped_data = defaultdict(lambda: {"drugName": "", "sideEffects": {}})
 
     # Open and read the CSV file
-    with open(csv_file, mode='r', encoding='utf-8') as file:
-        csv_reader = csv.DictReader(file)  # Use DictReader to process each row as a dictionary
+    with open(csv_file, mode="r", encoding="utf-8") as file:
+        csv_reader = csv.DictReader(
+            file
+        )  # Use DictReader to process each row as a dictionary
 
         # Process each row in the CSV file
         for row in csv_reader:
@@ -78,7 +89,9 @@ def csv_to_json_grouped(csv_file, json_file):
             score = row.get("Count")  # Get the 'score' value
 
             if not drug or not side_effect or not score:
-                raise ValueError("Missing required fields ('Drug', 'Reaction', 'Count') in CSV file.")
+                raise ValueError(
+                    "Missing required fields ('Drug', 'Reaction', 'Count') in CSV file."
+                )
 
             # Capitalize the first letter of the side effect and drug
             drug = drug.title()
@@ -96,16 +109,19 @@ def csv_to_json_grouped(csv_file, json_file):
     result = list(grouped_data.values())
 
     # Write the grouped data to a JSON file
-    with open(json_file, mode='w', encoding='utf-8') as file:
-        json.dump(result, file, indent=4, ensure_ascii=False)  # ensure_ascii=False ensures proper display of non-ASCII characters
+    with open(json_file, mode="w", encoding="utf-8") as file:
+        json.dump(
+            result, file, indent=4, ensure_ascii=False
+        )  # ensure_ascii=False ensures proper display of non-ASCII characters
     print(f"Successfully converted {csv_file} to {json_file}.")
+
 
 # Example call
 if __name__ == "__main__":
     # Path to the input CSV file
-    input_csv = "data/drug_reactions.csv"  
+    input_csv = "data/drug_reactions.csv"
     # Path to the output JSON file
-    output_json = "website/public/data/formatted_drug_reactions.json"  
+    output_json = "website/public/data/formatted_drug_reactions.json"
 
     # Call the conversion function
     csv_to_json_grouped(input_csv, output_json)
@@ -116,7 +132,7 @@ import pandas as pd
 
 # Define folder path
 folder_path = "output"
-output_file = "output/merged_drug_data.csv"  
+output_file = "output/merged_drug_data.csv"
 
 # Initialize empty DataFrame for merging
 merged_data = pd.DataFrame()
@@ -163,10 +179,7 @@ result = []
 
 # Group by drug name
 for drug, group in df.groupby("drug"):
-    drug_data = {
-        "drugName": drug,
-        "sideEffects": {}
-    }
+    drug_data = {"drugName": drug, "sideEffects": {}}
 
     # Group by side effects and collect unique comments
     for side_effect, comments in group.groupby("side_effect"):

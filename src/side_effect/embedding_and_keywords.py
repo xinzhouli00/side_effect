@@ -3,6 +3,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from nltk.corpus import wordnet
 import torch
 
+
 class BioBERTEmbedder:
     def __init__(self, model_name="dmis-lab/biobert-base-cased-v1.2"):
         """
@@ -10,14 +11,16 @@ class BioBERTEmbedder:
         """
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModel.from_pretrained(model_name)
-       
+
     def get_embeddings(self, text):
         """
         Generate BioBERT embeddings for a given text.
         :param text: Input text.
         :return: NumPy array representing the text's embedding.
         """
-        inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
+        inputs = self.tokenizer(
+            text, return_tensors="pt", padding=True, truncation=True, max_length=512
+        )
         outputs = self.model(**inputs)
         return outputs.last_hidden_state.mean(dim=1).detach().numpy()
 
@@ -68,7 +71,9 @@ class KeywordExpander:
             sim = cosine_similarity([target_emb], [word_emb])[0][0]
             if sim >= threshold:
                 similarities.append({word: sim})
-        return sorted(similarities, key=lambda x: list(x.values())[0], reverse=True)[:top_k]
+        return sorted(similarities, key=lambda x: list(x.values())[0], reverse=True)[
+            :top_k
+        ]
 
     def expand_keywords(self, initial_keywords):
         """
@@ -78,7 +83,9 @@ class KeywordExpander:
         """
         synonyms_kw = self.get_wordnet_synonyms(initial_keywords)
         for word in initial_keywords:
-            reference_words = list(set(synonyms_kw[word] + self.side_effects_official + [word]))
+            reference_words = list(
+                set(synonyms_kw[word] + self.side_effects_official + [word])
+            )
             similar_words_emb = self.find_similar_words(word, reference_words)
             synonyms_kw[word] = similar_words_emb
         return synonyms_kw
