@@ -99,12 +99,10 @@ class SideEffectAnalyzer:
                     kw_comment_similarities, kw, expanded_keywords, drug_dict
                 )
                 top_k_comments.extend(top_k_comment)
-                break
 
             new_comment_dict.extend(drug_dict)
             side_effect_scores[drug] = side_effect_score
             #top_k_comments.extend(top_k_comment)
-            break
 
             log_progress(f"Side effect scores for {drug}: {side_effect_score}\n")
         print(new_comment_dict)
