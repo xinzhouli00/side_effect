@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/medicine/Dexedrine": "pages/medicine/Dexedrine.js"
+  "/find_medicine": "pages/find_medicine.js",
+  "/medicine/Adderall": "pages/medicine/Adderall.js"
 }

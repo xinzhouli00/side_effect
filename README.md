@@ -189,6 +189,95 @@ pytest -v tests
 
 ---
 
+## **Demostration Website**
+
+Our project processes three key data sources and converts them into JSON format for website visualization:
+
+1. **User Reviews Analysis (`reviews.json`)**
+2. **Side Effect Scores (`drugSideEffectsData.json`)**
+3. **FDA Report Analysis (`formatted_drug_reactions.json`)**
+
+Our `merge_data_json.py` script handles the conversion of CSV files to JSON format and their placement in the website directory:
+
+```bash
+project/
+├── merge_data_json.py      # Data conversion script
+├── output/                 # Processed CSV files
+│   ├── side_effect_scores.csv
+│   ├── drug_reactions.csv
+│   └── merged_drug_data.csv
+└── website/
+    └── public/
+        └── data/           # JSON files for website
+            ├── reviews.json
+            ├── drugSideEffectsData.json
+            └── formatted_drug_reactions.json
+```
+
+### Processing Steps:
+1. Script reads CSV files from `output/` directory
+2. Converts data to appropriate JSON format
+3. Automatically saves files to `website/public/data/`
+4. Files become accessible to website components
+
+### File Mapping:
+- `side_effect_scores.csv` → `drugSideEffectsData.json`
+- `drug_reactions.csv` → `formatted_drug_reactions.json`
+- `merged_drug_data.csv` → `reviews.json`
+
+These JSON files are placed in the `website/public/data/` directory and are utilized by the website for:
+- Interactive visualizations
+- Drug comparison features
+- Side effect frequency analysis
+- User experience insights
+
+To run the website:
+```bash
+pnpm i        # Install dependencies
+pnpm dev      # Start development server
+```
+Then visit localhost:3000 to view the interactive dashboard.
+
+### How to Use Our ADHD Medication Side Effect Analysis Tool
+
+Our website provides two main features to help users understand and compare ADHD medication side effects:
+
+#### Individual Drug Pages
+![Individual Drug Page](drug_page_example.png)
+Each medication has a dedicated page showing:
+
+1. **Side Effects Comparison**
+  - FDA-reported side effects ranking
+  - User review-based side effects ranking
+  - Allows users to compare official data with real user experiences
+
+2. **Social Sentiments**
+  - Actual user comments and experiences
+  - Provides real-world context for side effects
+
+#### Find Drugs by Side Effect Feature
+![Find Drugs Page](find_drugs_example.png)
+This tool helps users make informed decisions about medication choices:
+
+1. **Search Function**
+  - Select a specific side effect from dropdown menu
+  - Click "Search" to view results
+
+2. **Results Display**
+  - Shows Top 3 drugs with strongest association to the selected side effect
+  - Shows Bottom 3 drugs with weakest association
+  - Helps users identify medications that might minimize specific side effects
+
+3. **Interactive Navigation**
+  - Click on any drug name to view its detailed page
+  - Allows users to learn more about medications with promising profiles
+
+This tool is particularly useful for:
+
+- Users concerned about specific side effects
+- Healthcare providers discussing medication options
+- Anyone seeking to understand ADHD medication trade-offs
+
 ## **Team Members**
 - **[Your Name]**
 - **[Team Member 2]**
