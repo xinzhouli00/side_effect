@@ -12,6 +12,70 @@ The pipeline combines **Natural Language Processing (NLP)** and **machine learni
 
 ---
 
+## **Usage**
+
+If you haven't had your poetry setup, please following the step in **Installation Package** part below.
+
+1. **Prepare Input Data**:
+   - Place raw Reddit and Drugs.com review data in the `data` directory.
+
+2. **Run the Pipeline**:
+   Execute the `apply.py` script to clean, process, and analyze the reviews:
+
+   ```bash
+   poetry run python src/side_effect/apply.py
+   ```
+
+   Optional Command-Line Arguments:
+   - `--process_data`: Preprocess input data before running the analysis.
+   - `--drug`: Specify a list of drugs to analyze.
+   - `--side_effect`: Specify side effects to focus the analysis on.
+
+   ```bash
+   poetry run python src/side_effect/apply.py --process_data
+   ```
+
+   Analyze specific drugs and side effects:
+
+   ```bash
+   poetry run python src/side_effect/apply.py -d Adderall,Ritalin -se Insomnia,Nausea
+   ```
+
+3. **Output Files**:
+   - `output/side_effect_scores.csv` contains ranked side effects.
+
+Example Output for side_effect_scores.csv
+
+| Drug Name | Side Effect | Score |
+| --------- | ----------- | ----- |
+| Adderall  | Insomnia    | 5.573 |
+| Adderall  | Nausea      | 4.752 |
+| Adderall  | Headache    | 4.749 |
+
+   - `output/top_k_comments.csv` lists the most relevant user comments.
+
+Example Output for top_k_comments.csv
+
+| Drug Name | Side Effect | Comment                                      | Score |
+| --------- | ----------- | -------------------------------------------- | ----- |
+| Adderall  | Insomnia    | "I couldn't sleep at all after taking this." | 5.573 |
+| Vyvanse   | Nausea      | "This drug made me feel nauseous all day."   | 4.752 |
+| Ritalin   | Headache    | "I developed a severe headache after use."   | 4.749 |
+
+   - `output/{drug}_rank.csv` provides drug-specific side effect rankings.
+
+Example Output for {drug}_rank.csv
+
+| rank  | Side Effect | Comment                                      |
+| ----- | ----------- | -------------------------------------------- |
+| top1  | Insomnia    | "I couldn't sleep at all after taking this." |
+| top2  | Nausea      | "This drug made me feel nauseous all day."   |
+| tail1 | Headache    | "I developed a severe headache after use."   |
+| tail2 | Pain        | "I developed a severe headache after use."   |
+
+---
+#### Data Link: [Google Drive](https://drive.google.com/drive/folders/1P2-KvY0kwX7ekzFFEEPDT35ErD6i2LNZ)
+
 ## **Key Features**
 1. **Data Collection and Cleaning**:
    - Reviews from **Reddit** and **Drugs.com** are preprocessed, cleaned, and stored in structured CSV files.
@@ -34,12 +98,7 @@ The pipeline combines **Natural Language Processing (NLP)** and **machine learni
    - Side effects are ranked based on their relevance scores.
    - Top K comments for each drug and side effect are extracted for analysis.
 
-6. **Command-Line Arguments**:
-   - `--process_data`: Preprocess input data before running the analysis.
-   - `--drug`: Specify a list of drugs to analyze.
-   - `--side_effect`: Specify side effects to focus the analysis on.
-
-7. **Outputs**:
+6. **Outputs**:
    - Cleaned and processed comments.
    - Ranked side effects and their relevance scores.
    - Comments most relevant to identified side effects.
@@ -120,21 +179,7 @@ The process for determining the number of most relevant comments and subsequentl
    poetry shell
    ```
 
-4. **Running the Project**
-
-   After installation, you can run the project's main application or scripts as follows:
-
-   ```bash
-   poetry run python src/side_effect/apply.py --process_data
-   ```
-
-   To analyze specific drugs and side effects:
-
-   ```bash
-   poetry run python src/side_effect/apply.py -d Adderall,Ritalin -se Insomnia,Nausea
-   ```
-
-5. **Updating Dependencies**
+4. **Updating Dependencies**
 
    To update the dependencies to their latest compatible versions, run:
 
@@ -151,41 +196,6 @@ Run tests using:
 ```bash
 pytest -v tests
 ```
-
----
-
-## **Usage**
-
-1. **Prepare Input Data**:
-   - Place raw Reddit and Drugs.com review data in the `data` directory.
-
-2. **Run the Pipeline**:
-   Execute the `apply.py` script to clean, process, and analyze the reviews:
-
-   ```bash
-   poetry run python src/side_effect/apply.py --process_data
-   ```
-
-   Analyze specific drugs and side effects:
-
-   ```bash
-   poetry run python src/side_effect/apply.py -d Adderall,Ritalin -se Insomnia,Nausea
-   ```
-
-3. **Output Files**:
-   - `output/side_effect_scores.csv` contains ranked side effects.
-   - `output/top_k_comments.csv` lists the most relevant user comments.
-   - `output/{drug}_rank.csv` provides drug-specific side effect rankings.
-
----
-
-## **Example Output**
-
-| Drug Name  | Side Effect      | Score   | Comment                                      |
-|------------|------------------|---------|----------------------------------------------|
-| Adderall   | Insomnia         | 0.85    | "I couldn't sleep at all after taking this." |
-| Vyvanse    | Nausea           | 0.78    | "This drug made me feel nauseous all day."   |
-| Ritalin    | Headache         | 0.72    | "I developed a severe headache after use."   |
 
 ---
 
@@ -278,11 +288,32 @@ This tool is particularly useful for:
 - Healthcare providers discussing medication options
 - Anyone seeking to understand ADHD medication trade-offs
 
+---
+
+## **Future Plans**
+
+1. **Model Optimization**:
+   - Improve the performance of similarity scoring and ranking algorithms to enhance accuracy.
+
+2. **Vocabulary Expansion**:
+   - Include more diverse and comprehensive terms in the keyword expansion process to improve coverage of side effect detection.
+
+3. **Audience Segmentation**:
+   - Segment users into different groups to gain a more nuanced understanding of feedback and side effect patterns.
+
+4. **Advanced Similarity Matching**:
+   - Experiment with various similarity measures to determine the most effective method for matching and analyzing textual data.
+
+5. **Frontend-Backend Integration**:
+   - Develop robust interfaces for seamless updates to the data pipeline and ensure the results are dynamically reflected in the front-end visualization.
+
+---
+
 ## **Team Members**
-- **[Your Name]**
-- **[Team Member 2]**
-- **[Team Member 3]**
-- **[Team Member 4]**
+- **Siyu Hu**
+- **Xinzhou Li**
+- **Qingyang Wang**
+- **Shengmian Wang**
 
 ---
 
@@ -293,7 +324,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## **Acknowledgments**
 - BioBERT model: [DMIS Lab](https://huggingface.co/dmis-lab/biobert-base-cased-v1.2)
-- OpenFDA: Source for official side effects data.
+- OpenFDA: Source for official side effects data. [OpenFDA](https://open.fda.gov/)
 - NLTK WordNet: For keyword expansion.
 - VADER Sentiment Analyzer: For sentiment filtering.
 
