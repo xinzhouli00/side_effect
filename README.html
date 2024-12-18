@@ -261,6 +261,105 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <hr>
 </section>
+<section id="demostration-website" class="level2">
+<h2 class="anchored" data-anchor-id="demostration-website"><strong>Demostration Website</strong></h2>
+<p>Our project processes three key data sources and converts them into JSON format for website visualization:</p>
+<ol type="1">
+<li><strong>User Reviews Analysis (<code>reviews.json</code>)</strong></li>
+<li><strong>Side Effect Scores (<code>drugSideEffectsData.json</code>)</strong></li>
+<li><strong>FDA Report Analysis (<code>formatted_drug_reactions.json</code>)</strong></li>
+</ol>
+<p>Our <code>merge_data_json.py</code> script handles the conversion of CSV files to JSON format and their placement in the website directory:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project/</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> merge_data_json.py      <span class="co"># Data conversion script</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> output/                 <span class="co"># Processed CSV files</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── side_effect_scores.csv</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── drug_reactions.csv</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── merged_drug_data.csv</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> website/</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> public/</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        <span class="ex">└──</span> data/           <span class="co"># JSON files for website</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>            <span class="ex">├──</span> reviews.json</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            <span class="ex">├──</span> drugSideEffectsData.json</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>            <span class="ex">└──</span> formatted_drug_reactions.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="processing-steps" class="level3">
+<h3 class="anchored" data-anchor-id="processing-steps">Processing Steps:</h3>
+<ol type="1">
+<li>Script reads CSV files from <code>output/</code> directory</li>
+<li>Converts data to appropriate JSON format</li>
+<li>Automatically saves files to <code>website/public/data/</code></li>
+<li>Files become accessible to website components</li>
+</ol>
+</section>
+<section id="file-mapping" class="level3">
+<h3 class="anchored" data-anchor-id="file-mapping">File Mapping:</h3>
+<ul>
+<li><code>side_effect_scores.csv</code> → <code>drugSideEffectsData.json</code></li>
+<li><code>drug_reactions.csv</code> → <code>formatted_drug_reactions.json</code></li>
+<li><code>merged_drug_data.csv</code> → <code>reviews.json</code></li>
+</ul>
+<p>These JSON files are placed in the <code>website/public/data/</code> directory and are utilized by the website for: - Interactive visualizations - Drug comparison features - Side effect frequency analysis - User experience insights</p>
+<p>To run the website:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> i        <span class="co"># Install dependencies</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> dev      <span class="co"># Start development server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then visit localhost:3000 to view the interactive dashboard.</p>
+</section>
+<section id="how-to-use-our-adhd-medication-side-effect-analysis-tool" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-our-adhd-medication-side-effect-analysis-tool">How to Use Our ADHD Medication Side Effect Analysis Tool</h3>
+<p>Our website provides two main features to help users understand and compare ADHD medication side effects:</p>
+<section id="individual-drug-pages" class="level4">
+<h4 class="anchored" data-anchor-id="individual-drug-pages">Individual Drug Pages</h4>
+<p><img src="drug_page_example.png" class="img-fluid" alt="Individual Drug Page"> Each medication has a dedicated page showing:</p>
+<ol type="1">
+<li><strong>Side Effects Comparison</strong></li>
+</ol>
+<ul>
+<li>FDA-reported side effects ranking</li>
+<li>User review-based side effects ranking</li>
+<li>Allows users to compare official data with real user experiences</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Social Sentiments</strong></li>
+</ol>
+<ul>
+<li>Actual user comments and experiences</li>
+<li>Provides real-world context for side effects</li>
+</ul>
+</section>
+<section id="find-drugs-by-side-effect-feature" class="level4">
+<h4 class="anchored" data-anchor-id="find-drugs-by-side-effect-feature">Find Drugs by Side Effect Feature</h4>
+<p><img src="find_drugs_example.png" class="img-fluid" alt="Find Drugs Page"> This tool helps users make informed decisions about medication choices:</p>
+<ol type="1">
+<li><strong>Search Function</strong></li>
+</ol>
+<ul>
+<li>Select a specific side effect from dropdown menu</li>
+<li>Click “Search” to view results</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Results Display</strong></li>
+</ol>
+<ul>
+<li>Shows Top 3 drugs with strongest association to the selected side effect</li>
+<li>Shows Bottom 3 drugs with weakest association</li>
+<li>Helps users identify medications that might minimize specific side effects</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Interactive Navigation</strong></li>
+</ol>
+<ul>
+<li>Click on any drug name to view its detailed page</li>
+<li>Allows users to learn more about medications with promising profiles</li>
+</ul>
+<p>This tool is particularly useful for:</p>
+<ul>
+<li>Users concerned about specific side effects</li>
+<li>Healthcare providers discussing medication options</li>
+<li>Anyone seeking to understand ADHD medication trade-offs</li>
+</ul>
+</section>
+</section>
+</section>
 <section id="team-members" class="level2">
 <h2 class="anchored" data-anchor-id="team-members"><strong>Team Members</strong></h2>
 <ul>
